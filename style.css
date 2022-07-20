@@ -1,0 +1,11 @@
+/* add css to all */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#map {
+  height: 700px;
+  width: 100%;
+}
+
