@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Maps Api</title>
-
-    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Google Maps</h1>
+    <!-- Search input -->
+    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
 
+    <!-- Google map -->
     <div id="map"></div>
 
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp7xvXYOwIwsZCSm3LODqbfwC27VawiUA&callback=initMap"></script>
+    <!-- Display geolocation data -->
+    <ul class="geo-data">
+        <li>Full Address: <span id="location"></span></li>
+        <li>Postal Code: <span id="postal_code"></span></li>
+        <li>Country: <span id="country"></span></li>
+        <li>Latitude: <span id="lat"></span></li>
+        <li>Longitude: <span id="lon"></span></li>
+    </ul>
+
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3NxoDlrG7-9oX79SooJ3odM3sFePPfk&callback=initMap&libraries=places&v=weekly"></script>
     <script src="/index.js"></script>
 </body>
 </html>
