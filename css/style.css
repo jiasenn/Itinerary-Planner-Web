@@ -1,0 +1,105 @@
+/* add css to all */
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+
+/* #map {
+  height: 700px;
+  width: 100%;
+} */
+
+html, body, #map {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      .controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+
+#searchInput {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 60px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  height: 32px;
+  width: 400px;
+  right: -50px;
+}
+
+#searchInput:focus {
+  border-color: #4d90fe;
+}
+
+/* ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+} */
+
+/* Sidebar Toggle */
+
+button:focus{
+  outline:none
+}
+
+h1{
+  margin:0;
+  padding:10px;
+  border-bottom:1px solid rgb(207, 207, 207)
+}
+
+
+aside{
+  background:#ffffff;
+  width:250px;height:100vh;
+  position:fixed;
+  transition:.3s;
+  left:-250px;
+  top:0;
+  transition-timing-function: cubic-bezier(0.9,0,1,1);
+  z-index:1;
+}
+
+aside.close{
+  left:0;
+  transition:.3s;
+  transition-timing-function: cubic-bezier(0.9,0,1,1);
+}
+
+nav a{
+  display: block;
+  color:#000000;
+  text-decoration:none;
+  padding:10px
+}
+
+nav a:hover{
+  color: #4d90fe;
+} 
+
+aside button{
+  border:black;
+  background:white;
+  position: absolute;
+  right: -50px;
+  top: 10px;
+  font-size:30px;
+  transform:rotate(90deg);
+  display:inline-block;
+  cursor:pointer;
+  color:black;
+  padding: 4px 6px 7px 5px; /* right bottom left top */
+  border-radius: 0px;
+}

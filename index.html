@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Maps Api</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
+
 </head>
 <body>
     <!-- Search input -->
-    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+    <!-- <input id="searchInput" class="controls" type="text" placeholder="Enter a location"> -->
+    <!-- Menu bar -->
+        <aside>
+            <button class="toggle">|||</button>
+            <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+
+            <h1>Itinerary Planner</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </aside>    
+
 
     <!-- Google map -->
     <div id="map"></div>
@@ -22,7 +40,71 @@
         <li>Longitude: <span id="lon"></span></li>
     </ul>
 
+    <div id="date-picker-section" class="container">
+  <div id="date-picker-container">
+    
+    <div id="date-picker-title">
+      <h4> Select your dates </h4>
+    </div>
+    
+    <p> Click on a date to open the date picker. </p>
+    
+    <div id="date-picker-dates">
+      <div id="date-picker-date-first" class="date-picker-date">
+        25/07/2022
+      </div>
+      <div class="date-picker-date">
+        27/07/2022
+      </div>
+    </div>
+    
+    <p> Revel in how big the dates are now. </p>
+    
+    <div id="date-picker-display-container">
+      <div class="date-picker-display-pair">
+        <div class="date-picker-display">
+          25 Jul
+        </div>
+        <div class="date-picker-display-label">
+          Date one
+        </div>
+      </div>
+      <div class="date-picker-display-pair">
+        <div class="date-picker-display">
+          27 Jul
+        </div>
+        <div class="date-picker-display-label">
+          Date two
+        </div>
+      </div>
+    </div>
+    <!-- Date Picker -->
+    <div id="date-picker-modal" class="hidden-2">
+        <div id="date-picker-top-bar">
+            <div id="date-picker-previous-month" class="date-picker-change-month">&lsaquo;</div>
+            <div id="date-picker-month">December 17</div>
+            <div id="date-picker-next-month" class="date-picker-change-month">&rsaquo;</div>
+        </div>
+        <div id="date-picker-exit">&times;</div>
+        <table id="date-picker">
+            <tr id="date-picker-weekdays">
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+            </tr>
+            <!-- Actual calendar rows added dynamically -->
+            <!--<tr class="date-picker-calendar-row"></tr>-->
+        </table>
+        </div>
+    </div>  
+
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3NxoDlrG7-9oX79SooJ3odM3sFePPfk&callback=initMap&libraries=places&v=weekly"></script>
-    <script src="/index.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/calendar.js"></script>
+
 </body>
 </html>
