@@ -1,6 +1,6 @@
 *, *:before, *:after {
   box-sizing: border-box;
-  transition: all 0.24s;
+  /* transition: all 0.24s; */
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   border-radius: 5px;
