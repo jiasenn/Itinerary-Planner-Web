@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="js-focus-visible" lang="en" data-rh="lang">    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,6 @@
         <aside>
             <button class="toggle">|||</button>
             <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-
             <h1>Itinerary Planner</h1>
             <nav>
                 <a href="javascript:showCalendar()">Home</a>
@@ -26,19 +25,11 @@
                 <a href="#">Contact Us</a>
             </nav>
         </aside>    
-
+    <!-- Date Picker -->
 
     <!-- Google map -->
+    <div id="wrapper">
     <div id="map"></div>
-
-    <!-- Display geolocation data -->
-    <ul class="geo-data">
-        <li>Full Address: <span id="location"></span></li>
-        <li>Postal Code: <span id="postal_code"></span></li>
-        <li>Country: <span id="country"></span></li>
-        <li>Latitude: <span id="lat"></span></li>
-        <li>Longitude: <span id="lon"></span></li>
-    </ul>
 
     <!-- Date Picker -->
     <div id="date-picker-section" class="hidden-1">
@@ -101,11 +92,21 @@
                 <!--<tr class="date-picker-calendar-row"></tr>-->
             </table>
         </div>
-    </div>  
+    </div>
+    </div>
+        <!-- Display geolocation data -->
+    <ul class="geo-data">
+        <li>Full Address: <span id="location"></span></li>
+        <li>Postal Code: <span id="postal_code"></span></li>
+        <li>Country: <span id="country"></span></li>
+        <li>Latitude: <span id="lat"></span></li>
+        <li>Longitude: <span id="lon"></span></li>
+    </ul>
 
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3NxoDlrG7-9oX79SooJ3odM3sFePPfk&callback=initMap&libraries=places&v=weekly"></script>
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
 
 </body>
 </html>

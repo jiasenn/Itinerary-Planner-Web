@@ -342,3 +342,39 @@ function updateDateShown() {
   updateDateBox.text(formattedDate);
   updateDisplayBox.text(dayAndMonth);
 }
+
+// Easepick 
+const DateTime = easepick.DateTime;
+
+const picker = new easepick.create({
+  element: document.getElementById("datepicker"),
+  css: [
+    "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css",
+    "https://easepick.com/css/demo_hotelcal.css",
+  ],
+  plugins: ["RangePlugin", "LockPlugin"],
+  RangePlugin: {
+    tooltipNumber(num) {
+      return num - 1;
+    },
+    locale: {
+      one: "night",
+      other: "nights",
+    },
+  },
+  LockPlugin: {
+    minDate: new Date(),
+    minDays: 2,
+    inseparable: true,
+    filter(date, picked) {
+      if (picked.length === 1) {
+        const incl = date.isBefore(picked[0]) ? "[)" : "(]";
+        return (
+          !picked[0].isSame(date, "day") && date.inArray(bookedDates, incl)
+        );
+      }
+
+      return date.inArray(bookedDates, "[)");
+    },
+  },
+});
