@@ -19,8 +19,8 @@
 
             <h1>Itinerary Planner</h1>
             <nav>
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
+                <a href="javascript:showCalendar()">Home</a>
+                <a href="javascript:hideCalendar()">About Us</a>
                 <a href="#">Services</a>
                 <a href="#">Portfolio</a>
                 <a href="#">Contact Us</a>
@@ -40,65 +40,66 @@
         <li>Longitude: <span id="lon"></span></li>
     </ul>
 
-    <div id="date-picker-section" class="container">
-  <div id="date-picker-container">
-    
-    <div id="date-picker-title">
-      <h4> Select your dates </h4>
-    </div>
-    
-    <p> Click on a date to open the date picker. </p>
-    
-    <div id="date-picker-dates">
-      <div id="date-picker-date-first" class="date-picker-date">
-        25/07/2022
-      </div>
-      <div class="date-picker-date">
-        27/07/2022
-      </div>
-    </div>
-    
-    <p> Revel in how big the dates are now. </p>
-    
-    <div id="date-picker-display-container">
-      <div class="date-picker-display-pair">
-        <div class="date-picker-display">
-          25 Jul
-        </div>
-        <div class="date-picker-display-label">
-          Date one
-        </div>
-      </div>
-      <div class="date-picker-display-pair">
-        <div class="date-picker-display">
-          27 Jul
-        </div>
-        <div class="date-picker-display-label">
-          Date two
-        </div>
-      </div>
-    </div>
     <!-- Date Picker -->
-    <div id="date-picker-modal" class="hidden-2">
-        <div id="date-picker-top-bar">
-            <div id="date-picker-previous-month" class="date-picker-change-month">&lsaquo;</div>
-            <div id="date-picker-month">December 17</div>
-            <div id="date-picker-next-month" class="date-picker-change-month">&rsaquo;</div>
+    <div id="date-picker-section" class="hidden-1">
+        <div id="date-picker-container">
+    
+            <div id="date-picker-title">
+                <h4> Select your dates </h4>
+            </div>
+    
+            <p> Click on a date to open the date picker. </p>
+    
+            <div id="date-picker-dates">
+                <div id="date-picker-date-first" class="date-picker-date">
+                    25/07/2022
+                </div>
+                <div class="date-picker-date">
+                    23/08/2022
+                </div>
+            </div>
+    
+            <p> Revel in how big the dates are now. </p>
+    
+            <div id="date-picker-display-container">
+                <div class="date-picker-display-pair">
+                    <div class="date-picker-display">
+                    25 Jul
+                    </div>
+                    <div class="date-picker-display-label">
+                    Date one
+                    </div>
+                </div>
+            <div class="date-picker-display-pair">
+                <div class="date-picker-display">
+                23 Aug
+                </div>
+                <div class="date-picker-display-label">
+                Date two
+                </div>
+            </div>
         </div>
-        <div id="date-picker-exit">&times;</div>
-        <table id="date-picker">
-            <tr id="date-picker-weekdays">
-                <th>S</th>
-                <th>M</th>
-                <th>T</th>
-                <th>W</th>
-                <th>T</th>
-                <th>F</th>
-                <th>S</th>
-            </tr>
-            <!-- Actual calendar rows added dynamically -->
-            <!--<tr class="date-picker-calendar-row"></tr>-->
-        </table>
+        <!-- Date Picker -->
+        <div id="date-picker-modal" class="hidden-2">
+            <div id="date-picker-top-bar">
+                <div id="date-picker-previous-month" class="date-picker-change-month">&lsaquo;</div>
+                <div id="date-picker-month">July 2022</div>
+                <div id="date-picker-next-month" class="date-picker-change-month">&rsaquo;</div>
+            </div>
+            <div id="date-picker-exit">&times;</div>
+            <table id="date-picker">
+                <tr id="date-picker-weekdays">
+                    <th>S</th>
+                    <th>M</th>
+                    <th>T</th>
+                    <th>W</th>
+                    <th>T</th>
+                    <th>F</th>
+                    <th>S</th>
+                </tr>
+                <!-- Actual calendar rows added dynamically -->
+                <!--<tr class="date-picker-calendar-row"></tr>-->
+            </table>
         </div>
     </div>  
 

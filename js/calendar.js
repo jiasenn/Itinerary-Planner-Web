@@ -235,6 +235,13 @@ function changeMonth(direction) {
   // passes 'true' that month has changed
   updateDatePicker(true);
 }
+function showCalendar() {
+  $("#date-picker-section").removeClass("hidden-1");
+}
+function hideCalendar() {
+  $(".date-picker-section").removeClass("active");
+  $("#date-picker-section").addClass("hidden-1");
+}
 
 function showDatePicker(e) {
   var pxFromTop = $(".date-picker-date").offset().top;

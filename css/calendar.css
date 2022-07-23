@@ -16,6 +16,13 @@ body {
 .hidden {
   display: none !important;
 }
+.hidden-1 {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.92);
+  transform-origin: left center;
+}
+
 .hidden-2 {
   opacity: 0;
   pointer-events: none;
@@ -32,7 +39,7 @@ body {
   padding: 40px;
   background: white;
   max-width: 500px;
-  box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.2), 30px 30px 50px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 100px 0 #4d91fe5d, 30px 30px 50px 0 rgba(0, 0, 0, 0.06);
 }
 #date-picker-title {
   font-family: 'Coda', serif;
@@ -55,7 +62,7 @@ body {
   padding-right: 50px;
   margin: 10px;
   cursor: pointer;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15), 3px 3px 5px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 20px 0 #4d90fe5d, 3px 3px 5px 0 rgba(0, 0, 0, 0.06);
   transition: none;
 }
 .date-picker-date:hover, .date-picker-date.active {
@@ -112,7 +119,7 @@ body {
   left: -5px;
   right: -5px;
   height: 96px;
-  background: #1ae094;
+  background: #4d90fe;
   content: '';
 }
 #date-picker-top-bar {
@@ -172,7 +179,7 @@ body {
   cursor: default;
   border-radius: 0;
   height: 50px;
-  border-color: #1ae094;
+  border-color: #4d90fe;
 }
 #date-picker td {
   cursor: pointer;
@@ -184,7 +191,7 @@ body {
   background: #eee;
 }
 #date-picker td.active {
-  background: #1ae094;
+  background: #4d90fe;
   color: white;
 }
 #date-picker td.previous-month, #date-picker td.next-month {
