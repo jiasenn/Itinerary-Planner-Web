@@ -34,7 +34,7 @@ body {
   padding-top: 80px;
   padding-bottom: 80px;
   min-height: 80vh;
-  z-index: 99;
+  position: relative;
 }
 #date-picker-container {
   margin: 0 auto;
@@ -204,4 +204,21 @@ body {
 #date-picker-weekdays {
   color: white;
 }
-
+#date-picker-button {
+  background: white;
+  color: black;
+  padding: 10px;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  transition: background 0.1s;
+}
+#date-picker-button:hover {
+  background: #F5F5F5;
+}
+#date-picker-button.active {
+  background: #4d90fe;
+  color: white;
+}
+.center-button {
+  text-align: center;
+}
