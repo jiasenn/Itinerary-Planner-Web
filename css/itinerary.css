@@ -1,0 +1,23 @@
+h1{
+  margin:0;
+  padding:20px;
+  border-bottom:1px solid rgb(207, 207, 207);
+  background-color: #4d90fe;
+  border-radius: 0%;
+  color: #ffffff;
+  font-family: roboto;
+}
+
+aside{
+  background: #ffffff;
+  width:350px;height:100vh;
+  position:fixed;
+  transition:.3s;
+  left:-350px;
+  top:0;
+  transition-timing-function: cubic-bezier(0.9,0,1,1);
+}
+
+nav a{
+  text-align: center;
+}
