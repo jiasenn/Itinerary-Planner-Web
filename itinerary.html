@@ -46,20 +46,19 @@
                         
                         <button type="button" id="cross" onclick="javascript:hideCalendar()" style="background-color: #4d90fe; color: white;">&#10005;</button>
 
-                        <div class="dropdown">
-                            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                              </ul>
-                              <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Edit property</a>
-                                <a href="#about">Delete</a>
-                              </div>
+                            <div class="dropdown">
+                                <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#home">Edit property</a>
+                                    <a href="#about">Delete</a>
+                                </div>
+                                </div>
+                            
                             </div>
-        
-                          
-                        </div>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-1"></p>
@@ -202,6 +201,18 @@
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
     <script src="/js/itinerary.js"></script>
-
+    <div class="dropdown">
+        <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Edit property</a>
+            <a href="#about">Delete</a>
+          </div>
+        </div>
+      
+    </div>
 </body>
 </html>
