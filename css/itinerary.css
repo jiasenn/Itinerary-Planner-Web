@@ -41,16 +41,12 @@ label {
   text-align: left;
 }
 
-.display-plans{
-  text-align: center;
-}
 
 /* The Magic */
 .accordion:hover .accordion-item:hover .accordion-item-content,
 .accordion .accordion-item--default .accordion-item-content {
     height: 3em;
 }
-
 
 .accordion-item-content,
 .accordion:hover .accordion-item-content {
