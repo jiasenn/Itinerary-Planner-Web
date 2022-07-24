@@ -18,10 +18,13 @@ const addPlan = (ev) => {
   let pre = document.querySelector("#msg pre");
   pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
-    const myArray = Object.values(plans[0]);
-
-  document.getElementById("display-plans-1").innerHTML = myArray[0];
-
+  for (let i = 0; i < plans.length; i++) {
+    const myArray = Object.values(plans[i]);
+    document.getElementById("display-plans-" + String(i + 1)).innerHTML = myArray[0];
+    document.getElementById("plans-start-" + String(i + 1)).innerHTML = myArray[1];
+    document.getElementById("plans-end-" + String(i + 1)).innerHTML = myArray[2];
+    document.getElementById("destination-" + String(i + 1)).innerHTML = myArray[3];
+  }
 
   //saving to localStorage
   localStorage.setItem("MyPlanList", JSON.stringify(plans));
@@ -30,30 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("plans-submit").addEventListener("click", addPlan);
 });
 
-$(document).ready(function () {
-  $(".today").val(getToday());
-});
-
-$(document).ready(function () {
-  $(".end-date").val(getEndDate());
-});
-
-// JQuery
-function getToday() {
-  const local = new Date();
-  local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
-  return local.toJSON().slice(0, 10);
-}
-
-function getEndDate() {
-  const local = new Date();
-  local.setMinutes(local.getMinutes() - 20*local.getTimezoneOffset());
-  return local.toJSON().slice(0, 10);
-}
-
 console.warn("added", { plans });
 let pre = document.querySelector("#msg pre");
 pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
-
-
-

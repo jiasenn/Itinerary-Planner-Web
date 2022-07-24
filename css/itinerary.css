@@ -36,6 +36,11 @@ label {
     font-size: 2px;
 }
 
+#menu-bar {
+  padding-top: 0px;
+  text-align: left;
+}
+
 .display-plans{
   text-align: center;
 }
@@ -43,7 +48,7 @@ label {
 /* The Magic */
 .accordion:hover .accordion-item:hover .accordion-item-content,
 .accordion .accordion-item--default .accordion-item-content {
-    height: 6em;
+    height: 2em;
 }
 
 
@@ -69,3 +74,7 @@ label {
 #cross:hover{
     border-width: 2px;
 }
+
+h1:empty {
+    display: none;
+  }
