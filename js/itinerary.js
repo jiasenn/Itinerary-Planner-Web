@@ -1,4 +1,7 @@
 let plans = [];
+sessionStorage.setItem("plans", JSON.stringify(plans));
+var obj = JSON.parse(sessionStorage.getItem('user')); // An object :D
+
 // example {id:1592304983049, title: 'Deadpool', year: 2015}
 const addPlan = (ev) => {
   ev.preventDefault(); //to stop the form submitting
@@ -36,3 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
 console.warn("added", { plans });
 let pre = document.querySelector("#msg pre");
 pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
+
+let data = localStorage.getItem("MyPlanList");

@@ -48,7 +48,7 @@ label {
 /* The Magic */
 .accordion:hover .accordion-item:hover .accordion-item-content,
 .accordion .accordion-item--default .accordion-item-content {
-    height: 2em;
+    height: 3em;
 }
 
 
