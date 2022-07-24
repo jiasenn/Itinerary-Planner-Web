@@ -16,6 +16,20 @@ function displayPlans(plans) {
       myArray[3];
   }
 }
+
+function hidePlans(plans) {
+  for (let i = 0; i < plans.length; i++) {
+    const myArray = Object.values(plans[i]);
+    document.getElementById("display-plans-" + String(i + 1)).innerHTML =
+      '';
+    document.getElementById("plans-start-" + String(i + 1)).innerHTML =
+      '';
+    document.getElementById("plans-end-" + String(i + 1)).innerHTML =
+      '';
+    document.getElementById("destination-" + String(i + 1)).innerHTML =
+      '';
+  }
+}
 // example {id:1592304983049, title: 'Deadpool', year: 2015}
 const addPlan = (ev) => {
   ev.preventDefault(); //to stop the form submitting
@@ -48,6 +62,22 @@ console.warn("added", { plans });
 let pre = document.querySelector("#msg pre");
 pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
-plans.push(Object.values(obj[0]));
+for (let i = 0; i < obj.length; i++) {
+  plans.push(Object.values(obj[i]));
+}
 
 displayPlans(obj);
+
+function removePlan(i) {
+  hidePlans(plans);
+  plans.splice(i, 1);
+  displayPlans(plans);
+  localStorage.removeItem("MyPlanList"); //remove one item
+  localStorage.setItem("MyPlanList", JSON.stringify(plans));
+}
+
+// for (var i = 0, len = localStorage.length; i < len; ++i) {
+//   console.log(localStorage.getItem(localStorage.key(i)));
+// }
+
+// console.log(plans[1]);
