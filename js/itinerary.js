@@ -1,7 +1,21 @@
-let plans = [];
-sessionStorage.setItem("plans", JSON.stringify(plans));
-var obj = JSON.parse(sessionStorage.getItem('user')); // An object :D
+// window.localStorage.clear(); //clear all localstorage
 
+let plans = [];
+var obj = JSON.parse(localStorage.getItem("MyPlanList")); // An object :D
+
+function displayPlans(plans) {
+  for (let i = 0; i < plans.length; i++) {
+    const myArray = Object.values(plans[i]);
+    document.getElementById("display-plans-" + String(i + 1)).innerHTML =
+      myArray[0];
+    document.getElementById("plans-start-" + String(i + 1)).innerHTML =
+      myArray[1];
+    document.getElementById("plans-end-" + String(i + 1)).innerHTML =
+      myArray[2];
+    document.getElementById("destination-" + String(i + 1)).innerHTML =
+      myArray[3];
+  }
+}
 // example {id:1592304983049, title: 'Deadpool', year: 2015}
 const addPlan = (ev) => {
   ev.preventDefault(); //to stop the form submitting
@@ -21,17 +35,11 @@ const addPlan = (ev) => {
   let pre = document.querySelector("#msg pre");
   pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
-  for (let i = 0; i < plans.length; i++) {
-    const myArray = Object.values(plans[i]);
-    document.getElementById("display-plans-" + String(i + 1)).innerHTML = myArray[0];
-    document.getElementById("plans-start-" + String(i + 1)).innerHTML = myArray[1];
-    document.getElementById("plans-end-" + String(i + 1)).innerHTML = myArray[2];
-    document.getElementById("destination-" + String(i + 1)).innerHTML = myArray[3];
-  }
+  displayPlans(plans);
 
   //saving to localStorage
   localStorage.setItem("MyPlanList", JSON.stringify(plans));
-};;
+};
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("plans-submit").addEventListener("click", addPlan);
 });
@@ -40,4 +48,6 @@ console.warn("added", { plans });
 let pre = document.querySelector("#msg pre");
 pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
-let data = localStorage.getItem("MyPlanList");
+plans.push(Object.values(obj[0]));
+
+displayPlans(obj);
