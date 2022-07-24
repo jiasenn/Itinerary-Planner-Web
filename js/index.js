@@ -95,3 +95,7 @@ $(document).mouseup(function (e) {
     $("aside").removeClass("close");
   }
 });
+
+function closeSide() {
+  $("aside").removeClass("close");
+}

@@ -22,18 +22,18 @@
         <nav>
             <div class="accordion">
                 <section class="accordion-item accordion-item--default">
-                    <a href="#" id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                         <!-- <div class="menu-icon">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div> -->
-                        <button type="button" id="cross" style="transform:rotate(90deg); font-size: 30px; background-color: #4d90fe; color: white;">|||</button>
+                        <a href="index.html" style="background-color: #4d90fe;"><button type="button" id="cross" style="transform:rotate(90deg); font-size: 30px; background-color: #4d90fe; color: white;">|||</button></a> 
                         <h1 style="border: 0;">Planner</h1>
-                        <button type="button" id="cross" onclick="javascript:hideCalendar()" style="background-color: #4d90fe; color: white;">&#10005;</button>
-                    </a>
+                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+                    </div>
                     <div class="accordion-item-content" style="display: flex; justify-content: space-between; padding: 0px 10px; height: 2em;">
-                        <a href="index.html" style="font-weight: 1000;">Your planner</a>
+                        <h3 style="font-weight: 1000;">Your planner</h3>
                         <a href="javascript:showCalendar();">+ Create new itineary</a>
                     </div>
                 </section>
