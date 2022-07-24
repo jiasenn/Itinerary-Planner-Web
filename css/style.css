@@ -120,7 +120,7 @@ nav a:hover{
   color: #4d90fe;
 } 
 
-aside button{
+.toggle{
   border:black;
   background:white;
   position: fixed;
