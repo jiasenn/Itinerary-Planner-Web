@@ -18,10 +18,40 @@
 
     <aside>
         <button class="toggle">|||</button>
-        <h1>Planner</h1>
+        <!-- <h1 class="accordion">Planner</h1> -->
         <nav>
-            <a href="index.html">Home</a>
-            <a href="javascript:showCalendar();">ADD ITINERARY</a>
+            <div class="accordion">
+                <section class="accordion-item accordion-item--default">
+                    <a href="#"><h1>Planner</h1></a>
+                    <div class="accordion-item-content">
+                        <a href="index.html">Home</a>
+                        <a href="javascript:showCalendar();">ADD ITINERARY</a>
+                    </div>
+                </section>
+                <section class="accordion-item">
+            <!-- <a href="#" id="display-plans-1" class="display-plans"> -->
+
+                    <h1>Section 2</h1>
+                    <div class="accordion-item-content">
+                       <p>Content for section 2</p>
+                    </div>
+                </section>
+                <section  class="accordion-item">
+                    <h1>Section 3</h1>
+                    <div class="accordion-item-content">
+                        <p>Content for section 3</p>
+                        <p>This is my default state.</p>
+                    </div>
+                </section>
+                <section class="accordion-item">
+                    <h1>Section 4</h1>
+                    <div class="accordion-item-content">
+                        <p>Content for section 4</p>
+                    </div>
+                </section>
+            </div>
+
+            </a>
             <a href="#"></a>
         </nav>        
     </aside>    
@@ -29,89 +59,58 @@
 
     <!-- Google map -->
     <div id="wrapper">
-    <div id="map"></div>
+        <div id="map"></div>
 
-    <!-- Date Picker -->
-    <div id="date-picker-section" class="hidden-1">
-        <div id="date-picker-container">
-    
-            <div id="date-picker-title">
-                <h4><center>Itinerary Planner</center></h4>
-            </div>
-    
-            <p> <center>Select your duration of travel. </center></p>
-    
-            <div id="date-picker-dates">
-                <div id="date-picker-date-first" class="date-picker-date">
-                    25/07/2022
-                </div>
-                <div class="date-picker-date">
-                    23/08/2022
-                </div>
-            </div>
-    
-            <p> <center> Confirm your selected dates</center> </p>
-    
-            <div id="date-picker-display-container">
-                <div class="date-picker-display-pair">
-                    <div class="date-picker-display-label">
-                    Start Date
+        <!-- Date Picker -->
+            <div id="date-picker-section" class="hidden-1">
+                <form id="date-picker-container">
+                    <div class="flex-contianer">
+                        <h3>Planner</h3>
+                        <button type="button" id="cross" onclick="javascript:hideCalendar()">&#10005;</button>
                     </div>
-                    <div class="date-picker-display">
-                    25 Jul
+            
+                    <div id="date-picker-title">
+                        <label for="name"><center>Itinerary Name</center></label>
+                        <center><input type="text" id="itineary-form" placeholder="Name your itinerary"/></center>
+                    </div>
+
+                    <div id="date-picker-title">
+                        <label for="date"> <center>Date Range</center></label>
+                        <center>
+                            <input type="date" class="today" id="date-picker-start-date" placeholder="Start Date" min="2022-01-01" max="2025-12-31">
+                            <input type="date" class="end-date" id="date-picker-end-date" placeholder="End Date" min="2022-01-01" max="2025-12-31">
+                        </center>
+                    </div>
+
+                
+                    <div id="date-picker-title">
+                        <label for="destination"> <center> Destination </center> </label>
+                        <center><input type="text" id="destination-form" placeholder="Enter Your Destination"/></center>
                     </div>
                     
-                </div>
-            <div class="date-picker-display-pair">
-                <div class="date-picker-display-label">
-                End Date
-                </div>
-                <div class="date-picker-display">
-                23 Aug
-                </div>
-                
+                    <div class="center-button">
+                        <center><button type="submit" id="plans-submit" onclick="javascript:hideCalendar()">Create Itinerary</button></center>
+                    </div>
+                </form>
             </div>
-        </div>
-        <!-- Date Picker -->
-        <div id="date-picker-modal" class="hidden-2">
-            <div id="date-picker-top-bar">
-                <div id="date-picker-previous-month" class="date-picker-change-month">&lsaquo;</div>
-                <div id="date-picker-month">July 2022</div>
-                <div id="date-picker-next-month" class="date-picker-change-month">&rsaquo;</div>
-            </div>
-            <div id="date-picker-exit">&times;</div>
-            <table id="date-picker">
-                <tr id="date-picker-weekdays">
-                    <th>S</th>
-                    <th>M</th>
-                    <th>T</th>
-                    <th>W</th>
-                    <th>T</th>
-                    <th>F</th>
-                    <th>S</th>
-                </tr>
-                <!-- Actual calendar rows added dynamically -->
-                <!--<tr class="date-picker-calendar-row"></tr>-->
-            </table>
-        </div>
-        <div class="center-button">
-            <button id="date-picker-button" onclick="javascript:hideCalendar()">Select Dates</button>
         </div>
     </div>
+    <div id="msg">
+            <pre></pre>
     </div>
         <!-- Display geolocation data -->
-    <ul class="geo-data">
+    <!-- <ul class="geo-data">
         <li>Full Address: <span id="location"></span></li>
         <li>Postal Code: <span id="postal_code"></span></li>
         <li>Country: <span id="country"></span></li>
         <li>Latitude: <span id="lat"></span></li>
         <li>Longitude: <span id="lon"></span></li>
-    </ul>
+    </ul> -->
 
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3NxoDlrG7-9oX79SooJ3odM3sFePPfk&callback=initMap&libraries=places&v=weekly"></script>
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
+    <script src="/js/itinerary.js"></script>
 
 </body>
 </html>
