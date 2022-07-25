@@ -97,6 +97,7 @@ aside{
   top:0;
   transition-timing-function: cubic-bezier(0.9,0,1,1);
   z-index:1;
+  overflow: auto;
 }
 
 aside.close{
