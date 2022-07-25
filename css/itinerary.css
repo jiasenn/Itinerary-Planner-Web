@@ -7,6 +7,16 @@ h1{
   color: #ffffff;
   font-family: roboto;
 }
+nav a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 0px 0px 0px;
+  background-color: #fff;
+  font-family: roboto;
+  font-size: 15px;
+  font-weight: 200;
+}
 
 aside{
   background: #ffffff;
@@ -235,8 +245,10 @@ hr {
 
 .close:hover,
 .close:focus {
-  color: #f44336;
+  color: black;
   cursor: pointer;
+  font-weight:200px;
+
 }
 
 /* Clear floats */
