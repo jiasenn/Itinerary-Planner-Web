@@ -74,6 +74,16 @@ label {
 h1:empty {
     display: none;
   }
+
+#display-plans-1, #display-plans-2, #display-plans-3,
+#display-plans-4, #display-plans-5 {
+    background-color: transparent;
+    color: black;
+    border-bottom: auto;
+    border-bottom: 2px;
+    font-weight:100;
+    padding:10px 20px;
+}
 /*dropdown*/
 .showLeft {
   background-color: white !important;
@@ -98,20 +108,24 @@ h1:empty {
   left: 0.4em;
 }
 .btn-right {
-  right: 0.4em;
+  right: 1px;
 }
 .btn-left,
 .btn-right {
   position: absolute;
   top: 0.24em;
 }
-.dropbtn {
+.dropbtn-1, .dropbtn-2, .dropbtn-3, 
+.dropbtn-4, .dropbtn-0 {
   background-color: #4caf50;
-  position: fixed;
+  position: absolute;
   color: white;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 .dropbtn:hover,
 .dropbtn:focus {
@@ -121,6 +135,7 @@ h1:empty {
   position: absolute;
   display: inline-block;
   right: 0.4em;
+  /* display: none; */
 }
 .dropdown-content {
   display: none;
@@ -144,6 +159,14 @@ h1:empty {
   background-color: #f1f1f1;
 }
 
+#myDropdown {
+  display: block;
+}
+
 .show {
   display: block;
+}
+
+#dots {
+  margin: 2px 15px 2px 0px;
 }
