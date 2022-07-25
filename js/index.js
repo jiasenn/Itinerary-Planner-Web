@@ -41,7 +41,7 @@ function initMap() {
   map.setMapTypeId("map_style");
 
   marker = new google.maps.Marker({
-    position: new google.maps.LatLng(3.167244, 101.61295),
+    position: new google.maps.LatLng(1.3414, 103.9633),
     animation: google.maps.Animation.DROP,
     icon: "https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png",
   });
@@ -135,7 +135,7 @@ function changeMarkerPos(lat, lon) {
   map.panTo(myLatLng);
 }
 
-google.maps.event.addDomListener(window, "load", initMap);
+// google.maps.event.addDomListener(window, "load", initMap);
 
 window.initMap = initMap;
 
