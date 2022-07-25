@@ -28,26 +28,32 @@
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div class="accordion-item-content" style="display: flex; justify-content: space-between; padding: 0px 10px; height: 2em;">
-                        <a href="javascript:refreshDots()" style="font-weight: 1000;">Your planner</a>
+                        <a href="javascript:displayPlans(plans)" style="font-weight: 1000;">Your planner</a>
                         <a href="javascript:showCalendar();">+ Create new itineary</a>
                     </div>
                 </section>
                 <section class="accordion-item">
 
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
+            <!-- <a href="#" id="display-plans-1" class="display-plans"> -->
+
                         <h1 id="display-plans-1"></h1>
-                        <div class="dropdown">
-                            <ul class="dropbtn-0 icons btn-right showLeft" onclick="showDropdown()">
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                            </ul>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Edit property</a>
-                                <a href="#about">Delete</a>
+                        <a id="itineary-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"></a>
+                        
+                        <button type="button" id="cross" onclick="javascript:hideCalendar()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+
+                            <div class="dropdown">
+                                <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#home">Edit property</a>
+                                    <a href="#about">Delete</a>
+                                </div>
+                                </div>
+                            
                             </div>
-                        </div>    
-                    </div>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-1"></p>
@@ -62,24 +68,12 @@
                         <p id="destination-1"></p>
                     </div>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                    <a href="javascript:removePlan(0); refreshDots()">Delete</a>
+                    <a href="javascript:removePlan(0)">Delete</a>
                     </div>
                 </section>
+                <hr>
                 <section  class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-2"></h1>
-                        <div class="dropdown">
-                            <ul class="dropbtn-1 icons btn-right showLeft" onclick="showDropdown()">
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                            </ul>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Edit property</a>
-                                <a href="#about">Delete</a>
-                            </div>
-                        </div>    
-                    </div>
+                    <h1 id="display-plans-2"></h1>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-2"></p>
@@ -93,24 +87,11 @@
                         <p id="destination-2"></p>
                     </div>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                    <a href="javascript:removePlan(1); refreshDots()">Delete</a>
+                    <a href="javascript:removePlan(1)">Delete</a>
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-3"></h1>
-                        <div class="dropdown">
-                            <ul class="dropbtn-2 icons btn-right showLeft" onclick="showDropdown()">
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                            </ul>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Edit property</a>
-                                <a href="#about">Delete</a>
-                            </div>
-                        </div>    
-                    </div>
+                    <h1 id="display-plans-3"></h1>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-3"></p>
@@ -125,23 +106,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-4"></h1>
-                        <!-- <a id="itineary-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"></a> -->
-                        
-                        <!-- <button type="button" id="cross" onclick="javascript:hideCalendar()" style="background-color: #4d90fe; color: white;">&#10005;</button> -->
-                        <div class="dropdown">
-                            <ul class="dropbtn-3 icons btn-right showLeft" onclick="showDropdown()">
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                            </ul>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Edit property</a>
-                                <a href="#about">Delete</a>
-                            </div>
-                        </div>    
-                    </div>
+                    <h1 id="display-plans-4"></h1>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-4"></p>
@@ -156,20 +121,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-5"></h1>
-                        <div class="dropdown">
-                            <ul class="dropbtn-4 icons btn-right showLeft" onclick="showDropdown()">
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                                <li id="dots"></li>
-                            </ul>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Edit property</a>
-                                <a href="#about">Delete</a>
-                            </div>
-                        </div>    
-                    </div>
+                    <h1 id="display-plans-5"></h1>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-5"></p>
@@ -223,26 +175,12 @@
                     </div>
                     
                     <div class="center-button">
-                        <center><button type="submit" id="plans-submit" onclick="hideCalendar()">Create Itinerary</button></center>
+                        <center><button type="submit" id="plans-submit" onclick="javascript:hideCalendar(); ">Create Itinerary</button></center>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="dropdown">
-    <!-- three dots -->
-    <ul class="dropbtn-1 icons btn-right showLeft" onclick="showDropdown()">
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <!-- menu -->
-    <div id="myDropdown" class="dropdown-content">
-      <a href="#home">Open</a>
-      <a href="#about">Edit</a>
-    </div>
-  </div>
-
     <div id="msg">
             <pre></pre>
     </div>
@@ -259,5 +197,18 @@
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
     <script src="/js/itinerary.js"></script>
+    <div class="dropdown">
+        <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Edit property</a>
+            <a href="#about">Delete</a>
+          </div>
+        </div>
+      
+    </div>
 </body>
 </html>

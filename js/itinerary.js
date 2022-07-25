@@ -3,7 +3,6 @@
 let plans = [];
 var obj = JSON.parse(localStorage.getItem("MyPlanList")); // An object :D
 
-
 function displayPlans(plans) {
   for (let i = 0; i < plans.length; i++) {
     const myArray = Object.values(plans[i]);
@@ -96,46 +95,7 @@ function showDropdown() {
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
-  for (let j = 0; j < plans.length; j++) {
-    if (!event.target.matches(".dropbtn-" + String(j))) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains("show")) {
-          openDropdown.classList.remove("show");
-        }
-      }
-    }
-  }
-};
-// console.log($("#display-plans-" + String(2)).is(":empty"));
-
-// for (let i = 1; i < 5; i++) {
-//   console.log(i);
-//   if ($("#display-plans-" + String(i)).is(":empty")) {
-//     const element = document.getElementById("dropbtn-" + String(i));
-//     console.log(i);
-
-//     element.style.display = "none";
-//     // $(this).find(".dropbtn-" + String(i)).css("display: none;");
-//     // $(this).find(".display-plans-" + String(i)).css("display: none;");
-//   }
-// }
-// while (true) {
-for (let i = 0; i < 5; i++) {
-    // console.log("#display-plans-" + String(i));
-    if ($("#display-plans-" + String(i+1)).is(":empty") || plans.length === 0) {
-      const element = document.querySelector(".dropbtn-" + String(i));
-      // console.log(i);
-
-      element.style.display = "none";    }
-  }
-// }
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches(".dropbtn-1")) {
+  if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
