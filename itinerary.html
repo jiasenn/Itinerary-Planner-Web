@@ -19,7 +19,7 @@
     <aside>
         <button class="toggle">|||</button>
         <!-- <h1 class="accordion">Planner</h1> -->
-        <nav>
+        <nav id="nav1">
             <div class="accordion">
                 <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
@@ -34,7 +34,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-1"></h1>
+                        <a href="javascript:w3_open(); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-1 icons btn-right showLeft dropbtn" onclick="showDropdown(1)">
                                 <li id="dots"></li>
@@ -42,7 +42,7 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-1" class="dropdown-content">
-                                <a href="#home">Edit property</a>
+                                <a href="javascript:w3_open()">Edit property</a>
                                 <a href="javascript:removePlan(0); location.reload()">Delete</a>
                             </div>
                         </div>    
@@ -63,7 +63,7 @@
                 </section>
                 <section  class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-2"></h1>
+                        <a href="javascript:w3_open()"><h1 id="display-plans-2"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-2 icons btn-right showLeft dropbtn" onclick="showDropdown(2)">
                                 <li id="dots"></li>
@@ -71,7 +71,7 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-2" class="dropdown-content">
-                                <a href="#home">Edit property</a>
+                                <a href="javascript:w3_open()">Edit property</a>
                                 <a href="javascript:removePlan(1); location.reload()">Delete</a>
                             </div>
                         </div>    
@@ -91,7 +91,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-3"></h1>
+                        <a href="javascript:w3_open()"><h1 id="display-plans-3"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-3 icons btn-right showLeft dropbtn" onclick="showDropdown(3)">
                                 <li id="dots"></li>
@@ -99,7 +99,7 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-3" class="dropdown-content">
-                                <a href="#home">Edit property</a>
+                                <a href="javascript:w3_open()">Edit property</a>
                                 <a href="javascript:removePlan(2); location.reload()">Delete</a>
                             </div>
                         </div>    
@@ -119,7 +119,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-4"></h1>
+                        <a href="javascript:w3_open()"><h1 id="display-plans-4"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-4 icons btn-right showLeft dropbtn" onclick="showDropdown(4)">
                                 <li id="dots"></li>
@@ -127,7 +127,7 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-4" class="dropdown-content">
-                                <a href="#home">Edit property</a>
+                                <a href="javascript:w3_open()">Edit property</a>
                                 <a href="javascript:removePlan(3); location.reload()">Delete</a>
                             </div>
                         </div>    
@@ -147,7 +147,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <h1 id="display-plans-5"></h1>
+                        <a href="javascript:w3_open()"><h1 id="display-plans-5"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-5 icons btn-right showLeft dropbtn" onclick="showDropdown(5)">
                                 <li id="dots"></li>
@@ -155,7 +155,7 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-5" class="dropdown-content">
-                                <a href="#home">Edit property</a>
+                                <a href="javascript:w3_open()">Edit property</a>
                                 <a href="javascript:removePlan(4); reload()">Delete</a>
                             </div>
                         </div>    
@@ -177,6 +177,33 @@
 
             </a>
             <a href="#"></a>
+        </nav>
+        <nav style="display:none; background-color: #4d90fe;" id="mySidebar">
+            <section class="accordion-item accordion-item--default">
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
+                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
+
+                        <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close()">&#8592;</button> 
+                        
+                        <!-- <button type="button" id="cross" onclick="javascript:closeSide(); " style="background-color: #4d90fe; color: white;">&#10005;</button> -->
+                        <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+
+                        <!-- <div class="dropdown">
+                            <button onclick="showDropdown(1)"><ul class="dropbtn-1 icons btn-right showLeft dropbtn" onclick="showDropdown(1)" style="padding: 10px 0px; background-color: #4d90fe;">
+                                <li id="dots"></li>
+                                <li id="dots"></li>
+                                <li id="dots"></li>
+                            </ul>
+                            </button>
+                            <div id="myDropdown-1" class="dropdown-content">
+                                <a href="javascript:w3_open()">Edit property</a>
+                                <a href="javascript:removePlan(3); location.reload()">Delete</a>
+                            </div>
+                        </div>     -->
+                    </div>
+            </section>
         </nav>        
     </aside>    
 
