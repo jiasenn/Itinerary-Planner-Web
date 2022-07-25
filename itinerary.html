@@ -42,8 +42,26 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-1" class="dropdown-content">
-                                <a href="#home">Edit property</a>
+                                <a href="javascript:showCalendar();">hi property</a>
+                                <div id="id01" class="modal">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <form class="modal-content" action="/action_page.php">
+                                      <div class="deletecontainer">
+                                        <h1>Delete Account</h1>
+                                        <p>Are you sure you want to delete your account?</p>
+                                  
+                                        <div class="clearfix">
+                                          <a type="button" class="cancelbtn">Cancel</a>
+                                          <button type="button" class="deletebtn">Delete</button>
+                                        </div>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <a onclick="javascript:removePlan(0); location.reload()">Delete</a>
                                 <a href="javascript:removePlan(0); location.reload()">Delete</a>
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                    This is an alert box.
+                                  </div>
                             </div>
                         </div>    
                     </div>
