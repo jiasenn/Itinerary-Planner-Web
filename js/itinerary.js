@@ -44,9 +44,9 @@ const addPlan = (ev) => {
   //document.querySelector('form').reset();
 
   //for display purposes only
-  console.warn("added", { plans });
-  let pre = document.querySelector("#msg pre");
-  pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
+  // console.warn("added", { plans });
+  // let pre = document.querySelector("#msg pre");
+  // pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
   displayPlans(plans);
 
@@ -57,15 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("plans-submit").addEventListener("click", addPlan);
 });
 
-console.warn("added", { plans });
-let pre = document.querySelector("#msg pre");
-pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
+// console.warn("added", { plans });
+// let pre = document.querySelector("#msg pre");
+// pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
 for (let i = 0; i < obj.length; i++) {
   plans.push(Object.values(obj[i]));
 }
 
-displayPlans(obj);
+displayPlans(plans);
 
 function removePlan(i) {
   hidePlans(plans);
