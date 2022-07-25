@@ -101,6 +101,7 @@ aside{
 
 aside.close{
   left:0;
+  top: auto;
   transition:.3s;
   transition-timing-function: cubic-bezier(0.9,0,1,1);
 }

@@ -14,7 +14,7 @@ aside{
   position:fixed;
   transition:.3s;
   left:-350px;
-  top:0;
+  top: -15px;;
   transition-timing-function: cubic-bezier(0.9,0,1,1);
 }
 
