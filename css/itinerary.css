@@ -230,12 +230,12 @@ hr {
   top: 15px;
   font-size: 40px;
   font-weight: bold;
-  color: #f1f1f1;
+  color: grey;
 }
 
 .close:hover,
 .close:focus {
-  color: #f44336;
+  /* color: grey; */
   cursor: pointer;
 }
 

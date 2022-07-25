@@ -221,3 +221,22 @@ body {
 .center-button {
   text-align: center;
 }
+ 
+.rowrow{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: grey;
+  background-color: white;
+  align-items: center;
+  margin: 10px 5px;
+  padding: 5px 10px;
+}
+
+.rowsa {
+  width: 0px;
+  text-align: center;
+  align-items: center;
+  margin: 10px 5px;
+  padding: 5px 10px;
+}
