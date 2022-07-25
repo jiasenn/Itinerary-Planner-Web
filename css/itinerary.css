@@ -119,8 +119,8 @@ h1:empty {
   position: absolute;
   top: 0.24em;
 }
-.dropbtn-1, .dropbtn-2, .dropbtn-3, 
-.dropbtn-4, .dropbtn-0, .dropbtn {
+
+.dropbtn {
   background-color: #4caf50;
   position: absolute;
   color: white;
