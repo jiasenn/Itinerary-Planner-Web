@@ -42,8 +42,11 @@
                                 <li id="dots"></li>
                             </ul>
                             <div id="myDropdown-1" class="dropdown-content">
-                                <a href="javascript:w3_open()"> Edit property</a>
-                                <a href="javascript:removePlan(0); location.reload()"onclick="return confirm('Please click on OK to continue');">Delete</a>
+                                <a href="javascript:w3_open()"> hi property</a>
+                                <a href="javascript:removePlan(0); location.reload()">Delete</a>
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                    This is an alert box.
+                                  </div>
                             </div>
                         </div>    
                     </div>
@@ -72,7 +75,7 @@
                             </ul>
                             <div id="myDropdown-2" class="dropdown-content">
                                 <a href="javascript:w3_open()">Edit property</a>
-                                <a href="javascript:removePlan(1); location.reload()"onclick="return confirm('Please click on OK to continue');">Delete</a>
+                                <a href="javascript:removePlan(1); location.reload()">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -100,13 +103,8 @@
                             </ul>
                             <div id="myDropdown-3" class="dropdown-content">
                                 <a href="javascript:w3_open()">Edit property</a>
-                                <!-- <a href="javascript:removePlan(2); location.reload()">Delete</a> -->
-                                <a href="javascript:removePlan(2); location.reload()"onclick="return confirm('Please click on OK to continue');">Delete</a> 
-                                    </div>
-                                    </div>
-                                  </form>
-                                </div>
-                                
+                                <a href="javascript:removePlan(2); location.reload()">Delete</a>
+                            </div>
                         </div>    
                     </div>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
@@ -133,8 +131,7 @@
                             </ul>
                             <div id="myDropdown-4" class="dropdown-content">
                                 <a href="javascript:w3_open()">Edit property</a>
-                                <a href="javascript:removePlan(3); location.reload()"onclick="return confirm('Please click on OK to continue');">Delete</a>
-
+                                <a href="javascript:removePlan(3); location.reload()">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -162,10 +159,7 @@
                             </ul>
                             <div id="myDropdown-5" class="dropdown-content">
                                 <a href="javascript:w3_open()">Edit property</a>
-                                <a href="javascript:removePlan(4); reload()" onclick="return confirm_alert(this);">Delete</a>
-
-
-
+                                <a href="javascript:removePlan(4); reload()">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -198,10 +192,25 @@
                         <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+
+                        <!-- <div class="dropdown">
+                            <button onclick="showDropdown(1)"><ul class="dropbtn-1 icons btn-right showLeft dropbtn" onclick="showDropdown(1)" style="padding: 10px 0px; background-color: #4d90fe;">
+                                <li id="dots"></li>
+                                <li id="dots"></li>
+                                <li id="dots"></li>
+                            </ul>
+                            </button>
+                            <div id="myDropdown-1" class="dropdown-content">
+                                <a href="javascript:w3_open()">Edit property</a>
+                                <a href="javascript:removePlan(3); location.reload()">Delete</a>
+                            </div>
+                        </div>     -->
                     </div>
             </section>
         </nav>        
     </aside>    
+
+
     <!-- Google map -->
     <div id="wrapper">
         <div id="map"></div>
@@ -256,22 +265,5 @@
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
     <script src="/js/itinerary.js"></script>
-
-    <script> 
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-<script type="text/javascript">
-    function confirm_alert(node) {
-        return confirm("Please click on OK to continue.");
-    }
-    </script>
 </body>
 </html>
