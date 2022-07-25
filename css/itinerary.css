@@ -98,8 +98,8 @@ h1:empty {
 }
 .icons li {
   background: none repeat scroll 0 0 black;
-  height: 7px;
-  width: 7px;
+  height: 5px;
+  width: 5px;
   line-height: 0;
   list-style: none outside none;
   margin-right: 15px;
