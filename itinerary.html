@@ -34,6 +34,7 @@
                     </div>
                     <div class="accordion-item-content" style="display: flex; justify-content: space-between; padding: 0px 10px; height: 2em;">
                         <h3 style="font-weight: 1000;">Your planner</h3>
+                        <a href="javascript:displayPlans(plans)" style="font-weight: 1000;">Your planner</a>
                         <a href="javascript:showCalendar();">+ Create new itineary</a>
                     </div>
                 </section>
@@ -60,6 +61,7 @@
         
                           
                         </div>
+
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                         <p>Start Date:</p>
                         <p id="plans-start-1"></p>
@@ -77,6 +79,7 @@
                     <a href="javascript:removePlan(0)">Delete</a>
                     </div>
                 </section>
+                <hr>
                 <section  class="accordion-item">
                     <h1 id="display-plans-2"></h1>
                     <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
@@ -202,6 +205,20 @@
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
     <script src="/js/itinerary.js"></script>
+
+    <div class="dropdown">
+        <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Edit property</a>
+            <a href="#about">Delete</a>
+          </div>
+        </div>
+      
+    </div>
 
 </body>
 </html>

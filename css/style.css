@@ -135,12 +135,15 @@ nav a:hover{
   border-radius: 4px;
   z-index: -1;
 }
+
+
 #display-plans-1 {
     background-color: transparent;
     color: black;
     border-bottom: auto;
     border-bottom: 2px;
     font-weight:100;
+    padding:10px 20px;
 }
 #display-plans-2 {
   background-color: transparent;
@@ -148,6 +151,7 @@ nav a:hover{
   border-bottom: auto;
   border-bottom: 2px;
   font-weight:100;
+  padding:10px 20px;
 }
 #display-plans-3 {
   background-color: transparent;
@@ -155,6 +159,7 @@ nav a:hover{
   border-bottom: auto;
   border-bottom: 2px;
   font-weight:100;
+  padding:10px 20px;
 }
 #display-plans-4 {
   background-color: transparent;
@@ -162,6 +167,7 @@ nav a:hover{
   border-bottom: auto;
   border-bottom: 2px;
   font-weight:100;
+  padding:10px 20px;
 }
 #display-plans-5 {
   background-color: transparent;
@@ -169,4 +175,5 @@ nav a:hover{
   border-bottom: auto;
   border-bottom: 2px;
   font-weight:100;
+  padding:10px 20px;
 }
