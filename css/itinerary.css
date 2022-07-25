@@ -218,7 +218,22 @@ h1:empty {
   background-color: #474e5d;
   padding-top: 50px;
 }
+/*button*/
+.modal-btn{
+  font-size: 30px;
+  text-align: center;
+  padding:0%;
+  margin:0;
+  border: 0;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: #4d90fe;
 
+
+
+}
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
@@ -256,4 +271,106 @@ hr {
   content: "";
   clear: both;
   display: table;
+}
+
+/* modal stuff */
+
+.bg-modal {
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.7);
+position: fixed;
+top:0;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000000;
+visibility: hidden;
+opacity: 0;
+transition: all var(--transition-speed);
+transform: translateY(5px);
+}
+
+.bg-active {
+visibility: visible;
+opacity: 1;
+transform: translateY(0);
+}
+
+.close-cal {
+position: absolute;
+top: 0;
+right: 14px;
+font-size: 42px;
+transform: rotate(45deg);
+cursor: pointer;
+color: black;
+}
+/*ADD TITLE POPUP*/
+#contact {
+background: #ffffff;
+color: #4d90fe;
+padding: 40px;
+border-radius: 4px;
+position: relative;
+width: 600px;
+height: 500px;
+}
+
+#contact h1 {
+text-align: center;
+}
+
+.contact-form {
+max-width: 700px;
+margin: auto;
+padding: 0 10px;
+overflow: hidden;
+
+}
+
+.contact-form-text {
+display: block;
+width: 100%;
+box-sizing: border-box;
+margin: 16px 0;
+border: 0;
+background: var(--bg-sec);
+font-family: var(--font-mono);
+padding: 20px 40px;
+outline: none;
+color: rgb(0, 0, 0);
+transition: var(--transition-speed);
+font-size: 17px;
+text-align: left;
+}
+
+.contact-form-text:focus {
+box-shadow: 0 0 0px 2px #e8e8e8a3;
+}
+
+
+.contact-form-btn {
+float: right;
+border: 0;
+background: var(--bg-sec);
+color: #a2a2a2;
+padding: 0px;
+border-radius: 20px;
+cursor: pointer;
+transition: var(--transition-speed);
+}
+
+.contact-form-btn:hover {
+background: var(--hl-sec);
+color:#4d90fe ;
+font-weight: 800;
+
+}
+.time-container{
+  align-items: center;
+}
+#contact-form-text{
+  border-color: grey;
+
 }
