@@ -112,3 +112,36 @@ window.onclick = function(event) {
     }
   }
 
+function showCalendar() {
+  $("#date-picker-section").removeClass("hidden-1");
+  $(document).ready(function () {
+    $(".today").val(getToday());
+  });
+
+  $(document).ready(function () {
+    $(".end-date").val(getEndDate());
+  });
+
+  // JQuery
+  function getToday() {
+    const local = new Date();
+    local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
+  }
+
+  function getEndDate() {
+    const local = new Date();
+    local.setMinutes(local.getMinutes() - 20 * local.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
+  }
+}
+
+function editProperties(i) {
+  showCalendar();
+  document.getElementById("itineary-form").value = plans[i][0];
+  document.getElementById("date-picker-start-date").value = plans[i][1];
+  document.getElementById("date-picker-end-date").value = plans[i][2];
+  document.getElementById("destination-form").value = plans[i][3];
+  plans.splice(i, 1);
+  localStorage.setItem("MyPlanList", JSON.stringify(plans));
+}
