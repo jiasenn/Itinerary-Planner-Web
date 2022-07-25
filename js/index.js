@@ -88,14 +88,30 @@ $(document).ready(function () {
   });
 });
 
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("nav1").style.display = "none";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("nav1").style.display = "block";
+}
+
 // click outside
 $(document).mouseup(function (e) {
   var container = $("aside");
   if (!container.is(e.target) && container.has(e.target).length === 0) {
     $("aside").removeClass("close");
+    setTimeout(function () {
+      w3_close();
+    }, 800);
   }
 });
 
 function closeSide() {
   $("aside").removeClass("close");
+  setTimeout(function () {
+    w3_close();
+  }, 800);
 }

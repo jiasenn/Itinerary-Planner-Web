@@ -19,7 +19,6 @@ function displayPlans(plans) {
 
 function hidePlans(plans) {
   for (let i = 0; i < plans.length; i++) {
-    const myArray = Object.values(plans[i]);
     document.getElementById("display-plans-" + String(i + 1)).innerHTML =
       '';
     document.getElementById("plans-start-" + String(i + 1)).innerHTML =
@@ -112,3 +111,4 @@ window.onclick = function(event) {
       element.style.display = "none";
     }
   }
+
