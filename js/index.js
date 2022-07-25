@@ -88,13 +88,13 @@ $(document).ready(function () {
   });
 });
 
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
+function w3_open(i) {
+  document.getElementById("mySidebar" + String(i)).style.display = "block";
   document.getElementById("nav1").style.display = "none";
 }
 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
+function w3_close(i) {
+  document.getElementById("mySidebar" + String(i)).style.display = "none";
   document.getElementById("nav1").style.display = "block";
 }
 

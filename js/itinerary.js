@@ -145,5 +145,3 @@ window.onclick = function(event) {
     plans.splice(i, 1);
     localStorage.setItem("MyPlanList", JSON.stringify(plans));
   }
-
-  
