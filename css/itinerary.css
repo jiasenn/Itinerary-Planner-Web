@@ -260,9 +260,10 @@ hr {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: grey;
   cursor: pointer;
   font-weight:200px;
+
 
 }
 

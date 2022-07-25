@@ -34,7 +34,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open(); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
+                        <a href="javascript:w3_open(1); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-1 icons btn-right showLeft dropbtn" onclick="showDropdown(1)">
                                 <li id="dots"></li>
@@ -63,7 +63,7 @@
                 </section>
                 <section  class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open()"><h1 id="display-plans-2"></h1></a>
+                        <a href="javascript:w3_open(2)"><h1 id="display-plans-2"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-2 icons btn-right showLeft dropbtn" onclick="showDropdown(2)">
                                 <li id="dots"></li>
@@ -91,7 +91,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open()"><h1 id="display-plans-3"></h1></a>
+                        <a href="javascript:w3_open(3)"><h1 id="display-plans-3"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-3 icons btn-right showLeft dropbtn" onclick="showDropdown(3)">
                                 <li id="dots"></li>
@@ -124,7 +124,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open()"><h1 id="display-plans-4"></h1></a>
+                        <a href="javascript:w3_open(4)"><h1 id="display-plans-4"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-4 icons btn-right showLeft dropbtn" onclick="showDropdown(4)">
                                 <li id="dots"></li>
@@ -153,7 +153,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open()"><h1 id="display-plans-5"></h1></a>
+                        <a href="javascript:w3_open(5)"><h1 id="display-plans-5"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-5 icons btn-right showLeft dropbtn" onclick="showDropdown(5)">
                                 <li id="dots"></li>
@@ -184,7 +184,7 @@
             </a>
             <a href="#"></a>
         </nav>
-        <nav style="display:none; background-color: #4d90fe;" id="mySidebar">
+        <nav style="display:none; background-color: #4d90fe;" id="mySidebar1">
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                     <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
@@ -199,6 +199,145 @@
                              <button type="button" class="modal-btn">+</button>
                         </div>
 
+                        <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(1)">&#8592;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+                    </div>
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
+
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(); w3_open(1)">&#x3c;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 1</p></h1></a>
+                        <button type="button" id="cross" onclick="javascript:w3_close(1); w3_open(2)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                    </div>
+            </section>
+            <section>
+                <table id="draggable_table" width="100%" style="background-color: white;">
+                    <tbody>
+                        <tr>
+                            <th class="rowsa">Time</th>
+                            <th>Activities</th>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0000</td>
+                            <td class="row rowrow" draggable="true">
+                                <button class="active"><a id="link1" href="#office" data-toggle="tab">Tab 1</a></button>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0100</td>
+                            <td class="row rowrow" draggable="true">Second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0200</td>
+                            <td class="row rowrow" draggable="true">Third</td>
+                        </tr>
+                        <tr class="rowsa" >
+                            <td>0300</td>
+                            <td class="row rowrow" draggable="true">Fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0400</td>
+                            <td class="row rowrow" draggable="true">Fifth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0500</td>
+                            <td class="row rowrow" draggable="true">Sixth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0600</td>
+                            <td class="row rowrow" draggable="true">Seventh</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0700</td>
+                            <td class="row rowrow" draggable="true">Eighth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0800</td>
+                            <td class="row rowrow" draggable="true">Ninth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0900</td>
+                            <td class="row rowrow" draggable="true">Tenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1000</td>
+                            <td class="row rowrow" draggable="true">Eleventh</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1100</td>
+                            <td class="row rowrow" draggable="true">Twelfth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1200</td>
+                            <td class="row rowrow" draggable="true">Thirteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1300</td>
+                            <td class="row rowrow" draggable="true">Fourteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1400</td>
+                            <td class="row rowrow" draggable="true">Fifteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1500</td>
+                            <td class="row rowrow" draggable="true">Sixteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1600</td>
+                            <td class="row rowrow" draggable="true">Seventeenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1700</td>
+                            <td class="row rowrow" draggable="true">Eighteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1800</td>
+                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1900</td>
+                            <td class="row rowrow" draggable="true">Twentieth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2000</td>
+                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2100</td>
+                            <td class="row rowrow" draggable="true">Twenty-second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2200</td>
+                            <td class="row rowrow" draggable="true">Twenty-third</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2300</td>
+                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2400</td>
+                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </section>
+        </nav>
+        <nav style="display:none; background-color: #4d90fe;" id="mySidebar2">
+            <section class="accordion-item accordion-item--default">
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
+                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
+
+                        <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(2)">&#8592;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+                    </div>
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
+
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(2); w3_open(1)">&#x3c;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 2</p></h1></a>
+                        <button type="button" id="cross" onclick="javascript:w3_close(2); w3_open(3)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                    </div>
             </section>
             <section>
                 <div id="activity-container">
@@ -276,9 +415,38 @@
                             <td>1600</td>
                             <td class="row rowrow" draggable="true">Seventeenth</td>
                         </tr>
-                        
-                    </div>
-                        
+                        <tr class="rowsa">
+                            <td>1700</td>
+                            <td class="row rowrow" draggable="true">Eighteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1800</td>
+                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1900</td>
+                            <td class="row rowrow" draggable="true">Twentieth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2000</td>
+                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2100</td>
+                            <td class="row rowrow" draggable="true">Twenty-second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2200</td>
+                            <td class="row rowrow" draggable="true">Twenty-third</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2300</td>
+                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2400</td>
+                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
+                        </tr>                        
                     </tbody>
                 </table>
                 <div class="bg-modal">
@@ -303,7 +471,260 @@
                     </div>
                 </div>
             </section>
-        </nav>        
+        </nav>    
+        <nav style="display:none; background-color: #4d90fe;" id="mySidebar3">
+            <section class="accordion-item accordion-item--default">
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
+                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
+
+                        <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(3)">&#8592;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+                    </div>
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
+
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(3); w3_open(2)">&#x3c;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 3</p></h1></a>
+                        <button type="button" id="cross" onclick="javascript:w3_close(3); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                    </div>
+            </section>
+            <section>
+                <table id="draggable_table" width="100%" style="background-color: white;">
+                    <tbody>
+                        <tr>
+                            <th class="rowsa">Time</th>
+                            <th>Activities</th>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0000</td>
+                            <td class="row rowrow" draggable="true">First</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0100</td>
+                            <td class="row rowrow" draggable="true">Second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0200</td>
+                            <td class="row rowrow" draggable="true">Third</td>
+                        </tr>
+                        <tr class="rowsa" >
+                            <td>0300</td>
+                            <td class="row rowrow" draggable="true">Fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0400</td>
+                            <td class="row rowrow" draggable="true">Fifth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0500</td>
+                            <td class="row rowrow" draggable="true">Sixth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0600</td>
+                            <td class="row rowrow" draggable="true">Seventh</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0700</td>
+                            <td class="row rowrow" draggable="true">Eighth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0800</td>
+                            <td class="row rowrow" draggable="true">Ninth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0900</td>
+                            <td class="row rowrow" draggable="true">Tenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1000</td>
+                            <td class="row rowrow" draggable="true">Eleventh</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1100</td>
+                            <td class="row rowrow" draggable="true">Twelfth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1200</td>
+                            <td class="row rowrow" draggable="true">Thirteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1300</td>
+                            <td class="row rowrow" draggable="true">Fourteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1400</td>
+                            <td class="row rowrow" draggable="true">Fifteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1500</td>
+                            <td class="row rowrow" draggable="true">Sixteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1600</td>
+                            <td class="row rowrow" draggable="true">Seventeenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1700</td>
+                            <td class="row rowrow" draggable="true">Eighteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1800</td>
+                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1900</td>
+                            <td class="row rowrow" draggable="true">Twentieth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2000</td>
+                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2100</td>
+                            <td class="row rowrow" draggable="true">Twenty-second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2200</td>
+                            <td class="row rowrow" draggable="true">Twenty-third</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2300</td>
+                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2400</td>
+                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </section>
+        </nav>    
+        <nav style="display:none; background-color: #4d90fe;" id="mySidebar4">
+            <section class="accordion-item accordion-item--default">
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
+                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
+
+                        <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(4)">&#8592;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+                    </div>
+                    <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
+
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(4); w3_open(3)">&#x3c;</button> 
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 4</p></h1></a>
+                        <button type="button" id="cross" onclick="javascript:w3_close(); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                    </div>
+            </section>
+            <section>
+                <table id="draggable_table" width="100%" style="background-color: white;">
+                    <tbody>
+                        <tr>
+                            <th class="rowsa">Time</th>
+                            <th>Activities</th>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0000</td>
+                            <td class="row rowrow" draggable="true">First</tr>
+                        <tr class="rowsa">
+                            <td>0100</td>
+                            <td class="row rowrow" draggable="true">Second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0200</td>
+                            <td class="row rowrow" draggable="true">Third</td>
+                        </tr>
+                        <tr class="rowsa" >
+                            <td>0300</td>
+                            <td class="row rowrow" draggable="true">Fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0400</td>
+                            <td class="row rowrow" draggable="true">Fifth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0500</td>
+                            <td class="row rowrow" draggable="true">Sixth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0600</td>
+                            <td class="row rowrow" draggable="true">Seventh</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0700</td>
+                            <td class="row rowrow" draggable="true">Eighth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0800</td>
+                            <td class="row rowrow" draggable="true">Ninth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>0900</td>
+                            <td class="row rowrow" draggable="true">Tenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1000</td>
+                            <td class="row rowrow" draggable="true">Eleventh</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1100</td>
+                            <td class="row rowrow" draggable="true">Twelfth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1200</td>
+                            <td class="row rowrow" draggable="true">Thirteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1300</td>
+                            <td class="row rowrow" draggable="true">Fourteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1400</td>
+                            <td class="row rowrow" draggable="true">Fifteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1500</td>
+                            <td class="row rowrow" draggable="true">Sixteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1600</td>
+                            <td class="row rowrow" draggable="true">Seventeenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1700</td>
+                            <td class="row rowrow" draggable="true">Eighteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1800</td>
+                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>1900</td>
+                            <td class="row rowrow" draggable="true">Twentieth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2000</td>
+                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2100</td>
+                            <td class="row rowrow" draggable="true">Twenty-second</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2200</td>
+                            <td class="row rowrow" draggable="true">Twenty-third</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2300</td>
+                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>2400</td>
+                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </section>
+        </nav>    
     </aside>    
     <!-- Google map -->
     <div id="wrapper">
