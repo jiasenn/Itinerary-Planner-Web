@@ -92,17 +92,58 @@ function changeLanguage(language) {
 function showDropdown() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
-
+function closeDropdown(dropbtn) {
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches(".dropbtn")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
+  window.onclick = function(event) {
+    if (!event.target.matches(dropbtn)) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
       }
     }
   }
 };
+closeDropdown(".dropbtn-1");
+closeDropdown(".dropbtn-2");
+
+
+// console.log(".dropbtn-" + String(0));
+// window.onclick = function(event) {
+//   for (let j = 1; j < 6; j++) {
+//     console.log(".dropbtn-" + String(j));
+//     if (!event.target.matches(".dropbtn-" + String(j))) {
+//       var dropdowns = document.getElementsByClassName("dropdown-content");
+//       var i;
+//       for (i = 0; i < dropdowns.length; i++) {
+//         var openDropdown = dropdowns[i];
+//         if (openDropdown.classList.contains("show")) {
+//           openDropdown.classList.remove("show");
+//         }
+//       }
+//     }
+//   }
+// };
+// console.log($("#display-plans-" + String(2)).is(":empty"));
+
+// for (let i = 1; i < 5; i++) {
+//   console.log(i);
+//   if ($("#display-plans-" + String(i)).is(":empty")) {
+//     const element = document.getElementById("dropbtn-" + String(i));
+//     console.log(i);
+
+//     element.style.display = "none";
+//     // $(this).find(".dropbtn-" + String(i)).css("display: none;");
+//     // $(this).find(".display-plans-" + String(i)).css("display: none;");
+//   }
+// }
+// while (true) {
+for (let k = 5; k > 0 ; k--) {
+  if ($("#display-plans-" + String(k)).is(":empty") || plans.length === 0) {
+    const element = document.querySelector(".dropbtn-" + String(k));
+    element.style.display = "none";
+  };
+}
