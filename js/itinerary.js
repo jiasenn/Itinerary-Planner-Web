@@ -3,15 +3,13 @@
   var modalBg = document.querySelector(".bg-modal");
   var modalClose = document.querySelector(".close-cal");
   var modalCreate = document.querySelector(".create-cal");
-  var editIBtn = document.querySelector(".editI-btn"); 
+  // var editIBtn = document.querySelector(".editI-btn"); 
 
 
   modalBtn.addEventListener("click", function () {
     modalBg.classList.add("bg-active");
   });
-  editIBtn.addEventListener("click", function () {
-    modalBg.classList.add("bg-active");
-  });
+
 
 
   modalClose.addEventListener("click", function () {
@@ -75,13 +73,14 @@ const addItinerary = (ev) => {
   console.log(itineraries);
 
   //saving to localStorage
+  // localStorage.removeItem("MyItineraryList"); //remove one item
+
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
-//   location.reload();
+  //   location.reload();
 };
+
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("contact-submit")
-    .addEventListener("click", addItinerary);
+  document.getElementById("contact-submit").addEventListener("click", addItinerary);
 });
 
 // console.warn("added", { plans });
@@ -90,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 for (let i = 0; i < obj1.length; i++) {
   itineraries.push(Object.values(obj1[i]));
+}
+for (let i = 0; i < itineraries.length; i++) {
+console.log(itineraries[i][0]);
 }
 
 displayItineraries(itineraries);
@@ -103,6 +105,9 @@ function removeItineraries(i) {
 }
 
 function editItinerary(i) {
+  modalBg.classList.add("bg-active");
+  displayItineraries(itineraries);
+  console.log(itineraries[i]);
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-startloc").value = itineraries[i][2];
@@ -110,6 +115,6 @@ function editItinerary(i) {
   document.getElementById("i-endloc").value = itineraries[i][4];
   document.getElementById("i-endtime").value = itineraries[i][5];
   document.getElementById("i-addinfo").value = itineraries[i][6];
-  itineraries.splice(i, 1);
+  // itineraries.splice(i, 1);
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
 }

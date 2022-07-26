@@ -36,7 +36,7 @@
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                         <a href="javascript:w3_open(1); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
                         <div class="dropdown">
-                            <ul class="dropbtn-1 icons btn-right showLeft dropbtn" onclick="showDropdown(1)">
+                            <ul class="dropbtn dropbtn-1 icons btn-right showLeft" onclick="showDropdown(1)">
                                 <li id="dots"></li>
                                 <li id="dots"></li>
                                 <li id="dots"></li>
@@ -223,7 +223,7 @@
                         <tr class="rowsa">
                             <td>0000</td>
                             <td class="row rowrow" draggable="true">
-                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">Tab 1</a></button> -->
+                                <button class="active"><a id="link1" href="#office" data-toggle="tab">Tab 1</a></button>
                                 <table>
                                     <tr>
                                         <td>Title:</td>
@@ -1032,22 +1032,10 @@
                     </div>
                     
                     <div class="center-button">
+                        <center><button type="submit" onclick="hideCalendar(); location.reload(); ">Save Edits</button></center>
+                        <br>
                         <center><button type="submit" id="plans-submit" onclick="hideCalendar(); location.reload()">Create Itinerary</button></center>
                         <section class="accordion-item">
-                            <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                                <a href="javascript:w3_open(); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
-                                <div class="dropdown">
-                                    <ul class="dropbtn-1 icons btn-right showLeft dropbtn" onclick="showDropdown(1)">
-                                        <li id="dots"></li>
-                                        <li id="dots"></li>
-                                        <li id="dots"></li>
-                                    </ul>
-                                    <div id="myDropdown-1" class="dropdown-content">
-                                        <a href="javascript:editProperties(0)"> Edit property</a>
-                                        <a href="javascript:removePlan(0); location.reload()"onclick="return confirm('Please click on OK to delete');">Delete</a>
-                                    </div>
-                                </div>    
-                            </div>
                             <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                                 <p>Start Date:</p>
                                 <p id="plans-start-1"></p>
