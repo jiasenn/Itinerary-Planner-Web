@@ -1,12 +1,27 @@
 // window.localStorage.clear(); //clear all localstorage
+  var modalBtn = document.querySelector(".modal-btn");
+  var modalBg = document.querySelector(".bg-modal");
+  var modalClose = document.querySelector(".close-cal");
+  var modalCreate = document.querySelector(".create-cal");
 
+  modalBtn.addEventListener("click", function () {
+    modalBg.classList.add("bg-active");
+  });
+
+  modalClose.addEventListener("click", function () {
+    modalBg.classList.remove("bg-active");
+  });
+  modalCreate.addEventListener("click", function () {
+    modalBg.classList.remove("bg-active");
+  });
+
+  
 let itineraries = [];
 var obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
 
 function displayItineraries(itineraries) {
-  for (let i = 1; i < itineraries.length; i++) {
+  for (let i = 0; i < itineraries.length; i++) {
     const myArray = Object.values(itineraries[i]);
-    console.log(myArray);
     document.getElementById("title-i" + String(i)).innerHTML = myArray[0];
     document.getElementById("loc-i" + String(i)).innerHTML = myArray[1];
     document.getElementById("start-loc-i" + String(i)).innerHTML = myArray[2];
@@ -14,24 +29,18 @@ function displayItineraries(itineraries) {
     document.getElementById("end-loc-i" + String(i)).innerHTML = myArray[4];
     document.getElementById("end-time-i" + String(i)).innerHTML = myArray[5];
     document.getElementById("add-info-i" + String(i)).innerHTML = myArray[6];
-    
-    // document.getElementById("title-i" + String(i + 1)).innerHTML =
-    //   myArray[0];
-    // document.getElementById("plans-start-" + String(i + 1)).innerHTML =
-    //   myArray[1];
-    // document.getElementById("plans-end-" + String(i + 1)).innerHTML =
-    //   myArray[2];
-    // document.getElementById("destination-" + String(i + 1)).innerHTML =
-    //   myArray[3];
   }
 }
 
 function hideItineraries(itineraries) {
   for (let i = 0; i < itineraries.length; i++) {
-    // document.getElementById("i-title").innerHTML = "";
-    // document.getElementById("plans-start-" + String(i + 1)).innerHTML = "";
-    // document.getElementById("plans-end-" + String(i + 1)).innerHTML = "";
-    // document.getElementById("destination-" + String(i + 1)).innerHTML = "";
+    document.getElementById("title-i" + String(i)).innerHTML = "";
+    document.getElementById("loc-i" + String(i)).innerHTML = "";
+    document.getElementById("start-loc-i" + String(i)).innerHTML = "";
+    document.getElementById("start-time-i" + String(i)).innerHTML = "";
+    document.getElementById("end-loc-i" + String(i)).innerHTML = "";
+    document.getElementById("end-time-i" + String(i)).innerHTML = "";
+    document.getElementById("add-info-i" + String(i)).innerHTML = "";
   }
 }
 // example {id:1592304983049, title: 'Deadpool', year: 2015}
@@ -61,7 +70,7 @@ const addItinerary = (ev) => {
 
   //saving to localStorage
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
-  location.reload();
+//   location.reload();
 };
 document.addEventListener("DOMContentLoaded", () => {
   document
@@ -79,10 +88,21 @@ for (let i = 0; i < obj1.length; i++) {
 
 displayItineraries(itineraries);
 
-function removePlan(i) {
+function removeItineraries(i) {
   hideItineraries(itineraries);
   itineraries.splice(i, 1);
   displayItineraries(itineraries);
   localStorage.removeItem("MyItineraryList"); //remove one item
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+}
+
+function editItinerary(i) {
+  document.getElementById("i-title").value = itineraries[i][0];
+  document.getElementById("i-loc").value = itineraries[i][1];
+  document.getElementById("i-startloc").value = itineraries[i][2];
+  document.getElementById("i-starttime").value = itineraries[i][3];
+  document.getElementById("i-endloc").value = itineraries[i][4];
+  document.getElementById("i-endtime").value = itineraries[i][5];
+  document.getElementById("i-addinfo").value = itineraries[i][6];
+  removeItineraries(i);
 }

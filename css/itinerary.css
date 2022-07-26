@@ -304,7 +304,7 @@ top: 0;
 right: 14px;
 font-size: 42px;
 transform: rotate(45deg);
-cursor: pointer;
+/* cursor: pointer; */
 color: black;
 }
 /*ADD TITLE POPUP*/

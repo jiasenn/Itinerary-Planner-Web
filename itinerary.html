@@ -218,10 +218,51 @@
                             <th>Activities</th>
                         </tr>
                         <tr class="rowsa">
+                            <td></td>
+                            <td><button type="button" class="modal-btn">+</button></td>
+                        </tr>
+                        <tr class="rowsa">
                             <td>0000</td>
                             <td class="row rowrow" draggable="true">
                                 <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">Tab 1</a></button> -->
-                                <button type="button" class="modal-btn">+</button>
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i0"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button>&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(0)">&#10005;</button></td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -255,6 +296,14 @@
                                     <tr>
                                         <td>Info:</td>
                                         <td id="add-info-i1"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="modal-btn">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(1)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>     
@@ -292,6 +341,14 @@
                                         <td id="add-info-i2"></td>
                                     </tr>
                                 </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="modal-btn">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(2)">&#10005;</button></td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -325,6 +382,14 @@
                                     <tr>
                                         <td>Info:</td>
                                         <td id="add-info-i3"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="modal-btn">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(2)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -362,6 +427,14 @@
                                         <td id="add-info-i4"></td>
                                     </tr>
                                 </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="modal-btn">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(3)">&#10005;</button></td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -397,6 +470,14 @@
                                         <td id="add-info-i5"></td>
                                     </tr>
                                 </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="modal-btn">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(4)">&#10005;</button></td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -430,6 +511,14 @@
                                     <tr>
                                         <td>Info:</td>
                                         <td id="add-info-i6"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="modal-btn">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="removeItineraries(5)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -525,7 +614,7 @@
                             <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time">
                             </div>
                             <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)" ></textarea>
-                            <input type = "submit" class = "contact-form-btn" id="contact-submit" value="create">
+                            <input type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create" onclick="window.close()">
                         </form>
                     </div>
                 </div>
@@ -657,27 +746,6 @@
                         </tr>                        
                     </tbody>
                 </table>
-                <div class="bg-modal">
-                    <div id="contact">
-                        <div class="close-cal">+</div>
-                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <!-- jiasen helps for the action to save the things  -->
-                        <form class="contact-form" action="#" method="post">
-                            <input type="hidden" name="_subject" value="Add Title">
-                            <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add Title" name="title" required>
-                            <div class="row">
-                            <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location" name="Add location" required>
-                            <div class="time-container">
-                            <input type = "information" class = "contact-form-text" id="i-startloc" placeholder="start-location" name="Start location">
-                            <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="start-time" name="Start time">
-                            <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
-                            <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time">
-                            </div>
-                            <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)" ></textarea>
-                            <input type = "submit" class = "contact-form-btn" id="contact-submit" value="create">
-                        </form>
-                    </div>
-                </div>
             </section>
         </nav>    
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar3">
