@@ -16,7 +16,7 @@
     <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
 
     <aside>
-        <button class="toggle">|||</button>
+        <button class="toggle" type="button" onclick="showMenu()">|||</button>
         <h1><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
         <nav>
             <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
@@ -101,10 +101,9 @@
     </div>
     </div>
 
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3NxoDlrG7-9oX79SooJ3odM3sFePPfk&callback=initMap&libraries=places&v=weekly"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANFw3IiEwi6Z4_OZtgzfkrc-QuPaoYi7g&callback=initMap&libraries=places&v=weekly"></script>
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
 
 </body>
 </html>

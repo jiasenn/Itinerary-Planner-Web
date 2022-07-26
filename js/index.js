@@ -2,7 +2,7 @@ var marker;
 var map;
 
 $("#link1").click(function () {
-  changeMarkerPos(3.15759, 101.611416);
+  changeMarkerPos(1.3414, 103.9633);
 });
 $("#link2").click(function () {
   changeMarkerPos(3.165559, 101.612416);
@@ -41,13 +41,14 @@ function initMap() {
   map.setMapTypeId("map_style");
 
   marker = new google.maps.Marker({
-    position: new google.maps.LatLng(1.3414, 103.9633),
+    position: new google.maps.LatLng(3.165659, 101.611416),
     animation: google.maps.Animation.DROP,
     icon: "https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png",
   });
 
   marker.setMap(map);
   map.panTo(marker.position);
+  console.log(map);
 
   var input = document.getElementById("searchInput");
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -129,21 +130,35 @@ function initMap() {
   });
 }
 
+
 function changeMarkerPos(lat, lon) {
   myLatLng = new google.maps.LatLng(lat, lon);
   marker.setPosition(myLatLng);
-  map.panTo(myLatLng);
+  console.log(marker.position);
+  // map.panTo(myLatLng);
+  console.log(map);
 }
-
-// google.maps.event.addDomListener(window, "load", initMap);
-
 window.initMap = initMap;
 
-$(document).ready(function () {
-  $(".toggle").click(function () {
-    $("aside").toggleClass("close");
-  });
+
+google.maps.event.addDomListener(window, "load", function () {
+  initMap();
+console.log(map);
 });
+
+
+function showMenu () {
+$("aside").addClass("close");
+
+}
+// $("aside").addClass("close");
+
+
+// $(document).ready(function () {
+//   $(".toggle").click(function () {
+//     $("aside").toggleClass("close");
+//   });
+// });
 
 function w3_open(i) {
   document.getElementById("mySidebar" + String(i)).style.display = "block";
