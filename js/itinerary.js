@@ -144,4 +144,18 @@ window.onclick = function(event) {
     document.getElementById("destination-form").value = plans[i][3];
     plans.splice(i, 1);
     localStorage.setItem("MyPlanList", JSON.stringify(plans));
-  }
+  }    
+    var modalBtn = document.querySelector('.modal-btn');
+    var modalBg = document.querySelector('.bg-modal');
+    var modalClose = document.querySelector('.close-cal')
+    
+    modalBtn.addEventListener('click', function() {
+    modalBg.classList.add('bg-active');
+    });
+    
+    modalClose.addEventListener('click', function() {
+    modalBg.classList.remove('bg-active');
+    })
+    
+
+  
