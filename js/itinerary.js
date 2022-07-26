@@ -3,10 +3,16 @@
   var modalBg = document.querySelector(".bg-modal");
   var modalClose = document.querySelector(".close-cal");
   var modalCreate = document.querySelector(".create-cal");
+  var editIBtn = document.querySelector(".editI-btn"); 
+
 
   modalBtn.addEventListener("click", function () {
     modalBg.classList.add("bg-active");
   });
+  editIBtn.addEventListener("click", function () {
+    modalBg.classList.add("bg-active");
+  });
+
 
   modalClose.addEventListener("click", function () {
     modalBg.classList.remove("bg-active");
@@ -15,7 +21,7 @@
     modalBg.classList.remove("bg-active");
   });
 
-  
+
 let itineraries = [];
 var obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
 
@@ -104,5 +110,6 @@ function editItinerary(i) {
   document.getElementById("i-endloc").value = itineraries[i][4];
   document.getElementById("i-endtime").value = itineraries[i][5];
   document.getElementById("i-addinfo").value = itineraries[i][6];
-  removeItineraries(i);
+  itineraries.splice(i, 1);
+  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
 }
