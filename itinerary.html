@@ -189,15 +189,15 @@
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                     <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
 
-                        <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close()">&#8592;</button> 
+                        <!-- <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close()">&#8592;</button> 
                         
-                        <!-- <button type="button" id="cross" onclick="javascript:closeSide(); " style="background-color: #4d90fe; color: white;">&#10005;</button> -->
-                        <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
+                        <button type="button" id="cross" onclick="javascript:closeSide(); " style="background-color: #4d90fe; color: white;">&#10005;</button>
+                        <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
-                        <div id="calandar-container">
+                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a> -->
+                        <!-- <div id="calandar-container">
                              <button type="button" class="modal-btn">+</button>
-                        </div>
+                        </div> -->
 
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(1)">&#8592;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
@@ -220,32 +220,219 @@
                         <tr class="rowsa">
                             <td>0000</td>
                             <td class="row rowrow" draggable="true">
-                                <button class="active"><a id="link1" href="#office" data-toggle="tab">Tab 1</a></button>
+                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">Tab 1</a></button> -->
+                                <button type="button" class="modal-btn">+</button>
                             </td>
                         </tr>
                         <tr class="rowsa">
                             <td>0100</td>
-                            <td class="row rowrow" draggable="true">Second</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i1"></td>
+                                    </tr>
+                                </table>
+                            </td>     
                         </tr>
                         <tr class="rowsa">
                             <td>0200</td>
-                            <td class="row rowrow" draggable="true">Third</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i2"></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa" >
                             <td>0300</td>
-                            <td class="row rowrow" draggable="true">Fourth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i3"></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>0400</td>
-                            <td class="row rowrow" draggable="true">Fifth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i4"></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>0500</td>
-                            <td class="row rowrow" draggable="true">Sixth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i5"></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>0600</td>
-                            <td class="row rowrow" draggable="true">Seventh</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-loc-i6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-loc-i6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Start:</td>
+                                        <td id="start-time-i6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>End:</td>
+                                        <td id="end-time-i6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i6"></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>0700</td>
@@ -321,6 +508,27 @@
                         </tr>                        
                     </tbody>
                 </table>
+                <div class="bg-modal" >
+                    <div id="contact" style="overflow: auto;">
+                        <div class="close-cal">+</div>
+                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                        <!-- jiasen helps for the action to save the things  -->
+                        <form class="contact-form" action="" method="post">
+                            <input type="hidden" name="_subject" value="Add Title">
+                            <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add Title" name="title" required>
+                            <div class="row">
+                            <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location" name="Add location" required>
+                            <div class="time-container">
+                            <input type = "information" class = "contact-form-text" id="i-startloc" placeholder="start-location" name="Start location">
+                            <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="start-time" name="Start time">
+                            <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
+                            <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time">
+                            </div>
+                            <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)" ></textarea>
+                            <input type = "submit" class = "contact-form-btn" id="contact-submit" value="create">
+                        </form>
+                    </div>
+                </div>
             </section>
         </nav>
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar2">
@@ -456,17 +664,17 @@
                         <!-- jiasen helps for the action to save the things  -->
                         <form class="contact-form" action="#" method="post">
                             <input type="hidden" name="_subject" value="Add Title">
-                            <input type = "title" class = "contact-form-text" placeholder="Add Title" name="title" required>
+                            <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add Title" name="title" required>
                             <div class="row">
-                            <input type = "location" class = "contact-form-text" placeholder="Add location" name="Add location" required>
+                            <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location" name="Add location" required>
                             <div class="time-container">
-                            <input type = "information" id = "contact-form-text" placeholder="start-location" name="Start location">
-                            <input type = "information" id = "contact-form-text" placeholder="start-time" name="Start time">
-                            <input type = "information" id = "contact-form-text" placeholder="end-location" name="End location">
-                            <input type = "information" id = "contact-form-text" placeholder="end-time" name="End time">
+                            <input type = "information" class = "contact-form-text" id="i-startloc" placeholder="start-location" name="Start location">
+                            <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="start-time" name="Start time">
+                            <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
+                            <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time">
                             </div>
-                            <textarea class = "contact-form-text" placeholder="Additional information" name="Additonal information(optional)" ></textarea>
-                            <input type = "submit" class = "contact-form-btn" value="create">
+                            <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)" ></textarea>
+                            <input type = "submit" class = "contact-form-btn" id="contact-submit" value="create">
                         </form>
                     </div>
                 </div>
@@ -810,6 +1018,7 @@
     <script src="/js/index.js"></script>
     <script src="/js/calendar.js"></script>
     <script src="/js/itinerary.js"></script>
+    <script src="/js/planner.js"></script>
 
     <script> 
 // Get the modal
