@@ -91,6 +91,7 @@ function changeLanguage(language) {
 function showDropdown(i) {
   document.getElementById("myDropdown-" + String(i)).classList.toggle("show");
 }
+
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
@@ -98,12 +99,16 @@ window.onclick = function(event) {
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
+      console.log(openDropdown);
       if (openDropdown.classList.contains("show")) {
         openDropdown.classList.remove("show");
       }
     }
   }
 };
+
+// console.log((document.getElementsByClassName("dropdown-content")[0]).classList.contains("show"));
+// console.log(document.getElementsByClassName("dropbtn")[0]);
 
   for (let k = 5; k > 0 ; k--) {
     if ($("#display-plans-" + String(k)).is(":empty") || plans.length === 0) {
@@ -142,8 +147,17 @@ window.onclick = function(event) {
     document.getElementById("date-picker-start-date").value = plans[i][1];
     document.getElementById("date-picker-end-date").value = plans[i][2];
     document.getElementById("destination-form").value = plans[i][3];
-    plans.splice(i, 1);
     localStorage.setItem("MyPlanList", JSON.stringify(plans));
+
   }    
 
+  function saveProperties(i) {
+    plans[i][0] = document.getElementById("itineary-form").value;
+    plans[i][1] = document.getElementById("date-picker-start-date").value;
+    plans[i][2] = document.getElementById("date-picker-end-date").value;
+    plans[i][3] = document.getElementById("destination-form").value;
+    localStorage.setItem("MyPlanList", JSON.stringify(plans));
+        plans.splice(i, 1);
+
+  }
   
