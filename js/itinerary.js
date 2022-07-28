@@ -28,11 +28,11 @@ function displayItineraries(itineraries) {
     const myArray = Object.values(itineraries[i]);
     document.getElementById("title-i" + String(i)).innerHTML = myArray[0];
     document.getElementById("loc-i" + String(i)).innerHTML = myArray[1];
-    document.getElementById("start-loc-i" + String(i)).innerHTML = myArray[2];
-    document.getElementById("start-time-i" + String(i)).innerHTML = myArray[3];
-    document.getElementById("end-loc-i" + String(i)).innerHTML = myArray[4];
-    document.getElementById("end-time-i" + String(i)).innerHTML = myArray[5];
-    document.getElementById("add-info-i" + String(i)).innerHTML = myArray[6];
+    // document.getElementById("start-loc-i" + String(i)).innerHTML = myArray[2];
+    document.getElementById("start-time-i" + String(i)).innerHTML = myArray[2];
+    // document.getElementById("end-loc-i" + String(i)).innerHTML = myArray[4];
+    // document.getElementById("end-time-i" + String(i)).innerHTML = myArray[5];
+    document.getElementById("add-info-i" + String(i)).innerHTML = myArray[3];
   }
 }
 
@@ -40,10 +40,10 @@ function hideItineraries(itineraries) {
   for (let i = 0; i < itineraries.length; i++) {
     document.getElementById("title-i" + String(i)).innerHTML = "";
     document.getElementById("loc-i" + String(i)).innerHTML = "";
-    document.getElementById("start-loc-i" + String(i)).innerHTML = "";
+    // document.getElementById("start-loc-i" + String(i)).innerHTML = "";
     document.getElementById("start-time-i" + String(i)).innerHTML = "";
-    document.getElementById("end-loc-i" + String(i)).innerHTML = "";
-    document.getElementById("end-time-i" + String(i)).innerHTML = "";
+    // document.getElementById("end-loc-i" + String(i)).innerHTML = "";
+    // document.getElementById("end-time-i" + String(i)).innerHTML = "";
     document.getElementById("add-info-i" + String(i)).innerHTML = "";
   }
 }
@@ -54,10 +54,10 @@ const addItinerary = (ev) => {
     // id: Date.now(),
     title: document.getElementById("i-title").value,
     loc: document.getElementById("i-loc").value,
-    start_loc: document.getElementById("i-startloc").value,
+    // start_loc: document.getElementById("i-startloc").value,
     start_time: document.getElementById("i-starttime").value,
-    end_loc: document.getElementById("i-endloc").value,
-    end_time: document.getElementById("i-endtime").value,
+    // end_loc: document.getElementById("i-endloc").value,
+    // end_time: document.getElementById("i-endtime").value,
     add_info: document.getElementById("i-addinfo").value,
   };
   itineraries.push(itinerary);
@@ -110,11 +110,17 @@ function editItinerary(i) {
   console.log(itineraries[i]);
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
-  document.getElementById("i-startloc").value = itineraries[i][2];
-  document.getElementById("i-starttime").value = itineraries[i][3];
-  document.getElementById("i-endloc").value = itineraries[i][4];
-  document.getElementById("i-endtime").value = itineraries[i][5];
-  document.getElementById("i-addinfo").value = itineraries[i][6];
+  // document.getElementById("i-startloc").value = itineraries[i][2];
+  document.getElementById("i-starttime").value = itineraries[i][2];
+  // document.getElementById("i-endloc").value = itineraries[i][4];
+  // document.getElementById("i-endtime").value = itineraries[i][5];
+  document.getElementById("i-addinfo").value = itineraries[i][3];
   // itineraries.splice(i, 1);
-  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  // localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+}
+
+function arraymove(arr, fromIndex, toIndex) {
+  var element = arr[fromIndex];
+  arr.splice(fromIndex, 1);
+  arr.splice(toIndex, 0, element);
 }

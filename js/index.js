@@ -1,11 +1,14 @@
 var marker;
 var map;
 
-$("#link1").click(function () {
+$("#loc-0").click(function () {
   changeMarkerPos(1.3414, 103.9633);
 });
-$("#link2").click(function () {
-  changeMarkerPos(3.165559, 101.612416);
+$("#loc-1").click(function () {
+  changeMarkerPos(1.3483, 103.6831);
+});
+$("#loc-2").click(function () {
+  changeMarkerPos(1.2966, 103.7763);
 });
 
 function initMap() {
