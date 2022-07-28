@@ -93,8 +93,26 @@ function showDropdown(i) {
 }
 
 // Close the dropdown if the user clicks outside of it
+$(document).mouseup(function (e) {
+  var container = $("dropdown-content");
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    // $("dropdown-content").removeClass("show");
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      console.log(openDropdown);
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+});
+
+
 window.onclick = function(event) {
   if (!event.target.matches(".dropbtn")) {
+    console.log("clicked outside");
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -160,4 +178,3 @@ window.onclick = function(event) {
         plans.splice(i, 1);
 
   }
-  

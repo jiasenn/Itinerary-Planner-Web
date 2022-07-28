@@ -91,7 +91,7 @@ for (let i = 0; i < obj1.length; i++) {
   itineraries.push(Object.values(obj1[i]));
 }
 for (let i = 0; i < itineraries.length; i++) {
-console.log(itineraries[i][0]);
+// console.log(itineraries[i][0]);
 }
 
 displayItineraries(itineraries);
