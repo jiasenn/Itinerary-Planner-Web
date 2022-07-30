@@ -158,7 +158,7 @@
                             </ul>
                             <div id="myDropdown-5" class="dropdown-content">
                                 <a href="javascript:editProperties(4)">Edit property</a>
-                                <a href="javascript:removePlan(4); reload()" onclick="return confirm_alert(this);">Delete</a>
+                                <a href="javascript:removePlan(4); location.reload()" onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
 
                             </div>
                         </div>    
@@ -247,7 +247,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(0)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(0);return confirm('Please click on OK to Remove Itinerary')">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(0)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -281,7 +281,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(1)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(1);return confirm('Please click on OK to Remove Itinerary')">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(1)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>     
@@ -315,7 +315,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(2)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(2);return confirm('Please click on OK to Remove Itinerary')">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(2)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -349,7 +349,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(3)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(3);return confirm('Please click on OK to Remove Itinerary')">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(3)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -383,7 +383,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(4)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(4);return confirm('Please click on OK to delete Itinerary')">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(4)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -417,7 +417,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(5)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(5);return confirm('Please click on OK to remove Itinerary')"">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(5)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
@@ -451,7 +451,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(6)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(6);return confirm('Please click on OK to remove Itinerary')"">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary'); removeItineraries(6)">&#10005;</button></td>
                                     </tr>
                                 </table>
                             </td>
