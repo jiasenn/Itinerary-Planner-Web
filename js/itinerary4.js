@@ -124,5 +124,3 @@ function hideUpdate4() {
   document.getElementById("contact-update4").style.display = "none";
   document.getElementById("contact-submit4").style.display = "block";
 }
-
-hideUpdate4();

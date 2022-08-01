@@ -129,5 +129,3 @@ function hideUpdate2() {
   document.getElementById("contact-update2").style.display = "none";
   document.getElementById("contact-submit2").style.display = "block";
 }
-
-hideUpdate2();
