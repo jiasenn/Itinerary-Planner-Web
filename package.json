@@ -1,0 +1,19 @@
+{
+  "name": "itinerary-planner-web",
+  "version": "1.0.0",
+  "description": "Itinerary planner webapp project that makes use of ML to auto generate Itinerary with editable input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiasenn/Itinerary-Planner-Web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiasenn/Itinerary-Planner-Web/issues"
+  },
+  "homepage": "https://github.com/jiasenn/Itinerary-Planner-Web#readme"
+}
