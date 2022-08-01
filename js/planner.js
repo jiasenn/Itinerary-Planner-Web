@@ -70,6 +70,10 @@ for (let i = 0; i < obj.length; i++) {
 
 displayPlans(plans);
 
+function resetForm() {
+  document.getElementById("date-picker-container").reset();
+}
+
 function removePlan(i) {
   hidePlans(plans);
   plans.splice(i, 1);

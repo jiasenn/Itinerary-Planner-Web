@@ -355,10 +355,10 @@
                                         <th><button id="loc-3">&#x27A4;</button></th>
                                     </tr>
                                     <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <th><button class="editI-btn" onclick="editItinerary(3)">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="removeItineraries(3)">&#10005;</button></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
                             </td>
@@ -541,10 +541,10 @@
                 </table>
                 <div class="bg-modal" >
                     <div id="contact" style="overflow: auto;">
-                        <div class="close-cal"><button onclick="resetForm()">+</button></div>
+                        <div class="close-cal"><button onclick="resetForm1()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
                         <!-- jiasen helps for the action to save the things  -->
-                        <form class="contact-form" action="" method="post">
+                        <form class="contact-form" id="iti-form" action="" method="post">
                             <input type="hidden" name="_subject" value="Add Title">
                             <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add title" name="title" required>
                             <div class="row">
@@ -555,8 +555,9 @@
                             <!-- <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
                             <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time"> -->
                             </div>
-                            <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)" ></textarea>
-                            <button type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create" onclick="threedots()">Create</button>
+                            <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                            <button type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create" onclick="threedots()" style="display: none;">Create</button>
+                            <button type = "submit" class = "contact-form-btn create-cal" id="contact-update" value="update">Update</button>
                         </form>
                     </div>
                 </div>
