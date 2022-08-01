@@ -94,7 +94,7 @@ function removeItineraries(i) {
 
 function editItinerary(i) {
   modalBg.classList.add("bg-active");
-
+  hideSubmit();
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-starttime").value = itineraries[i][2];
