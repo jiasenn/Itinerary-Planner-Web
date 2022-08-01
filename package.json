@@ -4,7 +4,7 @@
   "description": "Itinerary planner webapp project that makes use of ML to auto generate Itinerary with editable input",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node js/index.js",
 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
