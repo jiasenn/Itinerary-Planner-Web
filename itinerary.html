@@ -190,18 +190,6 @@
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar1">
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
-                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
-
-                        <!-- <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close()">&#8592;</button> 
-                        
-                        <button type="button" id="cross" onclick="javascript:closeSide(); " style="background-color: #4d90fe; color: white;">&#10005;</button>
-                        <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a> -->
-                        <!-- <div id="calandar-container">
-                             <button type="button" class="modal-btn">+</button>
-                        </div> -->
-
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(1)">&#8592;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
@@ -219,10 +207,6 @@
                         <tr>
                             <th class="rowsa">Time</th>
                             <th>Activities</th>
-                        </tr>
-                        <tr class="rowsa">
-                            <!-- <td></td> -->
-                                                    
                         </tr>
                         <tr class="rowsa">
                             <td>
@@ -373,7 +357,7 @@
                                     </tr>
                                     <tr>
                                         <td>Loc:</td>
-                                        <td id="loc-i4" style="color: red"></td>
+                                        <td id="loc-i4"></td>
                                     </tr>
                                     <tr>
                                         <td>Time:</td>
@@ -556,7 +540,7 @@
                             <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time"> -->
                             </div>
                             <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
-                            <button type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create" onclick="threedots()">Create</button>
+                            <button type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create">Create</button>
                             <button type = "button" class = "contact-form-btn create-cal" id="contact-update">Update</button>
                         </form>
                     </div>
@@ -580,7 +564,6 @@
                     </div>
             </section>
             <section>
-                <div id="activity-container">
                 <table id="draggable_table" width="100%" style="background-color: white;">
                     <tbody>
                         <tr>
@@ -588,107 +571,270 @@
                             <th>Activities</th>
                         </tr>
                         <tr class="rowsa">
-                            <td>0000</td>
-                            <td class="row rowrow" draggable="true">First</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0100</td>
-                            <td class="row rowrow" draggable="true">Second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0200</td>
-                            <td class="row rowrow" draggable="true">Third</td>
-                        </tr>
-                        <tr class="rowsa" >
-                            <td>0300</td>
-                            <td class="row rowrow" draggable="true">Fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0400</td>
-                            <td class="row rowrow" draggable="true">Fifth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0500</td>
-                            <td class="row rowrow" draggable="true">Sixth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0600</td>
-                            <td class="row rowrow" draggable="true">Seventh</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0700</td>
-                            <td class="row rowrow" draggable="true">Eighth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0800</td>
-                            <td class="row rowrow" draggable="true">Ninth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0900</td>
-                            <td class="row rowrow" draggable="true">Tenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1000</td>
-                            <td class="row rowrow" draggable="true">Eleventh</td>
+                            <td>
+                                0900<button type="button" class="modal-btn2" >+</button>
+                            </td>
+                            <td class="row rowrow" draggable="true">
+                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i20"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-0">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(0); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1100</td>
-                            <td class="row rowrow" draggable="true">Twelfth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1200</td>
-                            <td class="row rowrow" draggable="true">Thirteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i21"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i21"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i21"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i21"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-1">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(1); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(1)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>     
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
-                            <td class="row rowrow" draggable="true">Fourteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i22"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i22"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i22"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i22"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-2">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(2); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-                        <tr class="rowsa">
-                            <td>1400</td>
-                            <td class="row rowrow" draggable="true">Fifteenth</td>
-                        </tr>
-                        <tr class="rowsa">
+                        <tr class="rowsa" >
                             <td>1500</td>
-                            <td class="row rowrow" draggable="true">Sixteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1600</td>
-                            <td class="row rowrow" draggable="true">Seventeenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i23"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i23"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i23"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i23"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-3">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(3); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1700</td>
-                            <td class="row rowrow" draggable="true">Eighteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1800</td>
-                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i24"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i24"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i24"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i24"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-4">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(4); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1900</td>
-                            <td class="row rowrow" draggable="true">Twentieth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2000</td>
-                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i25"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i25"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i25"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i25"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-5">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(5); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>2100</td>
-                            <td class="row rowrow" draggable="true">Twenty-second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2200</td>
-                            <td class="row rowrow" draggable="true">Twenty-third</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2300</td>
-                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2400</td>
-                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i26"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i26"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i26"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i26"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-6">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary2(6); hideSubmit2()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(6)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>                        
                     </tbody>
                 </table>
+                <div class="bg-modal2" >
+                    <div id="contact" style="overflow: auto;">
+                        <div class="close-cal2"><button onclick="resetForm2(); hideUpdate2()" style="background-color: transparent;">+</button></div>
+                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                        <!-- jiasen helps for the action to save the things  -->
+                        <form class="contact-form" id="iti-form2" action="" method="post">
+                            <input type="hidden" name="_subject" value="Add Title">
+                            <input type = "title" class = "contact-form-text" id="i-title2" placeholder="Add title" name="title" required>
+                            <div class="row">
+                            <input type = "location" class = "contact-form-text" id="i-loc2" placeholder="Add location" name="location" required>
+                            <div class="time-container">
+                            <!-- <input type = "information" class = "contact-form-text" id="i-startloc" placeholder="start-location" name="Start location"> -->
+                            <input type = "information" class = "contact-form-text" id="i-starttime2" placeholder="Start time" name="time">
+                            <!-- <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
+                            <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time"> -->
+                            </div>
+                            <textarea class = "contact-form-text" id="i-addinfo2" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                            <button type = "submit" class = "contact-form-btn create-cal2" id="contact-submit2" value="create">Create</button>
+                            <button type = "button" class = "contact-form-btn create-cal2" id="contact-update2">Update</button>
+                        </form>
+                    </div>
+                </div>
             </section>
         </nav>    
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar3">
@@ -715,107 +861,266 @@
                             <th>Activities</th>
                         </tr>
                         <tr class="rowsa">
-                            <td>0000</td>
-                            <td class="row rowrow" draggable="true">First</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0100</td>
-                            <td class="row rowrow" draggable="true">Second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0200</td>
-                            <td class="row rowrow" draggable="true">Third</td>
-                        </tr>
-                        <tr class="rowsa" >
-                            <td>0300</td>
-                            <td class="row rowrow" draggable="true">Fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0400</td>
-                            <td class="row rowrow" draggable="true">Fifth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0500</td>
-                            <td class="row rowrow" draggable="true">Sixth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0600</td>
-                            <td class="row rowrow" draggable="true">Seventh</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0700</td>
-                            <td class="row rowrow" draggable="true">Eighth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0800</td>
-                            <td class="row rowrow" draggable="true">Ninth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0900</td>
-                            <td class="row rowrow" draggable="true">Tenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1000</td>
-                            <td class="row rowrow" draggable="true">Eleventh</td>
+                            <td>
+                                0900<button type="button" class="modal-btn3" >+</button>
+                            </td>
+                            <td class="row rowrow" draggable="true">
+                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i30"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-0">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(0); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1100</td>
-                            <td class="row rowrow" draggable="true">Twelfth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1200</td>
-                            <td class="row rowrow" draggable="true">Thirteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i31"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i31"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i31"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i31"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-1">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(1); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(1)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>     
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
-                            <td class="row rowrow" draggable="true">Fourteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i32"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i32"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i32"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i32"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-2">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(2); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-                        <tr class="rowsa">
-                            <td>1400</td>
-                            <td class="row rowrow" draggable="true">Fifteenth</td>
-                        </tr>
-                        <tr class="rowsa">
+                        <tr class="rowsa" >
                             <td>1500</td>
-                            <td class="row rowrow" draggable="true">Sixteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1600</td>
-                            <td class="row rowrow" draggable="true">Seventeenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i33"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i33"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i33"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i33"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-3">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(3); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1700</td>
-                            <td class="row rowrow" draggable="true">Eighteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1800</td>
-                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i34"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i34"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i34"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i34"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-4">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(4); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1900</td>
-                            <td class="row rowrow" draggable="true">Twentieth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2000</td>
-                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i35"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i35"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i35"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i35"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-5">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(5); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>2100</td>
-                            <td class="row rowrow" draggable="true">Twenty-second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2200</td>
-                            <td class="row rowrow" draggable="true">Twenty-third</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2300</td>
-                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2400</td>
-                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i36"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i36"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i36"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i36"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-6">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary3(6); hideSubmit3()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(6)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>                        
                     </tbody>
                 </table>
+                <div class="bg-modal3" >
+                    <div id="contact" style="overflow: auto;">
+                        <div class="close-cal3"><button onclick="resetForm3(); hideUpdate3()" style="background-color: transparent;">+</button></div>
+                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                        <!-- jiasen helps for the action to save the things  -->
+                        <form class="contact-form" id="iti-form3" action="" method="post">
+                            <input type="hidden" name="_subject" value="Add Title">
+                            <input type = "title" class = "contact-form-text" id="i-title3" placeholder="Add title" name="title" required>
+                            <div class="row">
+                            <input type = "location" class = "contact-form-text" id="i-loc3" placeholder="Add location" name="location" required>
+                            <div class="time-container">
+                            <input type = "information" class = "contact-form-text" id="i-starttime3" placeholder="Start time" name="time">
+                            <textarea class = "contact-form-text" id="i-addinfo3" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                            <button type = "submit" class = "contact-form-btn create-cal3" id="contact-submit3" value="create">Create</button>
+                            <button type = "button" class = "contact-form-btn create-cal3" id="contact-update3">Update</button>
+                        </form>
+                    </div>
+                </div>
             </section>
         </nav>    
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar4">
@@ -842,106 +1147,266 @@
                             <th>Activities</th>
                         </tr>
                         <tr class="rowsa">
-                            <td>0000</td>
-                            <td class="row rowrow" draggable="true">First</tr>
-                        <tr class="rowsa">
-                            <td>0100</td>
-                            <td class="row rowrow" draggable="true">Second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0200</td>
-                            <td class="row rowrow" draggable="true">Third</td>
-                        </tr>
-                        <tr class="rowsa" >
-                            <td>0300</td>
-                            <td class="row rowrow" draggable="true">Fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0400</td>
-                            <td class="row rowrow" draggable="true">Fifth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0500</td>
-                            <td class="row rowrow" draggable="true">Sixth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0600</td>
-                            <td class="row rowrow" draggable="true">Seventh</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0700</td>
-                            <td class="row rowrow" draggable="true">Eighth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0800</td>
-                            <td class="row rowrow" draggable="true">Ninth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0900</td>
-                            <td class="row rowrow" draggable="true">Tenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1000</td>
-                            <td class="row rowrow" draggable="true">Eleventh</td>
+                            <td>
+                                0900<button type="button" class="modal-btn4" >+</button>
+                            </td>
+                            <td class="row rowrow" draggable="true">
+                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i40"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i40"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i40"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i40"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-0">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(0); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1100</td>
-                            <td class="row rowrow" draggable="true">Twelfth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1200</td>
-                            <td class="row rowrow" draggable="true">Thirteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i41"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i41"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i41"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i41"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-1">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(1); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(1)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>     
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
-                            <td class="row rowrow" draggable="true">Fourteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i42"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i42"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i42"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i42"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-2">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(2); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-                        <tr class="rowsa">
-                            <td>1400</td>
-                            <td class="row rowrow" draggable="true">Fifteenth</td>
-                        </tr>
-                        <tr class="rowsa">
+                        <tr class="rowsa" >
                             <td>1500</td>
-                            <td class="row rowrow" draggable="true">Sixteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1600</td>
-                            <td class="row rowrow" draggable="true">Seventeenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i43"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i43"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i43"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i43"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-3">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(3); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1700</td>
-                            <td class="row rowrow" draggable="true">Eighteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1800</td>
-                            <td class="row rowrow" draggable="true">Nineteenth</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i44"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i44" style="color: red"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i44"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i44"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-4">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(4); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1900</td>
-                            <td class="row rowrow" draggable="true">Twentieth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2000</td>
-                            <td class="row rowrow" draggable="true">Twenty-first</td>
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i45"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i45"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i45"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i45"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-5">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(5); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>2100</td>
-                            <td class="row rowrow" draggable="true">Twenty-second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2200</td>
-                            <td class="row rowrow" draggable="true">Twenty-third</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2300</td>
-                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2400</td>
-                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
-                        </tr>                        
+                            <td class="row rowrow" draggable="true">
+                                <table>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td id="title-i46"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loc:</td>
+                                        <td id="loc-i46"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td>
+                                        <td id="start-time-i46"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Info:</td>
+                                        <td id="add-info-i46"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <th><button id="loc-6">&#x27A4;</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th><button class="editI-btn" onclick="editItinerary4(6); hideSubmit4()">&#x270E;</button></th>
+                                    </tr>
+                                     <tr>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(6)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>                      
                     </tbody>
                 </table>
+                <div class="bg-modal4" >
+                    <div id="contact" style="overflow: auto;">
+                        <div class="close-cal4"><button onclick="resetForm4(); hideUpdate4()" style="background-color: transparent;">+</button></div>
+                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                        <!-- jiasen helps for the action to save the things  -->
+                        <form class="contact-form" id="iti-form4" action="" method="post">
+                            <input type="hidden" name="_subject" value="Add Title">
+                            <input type = "title" class = "contact-form-text" id="i-title4" placeholder="Add title" name="title" required>
+                            <div class="row">
+                            <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
+                            <div class="time-container">
+                            <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
+                            <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                            <button type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="create">Create</button>
+                            <button type = "button" class = "contact-form-btn create-cal4" id="contact-update4">Update</button>
+                        </form>
+                    </div>
+                </div>
             </section>
         </nav>    
     </aside>    
@@ -1013,8 +1478,11 @@
     <script src="/js/index.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANFw3IiEwi6Z4_OZtgzfkrc-QuPaoYi7g&callback=initMap&libraries=places&v=weekly"></script>
     <script src="/js/calendar.js"></script>
-    <script src="/js/itinerary.js"></script>
     <script src="/js/planner.js"></script>
+    <script src="/js/itinerary.js"></script>
+    <script src="/js/itinerary2.js"></script>
+    <script src="/js/itinerary3.js"></script>
+    <script src="/js/itinerary4.js"></script>
 
     <script> 
 // Get the modal

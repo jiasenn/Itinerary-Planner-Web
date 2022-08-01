@@ -94,7 +94,6 @@ function removeItineraries(i) {
 
 function editItinerary(i) {
   modalBg.classList.add("bg-active");
-  hideSubmit();
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-starttime").value = itineraries[i][2];
@@ -108,7 +107,7 @@ function updateItinerary(i) {
   itineraries[i][1] = document.getElementById("i-loc").value;
   itineraries[i][2] = document.getElementById("i-starttime").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
-  displayPlans(itineraries);
+  displayItineraries(itineraries);
   selfRefresh1();
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   modalBg.classList.remove("bg-active");
@@ -142,3 +141,5 @@ function hideUpdate() {
   document.getElementById("contact-update").style.display = "none";
   document.getElementById("contact-submit").style.display = "block";
 }
+
+hideUpdate();
