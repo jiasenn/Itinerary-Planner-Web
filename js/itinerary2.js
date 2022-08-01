@@ -7,6 +7,7 @@ var modalCreate2 = document.querySelector(".create-cal2");
 
 modalBtn2.addEventListener("click", function () {
   modalBg2.classList.add("bg-active");
+  hideUpdate();
 });
 
 modalClose2.addEventListener("click", function () {

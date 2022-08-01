@@ -8,6 +8,7 @@ var modalCreate = document.querySelector(".create-cal");
 
 modalBtn.addEventListener("click", function () {
   modalBg.classList.add("bg-active");
+  hideUpdate();
 });
 
 
@@ -141,5 +142,3 @@ function hideUpdate() {
   document.getElementById("contact-update").style.display = "none";
   document.getElementById("contact-submit").style.display = "block";
 }
-
-hideUpdate();
