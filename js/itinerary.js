@@ -99,7 +99,7 @@ function editItinerary(i) {
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-starttime").value = itineraries[i][2];
   document.getElementById("i-addinfo").value = itineraries[i][3];
-  // document.getElementById("update-iti").setAttribute("onclick", "updateItinerary(" + i + "); hideCalendar();");
+  document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 
 function updateItinerary(i) {
@@ -109,8 +109,11 @@ function updateItinerary(i) {
   itineraries[i][2] = document.getElementById("i-starttime").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
   displayPlans(itineraries);
-  selfRefresh();
+  selfRefresh1();
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  modalBg.classList.remove("bg-active");
+  displayItineraries(itineraries);
+
   // document.getElementById("update-plan").setAttribute("id", "plans-submit");
   // delete last added plan from plans
   // plans.splice(i, 0,)
@@ -125,4 +128,15 @@ function selfRefresh1() {
   }
   localStorage.removeItem("MyItineraryList"); //remove one item
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+}
+
+function hideSubmit() {
+  document.getElementById("contact-submit").style.display = "none";
+  document.getElementById("contact-update").style.display = "block";
+
+}
+
+function hideUpdate() {
+  document.getElementById("contact-update").style.display = "none";
+  document.getElementById("contact-submit").style.display = "block";
 }
