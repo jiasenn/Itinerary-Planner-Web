@@ -52,7 +52,9 @@ const addPlan = (ev) => {
 
   //saving to localStorage
   localStorage.setItem("MyPlanList", JSON.stringify(plans));
-};
+  threedots();
+};;
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("plans-submit").addEventListener("click", addPlan);
 });
@@ -126,10 +128,14 @@ $(document).mouseup(function (e) {
 // console.log((document.getElementsByClassName("dropdown-content")[0]).classList.contains("show"));
 // console.log(document.getElementsByClassName("dropbtn")[0]);
 function threedots() {
-  for (let k = 5; k > 0; k--) {
+  for (let k = 5; k >= 0; k--) {
     if ($("#display-plans-" + String(k)).is(":empty") || plans.length === 0) {
       const element = document.querySelector(".dropbtn-" + String(k));
       element.style.display = "none";
+    }
+    else {
+      const element = document.querySelector(".dropbtn-" + String(k));
+      element.style.display = "block";
     }
   }
 }

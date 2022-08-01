@@ -41,7 +41,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                         <a href="javascript:w3_open(1); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn dropbtn-1 icons btn-right showLeft" onclick="showDropdown(1)">
@@ -51,7 +51,7 @@
                             </ul>
                             <div id="myDropdown-1" class="dropdown-content">
                                 <a href="javascript:editProperties(0)">Edit property</a>
-                                <a href="javascript:removePlan(0); threedots()()"onclick="return confirm('Please click on OK to delete');">Delete</a>
+                                <a href="javascript:removePlan(0); threedots()"onclick="return confirm('Please click on OK to delete');">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -70,7 +70,7 @@
                     </div>
                 </section>
                 <section  class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                         <a href="javascript:w3_open(2)"><h1 id="display-plans-2"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-2 icons btn-right showLeft dropbtn" onclick="showDropdown(2)">
@@ -98,7 +98,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                         <a href="javascript:w3_open(3)"><h1 id="display-plans-3"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-3 icons btn-right showLeft dropbtn" onclick="showDropdown(3)">
@@ -126,7 +126,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                         <a href="javascript:w3_open(4)"><h1 id="display-plans-4"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-4 icons btn-right showLeft dropbtn" onclick="showDropdown(4)">
@@ -155,7 +155,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
                         <a href="javascript:w3_open(5)"><h1 id="display-plans-5"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-5 icons btn-right showLeft dropbtn" onclick="showDropdown(5)">
@@ -977,8 +977,9 @@
                     <div class="center-button">
                         <!-- <center><button type="submit" onclick="hideCalendar()">Save Edits</button></center> -->
                         <br>
-                        <center><button type="submit" id="plans-submit" onclick="hideCalendar(); threedots()">Create Itinerary</button></center>
-                        <section class="accordion-item">
+                        <center><button type="submit" id="plans-submit" onclick="hideCalendar()">Create Itinerary</button></center>
+                    </div>
+                        <!-- <section class="accordion-item">
                             <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                                 <p>Start Date:</p>
                                 <p id="plans-start-1"></p>
@@ -992,10 +993,7 @@
                                 <p>Destination:</p>
                                 <p id="destination-1"></p>
                             </div>
-                            
-                   
-                        </section>
-                    </div>
+                        </section> -->
                 </form>
             </div>
         </div>

@@ -75,9 +75,19 @@ const addItinerary = (ev) => {
   //saving to localStorage
   // localStorage.removeItem("MyItineraryList"); //remove one item
 
-  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  // localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  // obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
+  // for (let i = 0; i < obj1.length + 1; i++) {
+  //   itineraries.push(Object.values(obj1[i]));
+  //   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  // }
+  // displayItineraries(itineraries);
   //   location.reload();
-};
+  hideItineraries(itineraries);
+  displayItineraries(itineraries);
+  localStorage.removeItem("MyItineraryList"); //remove one item
+  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+};;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit").addEventListener("click", addItinerary);
@@ -86,13 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // console.warn("added", { plans });
 // let pre = document.querySelector("#msg pre");
 // pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
-
 for (let i = 0; i < obj1.length; i++) {
-  itineraries.push(Object.values(obj1[i]));
+itineraries.push(Object.values(obj1[i]));
 }
-for (let i = 0; i < itineraries.length; i++) {
-// console.log(itineraries[i][0]);
-}
+
+
 
 displayItineraries(itineraries);
 
