@@ -100,6 +100,9 @@ for (let i = 0; i < obj1.length; i++) {
 itineraries.push(Object.values(obj1[i]));
 }
 
+function resetForm() {
+  document.getElementById("date-picker-container").reset();
+}
 
 
 displayItineraries(itineraries);

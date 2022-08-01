@@ -36,8 +36,8 @@
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div class="accordion-item-content" style="display: flex; justify-content: space-between; padding: 0px 10px; height: 2em;">
-                        <a href="javascript:displayPlans(plans)" style="font-weight: 1000;">Your planner</a>
-                        <a href="javascript:showCalendar();">+ Create new itineary</a>
+                        <a href="javascript:displayPlans(plans); selfRefresh()" style="font-weight: 1000;">Your planner</a>
+                        <a href="javascript:showButton(); showCalendar();">+ Create new itineary</a>
                     </div>
                 </section>
                 <section class="accordion-item">
@@ -541,7 +541,7 @@
                 </table>
                 <div class="bg-modal" >
                     <div id="contact" style="overflow: auto;">
-                        <div class="close-cal">+</div>
+                        <div class="close-cal"><button onclick="resetForm()">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
                         <!-- jiasen helps for the action to save the things  -->
                         <form class="contact-form" action="" method="post">
@@ -953,7 +953,7 @@
                 <form id="date-picker-container">
                     <div class="flex-contianer">
                         <h3>Planner</h3>
-                        <button type="button" id="cross" onclick="javascript:hideCalendar()">&#10005;</button>
+                        <button type="button" id="cross" onclick="hideCalendar(); resetForm()">&#10005;</button>
                     </div>
             
                     <div id="date-picker-title">
@@ -975,9 +975,9 @@
                     </div>
                     
                     <div class="center-button">
-                        <!-- <center><button type="submit" onclick="hideCalendar()">Save Edits</button></center> -->
                         <br>
-                        <center><button type="submit" id="plans-submit" onclick="hideCalendar()">Create Itinerary</button></center>
+                        <center><button type="submit" id="update-plan">Update</button></center>
+                        <center><button type="submit" id="plans-submit" onclick="hideCalendar()" >Create Itinerary</button></center>
                     </div>
                         <!-- <section class="accordion-item">
                             <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
