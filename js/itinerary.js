@@ -112,6 +112,8 @@ function updateItinerary(i) {
   selfRefresh1();
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   modalBg.classList.remove("bg-active");
+  resetForm1();
+  hideUpdate();
   displayItineraries(itineraries);
 
   // document.getElementById("update-plan").setAttribute("id", "plans-submit");
