@@ -221,11 +221,4 @@ function showMenu () {
   document.getElementById("nav1").style.display = "none";
 }
 
-function getCoordinates() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-}
 
