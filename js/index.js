@@ -1,3 +1,7 @@
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
+
 var marker;
 var map;
 
@@ -228,3 +232,4 @@ function getCoordinates() {
     console.log("Geolocation is not supported by this browser.");
   }
 }
+
