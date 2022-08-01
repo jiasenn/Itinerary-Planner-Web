@@ -125,13 +125,16 @@ $(document).mouseup(function (e) {
 
 // console.log((document.getElementsByClassName("dropdown-content")[0]).classList.contains("show"));
 // console.log(document.getElementsByClassName("dropbtn")[0]);
-
-  for (let k = 5; k > 0 ; k--) {
+function threedots() {
+  for (let k = 5; k > 0; k--) {
     if ($("#display-plans-" + String(k)).is(":empty") || plans.length === 0) {
       const element = document.querySelector(".dropbtn-" + String(k));
       element.style.display = "none";
     }
   }
+}
+
+threedots();
 
   function showCalendar() {
     $("#date-picker-section").removeClass("hidden-1");

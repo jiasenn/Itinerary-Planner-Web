@@ -41,7 +41,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
                         <a href="javascript:w3_open(1); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn dropbtn-1 icons btn-right showLeft" onclick="showDropdown(1)">
@@ -51,7 +51,7 @@
                             </ul>
                             <div id="myDropdown-1" class="dropdown-content">
                                 <a href="javascript:editProperties(0)">Edit property</a>
-                                <a href="javascript:removePlan(0); location.reload()"onclick="return confirm('Please click on OK to delete');">Delete</a>
+                                <a href="javascript:removePlan(0); threedots()()"onclick="return confirm('Please click on OK to delete');">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -70,7 +70,7 @@
                     </div>
                 </section>
                 <section  class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
                         <a href="javascript:w3_open(2)"><h1 id="display-plans-2"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-2 icons btn-right showLeft dropbtn" onclick="showDropdown(2)">
@@ -80,7 +80,7 @@
                             </ul>
                             <div id="myDropdown-2" class="dropdown-content">
                                 <a href="javascript:editProperties(1)">Edit property</a>
-                                <a href="javascript:removePlan(1); location.reload()"onclick="return confirm('Please click on OK to delete');">Delete</a>
+                                <a href="javascript:removePlan(1); threedots()"onclick="return confirm('Please click on OK to delete');">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -98,7 +98,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
                         <a href="javascript:w3_open(3)"><h1 id="display-plans-3"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-3 icons btn-right showLeft dropbtn" onclick="showDropdown(3)">
@@ -108,8 +108,7 @@
                             </ul>
                             <div id="myDropdown-3" class="dropdown-content">
                                 <a href="javascript:editProperties(2)">Edit property</a>
-                                <!-- <a href="javascript:removePlan(2); location.reload()">Delete</a> -->
-                                <a href="javascript:removePlan(2); location.reload()"onclick="return confirm('Please click on OK to delete');">Delete</a> 
+                                <a href="javascript:removePlan(2); threedots()" onclick="return confirm('Please click on OK to delete');">Delete</a> 
                             </div>                                
                         </div>    
                     </div>
@@ -127,7 +126,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
                         <a href="javascript:w3_open(4)"><h1 id="display-plans-4"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-4 icons btn-right showLeft dropbtn" onclick="showDropdown(4)">
@@ -137,7 +136,7 @@
                             </ul>
                             <div id="myDropdown-4" class="dropdown-content">
                                 <a href="javascript:editProperties(3)">Edit property</a>
-                                <a href="javascript:removePlan(3); location.reload()"onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
+                                <a href="javascript:removePlan(3); threedots()"onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
 
                             </div>
                         </div>    
@@ -156,7 +155,7 @@
                     </div>
                 </section>
                 <section class="accordion-item">
-                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
+                    <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;" id="threedots">
                         <a href="javascript:w3_open(5)"><h1 id="display-plans-5"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-5 icons btn-right showLeft dropbtn" onclick="showDropdown(5)">
@@ -166,7 +165,7 @@
                             </ul>
                             <div id="myDropdown-5" class="dropdown-content">
                                 <a href="javascript:editProperties(4)">Edit property</a>
-                                <a href="javascript:removePlan(4); location.reload()" onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
+                                <a href="javascript:removePlan(4); threedots() " onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
 
                             </div>
                         </div>    
@@ -976,9 +975,9 @@
                     </div>
                     
                     <div class="center-button">
-                        <center><button type="submit" onclick="hideCalendar(); location.reload(); ">Save Edits</button></center>
+                        <!-- <center><button type="submit" onclick="hideCalendar()">Save Edits</button></center> -->
                         <br>
-                        <center><button type="submit" id="plans-submit" onclick="hideCalendar(); location.reload()">Create Itinerary</button></center>
+                        <center><button type="submit" id="plans-submit" onclick="hideCalendar(); threedots()">Create Itinerary</button></center>
                         <section class="accordion-item">
                             <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
                                 <p>Start Date:</p>
