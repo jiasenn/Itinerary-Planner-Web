@@ -18,12 +18,20 @@
 
     <aside>
         <button class="toggle" type="button">|||</button>
+        <aside id="mainmenu" style="position: fixed; right: 1044;">
+        <h1 style="background-color: white; color: white; padding: 10px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
+        <nav style="padding: 0px 0 px 10px 0px;">
+            <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
+            <a href="javascript:hideMenu()" id="planner"><img src="/img/maps-menu3.png" alt="png"></a>
+            <a href="#"><img src="/img/maps-menu2.png" alt="png"></a>
+        </nav>        
+        </aside>
         <!-- <h1 class="accordion">Planner</h1> -->
         <nav id="nav1">
             <div class="accordion">
                 <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
-                        <a href="index.html" style="background-color: #4d90fe;"><button type="button" id="cross" style="transform:rotate(90deg); font-size: 30px; background-color: #4d90fe; color: white;">|||</button></a> 
+                        <a href="javascript:showMenu()" style="background-color: #4d90fe;"><button type="button" id="cross" style="transform:rotate(90deg); font-size: 30px; background-color: #4d90fe; color: white;">|||</button></a> 
                         <h1 style="border: 0;">Planner</h1>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>

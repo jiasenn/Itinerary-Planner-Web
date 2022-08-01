@@ -210,3 +210,16 @@ $(document).mouseup(function (e) {
     $("dropdown-content").removeClass("close");
   }
 });
+
+document.getElementById("mainmenu").style.display = "block";  //hide
+document.getElementById("nav1").style.display = "none";  //hide
+
+function hideMenu() {
+  document.getElementById("mainmenu").style.display = "none";
+  document.getElementById("nav1").style.display = "block";
+}
+
+function showMenu () {
+  document.getElementById("mainmenu").style.display = "block";
+  document.getElementById("nav1").style.display = "none";
+}
