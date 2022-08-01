@@ -211,9 +211,6 @@ $(document).mouseup(function (e) {
   }
 });
 
-document.getElementById("mainmenu").style.display = "block";  //hide
-document.getElementById("nav1").style.display = "none";  //hide
-
 function hideMenu() {
   document.getElementById("mainmenu").style.display = "none";
   document.getElementById("nav1").style.display = "block";
@@ -222,4 +219,12 @@ function hideMenu() {
 function showMenu () {
   document.getElementById("mainmenu").style.display = "block";
   document.getElementById("nav1").style.display = "none";
+}
+
+function getCoordinates() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
 }
