@@ -170,8 +170,13 @@ $(document).ready(function () {
 });
 
 function w3_open(i) {
-  document.getElementById("mySidebar" + String(i)).style.display = "block";
-  document.getElementById("nav1").style.display = "none";
+  if (document.getElementById("mySidebar" + String(i)).style.visibility == "visible") {
+    document.getElementById("mySidebar" + String(i)).style.display = "block";
+    document.getElementById("nav1").style.display = "none"; 
+  }
+  else {
+    w3_open(i - 1);
+  }
 }
 
 function w3_close(i) {
@@ -212,5 +217,4 @@ function showMenu () {
   document.getElementById("mainmenu").style.display = "block";
   document.getElementById("nav1").style.display = "none";
 }
-
 

@@ -187,10 +187,11 @@ function updatePlan(i) {
   plans[i][1] = document.getElementById("date-picker-start-date").value;
   plans[i][2] = document.getElementById("date-picker-end-date").value;
   plans[i][3] = document.getElementById("destination-form").value;
+  localStorage.setItem("MyPlanList", JSON.stringify(plans));
   displayPlans(plans);
   selfRefresh();
   threedots();
-  localStorage.setItem("MyPlanList", JSON.stringify(plans));
+  getDuration(i);
 }
 
 function selfRefresh() {
@@ -206,4 +207,21 @@ function selfRefresh() {
 function showButton() {
   $("#update-plan").addClass("hidden-1");
   $("#plans-submit").removeClass("hidden-1");
+}
+
+let date = document.getElementById("plans-start-1").innerHTML;
+
+
+function getDuration(i) {
+  for (let k = 1; k <= 4; k++) {
+    document.getElementById("mySidebar" + String(k)).style.visibility ="hidden";
+  }
+
+  var start_date = document.getElementById("plans-start-" + String(i + 1)).innerHTML;
+  var end_date = document.getElementById("plans-end-" + String(i + 1)).innerHTML;
+  var diffInMs = new Date(end_date) - new Date(start_date);
+  var diffInDays = diffInMs / (1000 * 60 * 60 * 24) + 1;
+  for (let j = 1; j <= diffInDays; j++) {
+    document.getElementById("mySidebar" + String(j)).style.visibility = "visible";
+  }
 }

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/calendar.css">
     <link rel="stylesheet" href="css/itinerary.css">
     <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm” crossorigin=”anonymous”>
-
 </head>
 <body>
     <!-- Menu bar -->
@@ -17,12 +16,12 @@
     <aside>
         <button class="toggle" type="button">|||</button>
         <aside id="mainmenu" style="position: fixed; right: 1044;">
-        <h1 style="background-color: white; color: white; padding: 10px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
-        <nav style="padding: 0px 0 px 10px 0px;">
-            <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
-            <a href="javascript:hideMenu()" id ="stop_timer" onclick="clearInterval(timerVar), myAlert()"><img src="/img/maps-menu3.png" alt="png" ></a>
-            <a href="#"><img src="/img/maps-menu2.png" alt="png"></a>
-        </nav>        
+            <h1 style="background-color: white; color: white; padding: 10px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
+            <nav style="padding: 0px 0 px 10px 0px;">
+                <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
+                <a href="javascript:hideMenu()" id ="stop_timer" onclick="clearInterval(timerVar), myAlert()"><img src="/img/maps-menu3.png" alt="png" ></a>
+                <a href="#"><img src="/img/maps-menu2.png" alt="png"></a>
+            </nav>        
         </aside>
         <nav id="nav1">
             <div class="accordion">
@@ -39,7 +38,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open(1); displayPlans(plans);"><h1 id="display-plans-1"></h1></a>
+                        <a href="javascript:getDuration(0); w3_open(1)"><h1 id="display-plans-1"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn dropbtn-1 icons btn-right showLeft" onclick="showDropdown(1)">
                                 <li id="dots"></li>
@@ -68,7 +67,7 @@
                 </section>
                 <section  class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open(2)"><h1 id="display-plans-2"></h1></a>
+                        <a href="javascript:getDuration(1); w3_open(1)"><h1 id="display-plans-2"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-2 icons btn-right showLeft dropbtn" onclick="showDropdown(2)">
                                 <li id="dots"></li>
@@ -96,7 +95,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open(3)"><h1 id="display-plans-3"></h1></a>
+                        <a href="javascript:getDuration(2); w3_open(1)"><h1 id="display-plans-3"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-3 icons btn-right showLeft dropbtn" onclick="showDropdown(3)">
                                 <li id="dots"></li>
@@ -124,7 +123,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open(4)"><h1 id="display-plans-4"></h1></a>
+                        <a href="javascript:getDuration(3); w3_open(1)"><h1 id="display-plans-4"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-4 icons btn-right showLeft dropbtn" onclick="showDropdown(4)">
                                 <li id="dots"></li>
@@ -152,7 +151,7 @@
                 </section>
                 <section class="accordion-item">
                     <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;">
-                        <a href="javascript:w3_open(5)"><h1 id="display-plans-5"></h1></a>
+                        <a href="javascript:getDuration(4); w3_open(1)"><h1 id="display-plans-5"></h1></a>
                         <div class="dropdown">
                             <ul class="dropbtn-5 icons btn-right showLeft dropbtn" onclick="showDropdown(5)">
                                 <li id="dots"></li>
@@ -185,13 +184,12 @@
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(1)">&#8592;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
-
                         <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(); w3_open(1)">&#x3c;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 1</p></h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 1</p></h1></a>
                         <button type="button" id="cross" onclick="javascript:w3_close(1); w3_open(2)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
@@ -468,12 +466,12 @@
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(2)">&#8592;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(2); w3_open(1)">&#x3c;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 2</p></h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 2</p></h1></a>
                         <button type="button" id="cross" onclick="javascript:w3_close(2); w3_open(3)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
@@ -749,12 +747,12 @@
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(3)">&#8592;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(3); w3_open(2)">&#x3c;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 3</p></h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 3</p></h1></a>
                         <button type="button" id="cross" onclick="javascript:w3_close(3); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
@@ -1029,13 +1027,13 @@
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(4)">&#8592;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
 
                         <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(4); w3_open(3)">&#x3c;</button> 
-                        <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 4</p></h1></a>
+                        <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 4</p></h1></a>
                         <button type="button" id="cross" onclick="javascript:w3_close(); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
@@ -1288,56 +1286,55 @@
                         </tr>                      
                     </tbody>
                 </table>
-                <div class="bg-modal4" >
-                    <div id="contact" style="overflow: auto;">
-                        <div class="close-cal4"><button onclick="resetForm4(); hideUpdate4()" style="background-color: transparent;">+</button></div>
-                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <form class="contact-form" id="iti-form4" action="" method="post">
-                            <input type="hidden" name="_subject" value="Add Title">
-                            <input type = "title" class = "contact-form-text" id="i-title4" placeholder="Add title" name="title" required>
-                            <div class="row">
-                                <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
-                                <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
-                            <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
-                            <button type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="create">Create</button>
-                            <button type = "button" class = "contact-form-btn create-cal4" id="contact-update4">Update</button>
-                        </form>
-                    </div>
-                </div>
             </section>
-        </nav>    
+        </nav>  
+        <div class="bg-modal4" >
+            <div id="contact" style="overflow: auto;">
+                <div class="close-cal4"><button onclick="resetForm4(); hideUpdate4()" style="background-color: transparent;">+</button></div>
+                <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                <form class="contact-form" id="iti-form4" action="" method="post">
+                    <!-- <input type="hidden" name="_subject" value="Add Title"> -->
+                    <!-- <input type = "title" class = "contact-form-text" id="i-title4" placeholder="Add title" name="title" required> -->
+                    <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
+                    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+                    <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
+                    <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                    <button type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="create">Create</button>
+                    <button type = "button" class = "contact-form-btn create-cal4" id="contact-update4">Update</button>
+                </form>
+            </div>
+        </div>  
     </aside>    
     <!-- Google map -->
     <div id="wrapper">
         <div id="map"></div>
         <!-- Date Picker -->
-            <div id="date-picker-section" class="hidden-1">
-                <form id="date-picker-container">
-                    <div class="flex-contianer">
-                        <h3>Planner</h3>
-                        <button type="button" id="cross" onclick="hideCalendar(); resetForm()">&#10005;</button>
-                    </div>
-                    <div id="date-picker-title">
-                        <label for="name"><center>Itinerary Name</center></label>
-                        <center><input type="text" id="itineary-form" placeholder="Name your itinerary"/></center>
-                    </div>
-                    <div id="date-picker-title">
-                        <label for="date"> <center>Date Range</center></label>
-                        <center>
-                            <input type="date" class="today" id="date-picker-start-date" min="2022-01-01" max="2025-12-31">
-                            <input type="date" class="end-date" id="date-picker-end-date" min="2022-01-01" max="2025-12-31">
-                        </center>
-                    </div>
-                    <div id="date-picker-title">
-                        <label for="destination"> <center> Destination </center> </label>
-                        <center><input type="text" id="destination-form" placeholder="Enter Your Destination"/></center>
-                    </div>
-                    <div class="center-button">                        
-                        <center><button type="submit" id="update-plan">Update</button></center>
-                        <center><button type="submit" id="plans-submit" onclick="hideCalendar()" >Create Itinerary</button></center>
-                    </div>
-                </form>
-            </div>
+        <div id="date-picker-section" class="hidden-1">
+            <form id="date-picker-container">
+                <div class="flex-contianer">
+                    <h3>Planner</h3>
+                    <button type="button" id="cross" onclick="hideCalendar(); resetForm()">&#10005;</button>
+                </div>
+                <div id="date-picker-title">
+                    <label for="name"><center>Itinerary Name</center></label>
+                    <center><input type="text" id="itineary-form" placeholder="Name your itinerary"/></center>
+                </div>
+                <div id="date-picker-title">
+                    <label for="date"> <center>Date Range</center></label>
+                    <center>
+                        <input type="date" id="date-picker-start-date" min="2022-01-01" max="2025-12-31">
+                        <input type="date" id="date-picker-end-date" min="2022-01-01" max="2025-12-31">
+                    </center>
+                </div>
+                <div id="date-picker-title">
+                    <label for="destination"> <center> Destination </center> </label>
+                    <center><input type="text" id="destination-form" placeholder="Enter Your Destination"/></center>
+                </div>
+                <div class="center-button">                        
+                    <center><button type="submit" id="update-plan">Update</button></center>
+                    <center><button type="submit" id="plans-submit" onclick="hideCalendar()" >Create Itinerary</button></center>
+                </div>
+            </form>
         </div>
         <section>
             <body>
@@ -1345,11 +1342,9 @@
                     <!-- <span id="minutes"></span>:<span id="seconds"></span> -->
                     <div id="timer"></div>
                     <div id='showCount'></div>
-                    
                 </div>
             </body>
-        </section>
-        
+        </section> 
     </div>
         <!-- Display geolocation data -->
     <ul class="geo-data">
