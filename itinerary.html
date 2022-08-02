@@ -22,7 +22,7 @@
         <h1 style="background-color: white; color: white; padding: 10px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
         <nav style="padding: 0px 0 px 10px 0px;">
             <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
-            <a href="javascript:hideMenu()" id="planner"><img src="/img/maps-menu3.png" alt="png"></a>
+            <a href="javascript:hideMenu()" id ="stop_timer" onclick="clearInterval(timerVar), myAlert()"><img src="/img/maps-menu3.png" alt="png" ></a>
             <a href="#"><img src="/img/maps-menu2.png" alt="png"></a>
         </nav>        
         </aside>
@@ -992,13 +992,25 @@
                                 <p>Destination:</p>
                                 <p id="destination-1"></p>
                             </div>
-                            
                    
                         </section>
+                        
                     </div>
                 </form>
             </div>
         </div>
+        <section>
+            <body>
+                <div class="watch-container">
+                    <!-- <span id="minutes"></span>:<span id="seconds"></span> -->
+                    <div id="timer"></div>
+                    <div id='showCount'></div>
+                    
+                    <!-- <div id="app"></div> -->
+                </div>
+            </body>
+        </section>
+        
     </div>
     <!-- <div id="msg">
             <pre></pre>

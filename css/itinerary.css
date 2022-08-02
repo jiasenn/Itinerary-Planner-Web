@@ -375,3 +375,10 @@ font-weight: 800;
   border-color: grey;
 
 }
+
+.watch-container{
+  position: absolute;
+  right: 8px;
+  bottom: 2;
+}
+
