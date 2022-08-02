@@ -1,24 +1,22 @@
 // window.localStorage.clear(); //clear all localstorage
-  var modalBtn = document.querySelector(".modal-btn");
-  var modalBg = document.querySelector(".bg-modal");
-  var modalClose = document.querySelector(".close-cal");
-  var modalCreate = document.querySelector(".create-cal");
-  // var editIBtn = document.querySelector(".editI-btn"); 
+var modalBtn = document.querySelector(".modal-btn");
+var modalBg = document.querySelector(".bg-modal");
+var modalClose = document.querySelector(".close-cal");
+var modalCreate = document.querySelector(".create-cal");
+// var editIBtn = document.querySelector(".editI-btn"); 
 
 
-  modalBtn.addEventListener("click", function () {
-    modalBg.classList.add("bg-active");
-  });
+modalBtn.addEventListener("click", function () {
+  modalBg.classList.add("bg-active");
+  hideUpdate();
+});
 
-
-
-  modalClose.addEventListener("click", function () {
-    modalBg.classList.remove("bg-active");
-  });
-  modalCreate.addEventListener("click", function () {
-    modalBg.classList.remove("bg-active");
-  });
-
+modalClose.addEventListener("click", function () {
+  modalBg.classList.remove("bg-active");
+});
+modalCreate.addEventListener("click", function () {
+  modalBg.classList.remove("bg-active");
+});
 
 let itineraries = [];
 var obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
@@ -28,10 +26,7 @@ function displayItineraries(itineraries) {
     const myArray = Object.values(itineraries[i]);
     document.getElementById("title-i" + String(i)).innerHTML = myArray[0];
     document.getElementById("loc-i" + String(i)).innerHTML = myArray[1];
-    // document.getElementById("start-loc-i" + String(i)).innerHTML = myArray[2];
     document.getElementById("start-time-i" + String(i)).innerHTML = myArray[2];
-    // document.getElementById("end-loc-i" + String(i)).innerHTML = myArray[4];
-    // document.getElementById("end-time-i" + String(i)).innerHTML = myArray[5];
     document.getElementById("add-info-i" + String(i)).innerHTML = myArray[3];
   }
 }
@@ -40,10 +35,7 @@ function hideItineraries(itineraries) {
   for (let i = 0; i < itineraries.length; i++) {
     document.getElementById("title-i" + String(i)).innerHTML = "";
     document.getElementById("loc-i" + String(i)).innerHTML = "";
-    // document.getElementById("start-loc-i" + String(i)).innerHTML = "";
     document.getElementById("start-time-i" + String(i)).innerHTML = "";
-    // document.getElementById("end-loc-i" + String(i)).innerHTML = "";
-    // document.getElementById("end-time-i" + String(i)).innerHTML = "";
     document.getElementById("add-info-i" + String(i)).innerHTML = "";
   }
 }
@@ -70,28 +62,21 @@ const addItinerary = (ev) => {
   // pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
 
   displayItineraries(itineraries);
-  console.log(itineraries);
-
-  //saving to localStorage
-  // localStorage.removeItem("MyItineraryList"); //remove one item
 
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
-  //   location.reload();
+  selfRefresh1();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit").addEventListener("click", addItinerary);
 });
 
-// console.warn("added", { plans });
-// let pre = document.querySelector("#msg pre");
-// pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
-
 for (let i = 0; i < obj1.length; i++) {
-  itineraries.push(Object.values(obj1[i]));
+itineraries.push(Object.values(obj1[i]));
 }
-for (let i = 0; i < itineraries.length; i++) {
-// console.log(itineraries[i][0]);
+
+function resetForm1() {
+  document.getElementById("iti-form").reset();
 }
 
 displayItineraries(itineraries);
@@ -105,18 +90,13 @@ function removeItineraries(i) {
 }
 
 function editItinerary(i) {
+  selfRefresh1();
   modalBg.classList.add("bg-active");
-  displayItineraries(itineraries);
-  console.log(itineraries[i]);
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
-  // document.getElementById("i-startloc").value = itineraries[i][2];
   document.getElementById("i-starttime").value = itineraries[i][2];
-  // document.getElementById("i-endloc").value = itineraries[i][4];
-  // document.getElementById("i-endtime").value = itineraries[i][5];
   document.getElementById("i-addinfo").value = itineraries[i][3];
-  // itineraries.splice(i, 1);
-  // localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 
 function arraymove(arr, fromIndex, toIndex) {
@@ -157,3 +137,36 @@ let count = 0;
      });
 
      
+function updateItinerary(i) {
+  itineraries[i][0] = document.getElementById("i-title").value;
+  itineraries[i][1] = document.getElementById("i-loc").value;
+  itineraries[i][2] = document.getElementById("i-starttime").value;
+  itineraries[i][3] = document.getElementById("i-addinfo").value;
+  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  modalBg.classList.remove("bg-active");
+  resetForm1();
+  hideUpdate();
+  displayItineraries(itineraries);
+}
+
+function selfRefresh1() {
+  itineraries = [];
+  var obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
+  for (let i = 0; i < obj1.length; i++) {
+    itineraries.push(Object.values(obj1[i]));
+  }
+  localStorage.removeItem("MyItineraryList"); //remove one item
+  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  console.log()
+}
+
+function hideSubmit() {
+  document.getElementById("contact-submit").style.display = "none";
+  document.getElementById("contact-update").style.display = "block";
+
+}
+
+function hideUpdate() {
+  document.getElementById("contact-update").style.display = "none";
+  document.getElementById("contact-submit").style.display = "block";
+}

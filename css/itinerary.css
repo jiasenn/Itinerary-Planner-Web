@@ -219,7 +219,8 @@ h1:empty {
   padding-top: 50px;
 }
 /*button*/
-.modal-btn{
+.modal-btn, .modal-btn2,
+.modal-btn3, .modal-btn4 {
   font-size: 30px;
   text-align: center;
   padding:0%;
@@ -230,9 +231,6 @@ h1:empty {
   border-radius: 50%;
   background-color: white;
   color: #4d90fe;
-
-
-
 }
 /* Modal Content/Box */
 .modal-content {
@@ -276,7 +274,8 @@ hr {
 
 /* modal stuff */
 
-.bg-modal {
+.bg-modal, .bg-modal2,
+.bg-modal3, .bg-modal4 {
 width: 100%;
 height: 100%;
 background-color: rgba(0,0,0,0.7);
@@ -298,7 +297,8 @@ opacity: 1;
 transform: translateY(0);
 }
 
-.close-cal {
+.close-cal, .close-cal2,
+.close-cal3, .close-cal4 {
 position: absolute;
 top: 0;
 right: 14px;
@@ -307,6 +307,7 @@ transform: rotate(45deg);
 /* cursor: pointer; */
 color: black;
 }
+
 /*ADD TITLE POPUP*/
 #contact {
 background: #ffffff;

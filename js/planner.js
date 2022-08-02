@@ -52,7 +52,10 @@ const addPlan = (ev) => {
 
   //saving to localStorage
   localStorage.setItem("MyPlanList", JSON.stringify(plans));
-};
+  selfRefresh();
+  threedots();
+};;
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("plans-submit").addEventListener("click", addPlan);
 });
@@ -66,6 +69,10 @@ for (let i = 0; i < obj.length; i++) {
 }
 
 displayPlans(plans);
+
+function resetForm() {
+  document.getElementById("date-picker-container").reset();
+}
 
 function removePlan(i) {
   hidePlans(plans);
@@ -131,6 +138,10 @@ function threedots() {
       const element = document.querySelector(".dropbtn-" + String(k));
       element.style.display = "none";
     }
+    else {
+      const element = document.querySelector(".dropbtn-" + String(k));
+      element.style.display = "block";
+    }
   }
 }
 
@@ -162,20 +173,55 @@ threedots();
   
   function editProperties(i) {
     showCalendar();
+    $("#update-plan").removeClass("hidden-1");
+    $("#plans-submit").addClass("hidden-1");
+
     document.getElementById("itineary-form").value = plans[i][0];
     document.getElementById("date-picker-start-date").value = plans[i][1];
     document.getElementById("date-picker-end-date").value = plans[i][2];
     document.getElementById("destination-form").value = plans[i][3];
-    localStorage.setItem("MyPlanList", JSON.stringify(plans));
+    document.getElementById("update-plan").setAttribute("onclick", "updatePlan(" + i + "); hideCalendar();");
+  }
 
-  }    
-
-  function saveProperties(i) {
+  function updatePlan(i) {
+    // hidePlans(plans);
     plans[i][0] = document.getElementById("itineary-form").value;
     plans[i][1] = document.getElementById("date-picker-start-date").value;
     plans[i][2] = document.getElementById("date-picker-end-date").value;
     plans[i][3] = document.getElementById("destination-form").value;
+    displayPlans(plans);
+    selfRefresh();
+    threedots();
     localStorage.setItem("MyPlanList", JSON.stringify(plans));
-        plans.splice(i, 1);
+    // document.getElementById("update-plan").setAttribute("id", "plans-submit");
+    // delete last added plan from plans
+    // plans.splice(i, 0,)
+    // plans.pop();
+  }
 
+
+  // function saveProperties(i) {
+  //   plans[i][0] = document.getElementById("itineary-form").value;
+  //   plans[i][1] = document.getElementById("date-picker-start-date").value;
+  //   plans[i][2] = document.getElementById("date-picker-end-date").value;
+  //   plans[i][3] = document.getElementById("destination-form").value;
+  //   localStorage.setItem("MyPlanList", JSON.stringify(plans));
+  //   plans.splice(i, 1, plans[i]);
+  //   plans.pop();
+
+  // }
+
+  function selfRefresh() {
+    let plans = [];
+    var obj = JSON.parse(localStorage.getItem("MyPlanList")); // An object :D
+    for (let i = 0; i < obj.length; i++) {
+      plans.push(Object.values(obj[i]));
+    }
+    localStorage.removeItem("MyPlanList"); //remove one item
+    localStorage.setItem("MyPlanList", JSON.stringify(plans));
+  }
+
+  function showButton() {
+    $("#update-plan").addClass("hidden-1");
+    $("#plans-submit").removeClass("hidden-1");
   }

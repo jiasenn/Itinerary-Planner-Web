@@ -182,11 +182,10 @@ function w3_close(i) {
 // click outside
 $(document).mouseup(function (e) {
   var container = $("aside");
-  if (!container.is(e.target) && container.has(e.target).length === 0) {
+  var container1 = $("form")
+  if (!container.is(e.target) && container.has(e.target).length === 0 &&
+  !container1.is(e.target) && container1.has(e.target).length === 0) {
     $("aside").removeClass("close");
-    // setTimeout(function () {
-    //   w3_close();
-    // }, 800);
   }
 });
 
@@ -196,13 +195,6 @@ function closeSide() {
     w3_close();
   }, 800);
 }
-
-$(document).mouseup(function (e) {
-  var container = $("aside");
-  if (!container.is(e.target) && container.has(e.target).length === 0) {
-    $("aside").removeClass("close");
-  }
-});
 
 $(document).mouseup(function (e) {
   var container = $("dropdown-content");
