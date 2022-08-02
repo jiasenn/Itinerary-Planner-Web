@@ -51,6 +51,9 @@ const addItinerary = (ev) => {
     // end_loc: document.getElementById("i-endloc").value,
     // end_time: document.getElementById("i-endtime").value,
     add_info: document.getElementById("i-addinfo").value,
+    full_add: document.getElementById("exactLoc").value,
+    lat: document.getElementById("lat").innerHTML,
+    lng: document.getElementById("lon").innerHTML,
   };
   itineraries.push(itinerary);
   document.forms[0].reset(); // to clear the form for the next entries
@@ -60,8 +63,9 @@ const addItinerary = (ev) => {
   // console.warn("added", { plans });
   // let pre = document.querySelector("#msg pre");
   // pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
-
-  displayItineraries(itineraries);
+  if (itineraries.length !== 0) {
+    displayItineraries(itineraries);
+  };
 
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   selfRefresh1();
@@ -72,8 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 for (let i = 0; i < obj1.length; i++) {
-itineraries.push(Object.values(obj1[i]));
+  itineraries.push(Object.values(obj1[i]));
 }
+
 
 function resetForm1() {
   document.getElementById("iti-form").reset();
@@ -96,6 +101,7 @@ function editItinerary(i) {
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-starttime").value = itineraries[i][2];
   document.getElementById("i-addinfo").value = itineraries[i][3];
+  document.getElementById("exactLoc").value = itineraries[i][4];
   document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 
@@ -136,12 +142,12 @@ let count = 0;
         divSection.innerHTML=`Number of Clicks are: ${count}`;
      });
 
-     
 function updateItinerary(i) {
   itineraries[i][0] = document.getElementById("i-title").value;
   itineraries[i][1] = document.getElementById("i-loc").value;
   itineraries[i][2] = document.getElementById("i-starttime").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
+  itineraries[i][4] = document.getElementById("exactLoc").value;
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   modalBg.classList.remove("bg-active");
   resetForm1();
@@ -170,3 +176,5 @@ function hideUpdate() {
   document.getElementById("contact-update").style.display = "none";
   document.getElementById("contact-submit").style.display = "block";
 }
+
+

@@ -50,11 +50,12 @@ const addItinerary3 = (ev) => {
   itineraries3.push(itinerary3);
   document.forms[0].reset(); // to clear the form for the next entries
 
-  displayItineraries3(itineraries3);
-
+  if (itineraries.length !== 0) {
+    displayItineraries3(itineraries3);
+  }
   localStorage.setItem("MyItineraryList3", JSON.stringify(itineraries3));
   selfRefresh3();
-};
+};;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit3").addEventListener("click", addItinerary3);
@@ -63,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
 for (let i = 0; i < obj3.length; i++) {
   itineraries3.push(Object.values(obj3[i]));
 }
+
+
 
 function resetForm3() {
   document.getElementById("iti-form3").reset();

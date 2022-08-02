@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Menu bar -->
-    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+    <!-- <input id="searchInput" class="controls" type="text" placeholder="Enter a location"> -->
     <aside>
         <button class="toggle" type="button">|||</button>
         <aside id="mainmenu" style="position: fixed; right: 1044;">
@@ -447,16 +447,14 @@
                     <div id="contact" style="overflow: auto;">
                         <div class="close-cal"><button onclick="resetForm1(); hideUpdate()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <form class="contact-form" id="iti-form" action="" method="post">
-                            <input type="hidden" name="_subject" value="Add Title">
+                        <form class="contact-form" id="iti-form" action="" method="post" validate>
                             <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add title" name="title" required>
-                            <div class="row">
-                                <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location" name="location" required>
-                                <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="Start time" name="time">
-                            </div>
+                            <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location nickname" name="location" required>
+                            <input type = "text" class = "contact-form-text" id="exactLoc" placeholder="Search for you location on Google" name="search" required>
+                            <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="Start time" name="time" required>
                             <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
-                            <button type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create">Create</button>
-                            <button type = "button" class = "contact-form-btn create-cal" id="contact-update">Update</button>
+                            <input type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="Create"/>
+                            <input type = "submit" class = "contact-form-btn create-cal" id="contact-update" value="Update"/>
                         </form>
                     </div>
                 </div>
@@ -729,15 +727,14 @@
                         <div class="close-cal2"><button onclick="resetForm2(); hideUpdate2()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
                         <form class="contact-form" id="iti-form2" action="" method="post">
-                            <input type="hidden" name="_subject" value="Add Title">
+                            <!-- <input type="hidden" name="_subject" value="Add Title"> -->
                             <input type = "title" class = "contact-form-text" id="i-title2" placeholder="Add title" name="title" required>
-                            <div class="row">
-                                <input type = "location" class = "contact-form-text" id="i-loc2" placeholder="Add location" name="location" required>
-                                <input type = "information" class = "contact-form-text" id="i-starttime2" placeholder="Start time" name="time">
-                            </div>
+                            <input type = "location" class = "contact-form-text" id="i-loc2" placeholder="Add location" name="location" required>
+                            <input type = "information" class = "contact-form-text" id="i-starttime2" placeholder="Start time" name="time">
+                            <input type = "text" class = "contact-form-text" id="exactLoc2" placeholder="Search for you location on Google" name="search" required>
                             <textarea class = "contact-form-text" id="i-addinfo2" placeholder="Additional information" name="Additonal information(optional)"></textarea>
-                            <button type = "submit" class = "contact-form-btn create-cal2" id="contact-submit2" value="create">Create</button>
-                            <button type = "button" class = "contact-form-btn create-cal2" id="contact-update2">Update</button>
+                            <input type = "submit" class = "contact-form-btn create-cal2" id="contact-submit2" value="Create">
+                            <input type = "button" class = "contact-form-btn create-cal2" id="contact-update2" value="Update">
                         </form>
                     </div>
                 </div>
@@ -1010,14 +1007,14 @@
                         <div class="close-cal3"><button onclick="resetForm3(); hideUpdate3()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
                         <form class="contact-form" id="iti-form3" action="" method="post">
-                            <input type="hidden" name="_subject" value="Add Title">
+                            <!-- <input type="hidden" name="_subject" value="Add Title"> -->
                             <input type = "title" class = "contact-form-text" id="i-title3" placeholder="Add title" name="title" required>
-                            <div class="row">
-                                <input type = "location" class = "contact-form-text" id="i-loc3" placeholder="Add location" name="location" required>
-                                <input type = "information" class = "contact-form-text" id="i-starttime3" placeholder="Start time" name="time">
+                            <input type = "location" class = "contact-form-text" id="i-loc3" placeholder="Add location" name="location" required>
+                            <input type = "text" class = "contact-form-text" id="exactLoc3" placeholder="Search for you location on Google" name="search" required>
+                            <input type = "information" class = "contact-form-text" id="i-starttime3" placeholder="Start time" name="time">
                             <textarea class = "contact-form-text" id="i-addinfo3" placeholder="Additional information" name="Additonal information(optional)"></textarea>
-                            <button type = "submit" class = "contact-form-btn create-cal3" id="contact-submit3" value="create">Create</button>
-                            <button type = "button" class = "contact-form-btn create-cal3" id="contact-update3">Update</button>
+                            <input type = "submit" class = "contact-form-btn create-cal3" id="contact-submit3" value="Create">
+                            <input type = "button" class = "contact-form-btn create-cal3" id="contact-update3" value="Update">
                         </form>
                     </div>
                 </div>
@@ -1286,24 +1283,24 @@
                         </tr>                      
                     </tbody>
                 </table>
+                <div class="bg-modal4" >
+                    <div id="contact" style="overflow: auto;">
+                        <div class="close-cal4"><button onclick="resetForm4(); hideUpdate4()" style="background-color: transparent;">+</button></div>
+                        <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                        <form class="contact-form" id="iti-form4" action="" method="post">
+                            <!-- <input type="hidden" name="_subject" value="Add Title"> -->
+                            <input type = "title" class = "contact-form-text" id="i-title4" placeholder="Add title" name="title" required>
+                            <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
+                            <input type = "text" class = "contact-form-text" id="exactLoc4" placeholder="Search for you location on Google" name="search" required>
+                            <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
+                            <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                            <input type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="Create">
+                            <input type = "button" class = "contact-form-btn create-cal4" id="contact-update4" value="Update">
+                        </form>
+                    </div>
+                </div>
             </section>
-        </nav>  
-        <div class="bg-modal4" >
-            <div id="contact" style="overflow: auto;">
-                <div class="close-cal4"><button onclick="resetForm4(); hideUpdate4()" style="background-color: transparent;">+</button></div>
-                <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                <form class="contact-form" id="iti-form4" action="" method="post">
-                    <!-- <input type="hidden" name="_subject" value="Add Title"> -->
-                    <!-- <input type = "title" class = "contact-form-text" id="i-title4" placeholder="Add title" name="title" required> -->
-                    <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
-                    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-                    <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
-                    <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
-                    <button type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="create">Create</button>
-                    <button type = "button" class = "contact-form-btn create-cal4" id="contact-update4">Update</button>
-                </form>
-            </div>
-        </div>  
+        </nav>    
     </aside>    
     <!-- Google map -->
     <div id="wrapper">

@@ -32,10 +32,6 @@ nav a{
   text-align: center;
 }
 
-input[type="text"]::placeholder {
-  text-align: center; 
-} 
-
 input { 
     text-align: center; 
 }
@@ -316,7 +312,7 @@ padding: 40px;
 border-radius: 4px;
 position: relative;
 width: 600px;
-height: 500px;
+height: 560px;
 }
 
 #contact h1 {
