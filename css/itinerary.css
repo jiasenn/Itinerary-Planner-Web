@@ -374,6 +374,8 @@ font-weight: 800;
 }
 
 .watch-container{
+  display: none;
+  visibility: hidden;
   position: absolute;
   right: 8px;
   bottom: 2;

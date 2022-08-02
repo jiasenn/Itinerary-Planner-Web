@@ -60,10 +60,15 @@ html, body, #map {
   box-shadow: 0 0 10px #4d90fe;
 }
 
-nav a#planner:hover {
+nav a#img:hover {
   border-color: #4d90fe;
   border-width: 1px;
   border-style: solid;}
+  nav a#stop_timer:hover {
+    border-color: #4d90fe;
+    border-width: 1px;
+    border-style: solid;}
+  
 
 /* ul, ol {
     margin-top: 0;
