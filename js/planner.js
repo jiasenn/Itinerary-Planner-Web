@@ -221,6 +221,9 @@ function getDuration(i) {
   var end_date = document.getElementById("plans-end-" + String(i + 1)).innerHTML;
   var diffInMs = new Date(end_date) - new Date(start_date);
   var diffInDays = diffInMs / (1000 * 60 * 60 * 24) + 1;
+  if (diffInDays > 4) {
+    diffInDays = 4;
+  }
   for (let j = 1; j <= diffInDays; j++) {
     document.getElementById("mySidebar" + String(j)).style.visibility = "visible";
   }
