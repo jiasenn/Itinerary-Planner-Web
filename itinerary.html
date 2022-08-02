@@ -12,21 +12,18 @@
 
 </head>
 <body>
-    <!-- <input id="searchInput" class="controls" type="text" placeholder="Enter a location"> -->
     <!-- Menu bar -->
     <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-
     <aside>
         <button class="toggle" type="button">|||</button>
         <aside id="mainmenu" style="position: fixed; right: 1044;">
-        <h1 style="background-color: white; color: white; padding: 10px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
-        <nav style="padding: 0px 0 px 10px 0px;">
-            <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
-            <a href="javascript:hideMenu()" id="planner"><img src="/img/maps-menu3.png" alt="png"></a>
-            <a href="#"><img src="/img/maps-menu2.png" alt="png"></a>
-        </nav>        
+            <h1 style="background-color: white; color: white; padding: 10px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
+            <nav style="padding: 0px 0 px 10px 0px;">
+                <a href="#"><img src="/img/maps-menu1.png" alt="png"></a>
+                <a href="javascript:hideMenu()" id="planner"><img src="/img/maps-menu3.png" alt="png"></a>
+                <a href="#"><img src="/img/maps-menu2.png" alt="png"></a>
+            </nav>        
         </aside>
-        <!-- <h1 class="accordion">Planner</h1> -->
         <nav id="nav1">
             <div class="accordion">
                 <section class="accordion-item accordion-item--default">
@@ -137,7 +134,6 @@
                             <div id="myDropdown-4" class="dropdown-content">
                                 <a href="javascript:editProperties(3)">Edit property</a>
                                 <a href="javascript:removePlan(3); threedots()"onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
-
                             </div>
                         </div>    
                     </div>
@@ -166,7 +162,6 @@
                             <div id="myDropdown-5" class="dropdown-content">
                                 <a href="javascript:editProperties(4)">Edit property</a>
                                 <a href="javascript:removePlan(4); threedots() " onclick="return confirm('Please click on OK to Delete Planner');">Delete</a>
-
                             </div>
                         </div>    
                     </div>
@@ -185,7 +180,6 @@
                 </section>
             </div>
             </a>
-            <a href="#"></a>
         </nav>
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar1">
             <section class="accordion-item accordion-item--default">
@@ -449,95 +443,18 @@
                                 </table>
                             </td>
                         </tr>
-                        <!-- <tr class="rowsa">
-                            <td>0700</td>
-                            <td class="row rowrow" draggable="true">Eighth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0800</td>
-                            <td class="row rowrow" draggable="true">Ninth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>0900</td>
-                            <td class="row rowrow" draggable="true">Tenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1000</td>
-                            <td class="row rowrow" draggable="true">Eleventh</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1100</td>
-                            <td class="row rowrow" draggable="true">Twelfth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1200</td>
-                            <td class="row rowrow" draggable="true">Thirteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1300</td>
-                            <td class="row rowrow" draggable="true">Fourteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1400</td>
-                            <td class="row rowrow" draggable="true">Fifteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1500</td>
-                            <td class="row rowrow" draggable="true">Sixteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1600</td>
-                            <td class="row rowrow" draggable="true">Seventeenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1700</td>
-                            <td class="row rowrow" draggable="true">Eighteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1800</td>
-                            <td class="row rowrow" draggable="true">Nineteenth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>1900</td>
-                            <td class="row rowrow" draggable="true">Twentieth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2000</td>
-                            <td class="row rowrow" draggable="true">Twenty-first</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2100</td>
-                            <td class="row rowrow" draggable="true">Twenty-second</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2200</td>
-                            <td class="row rowrow" draggable="true">Twenty-third</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2300</td>
-                            <td class="row rowrow" draggable="true">Twenty-fourth</td>
-                        </tr>
-                        <tr class="rowsa">
-                            <td>2400</td>
-                            <td class="row rowrow" draggable="true">Twenty-fifth</td>
-                        </tr>                         -->
                     </tbody>
                 </table>
                 <div class="bg-modal" >
                     <div id="contact" style="overflow: auto;">
                         <div class="close-cal"><button onclick="resetForm1(); hideUpdate()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <!-- jiasen helps for the action to save the things  -->
                         <form class="contact-form" id="iti-form" action="" method="post">
                             <input type="hidden" name="_subject" value="Add Title">
                             <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add title" name="title" required>
                             <div class="row">
-                            <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location" name="location" required>
-                            <div class="time-container">
-                            <!-- <input type = "information" class = "contact-form-text" id="i-startloc" placeholder="start-location" name="Start location"> -->
-                            <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="Start time" name="time">
-                            <!-- <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
-                            <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time"> -->
+                                <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location" name="location" required>
+                                <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="Start time" name="time">
                             </div>
                             <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
                             <button type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="create">Create</button>
@@ -550,14 +467,11 @@
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar2">
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
-                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
-
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(2)">&#8592;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
-
                         <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(2); w3_open(1)">&#x3c;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 2</p></h1></a>
                         <button type="button" id="cross" onclick="javascript:w3_close(2); w3_open(3)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
@@ -575,7 +489,6 @@
                                 0900<button type="button" class="modal-btn2" >+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
-                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
                                 <table>
                                     <tr>
                                         <td>Title:</td>
@@ -817,17 +730,12 @@
                     <div id="contact" style="overflow: auto;">
                         <div class="close-cal2"><button onclick="resetForm2(); hideUpdate2()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <!-- jiasen helps for the action to save the things  -->
                         <form class="contact-form" id="iti-form2" action="" method="post">
                             <input type="hidden" name="_subject" value="Add Title">
                             <input type = "title" class = "contact-form-text" id="i-title2" placeholder="Add title" name="title" required>
                             <div class="row">
-                            <input type = "location" class = "contact-form-text" id="i-loc2" placeholder="Add location" name="location" required>
-                            <div class="time-container">
-                            <!-- <input type = "information" class = "contact-form-text" id="i-startloc" placeholder="start-location" name="Start location"> -->
-                            <input type = "information" class = "contact-form-text" id="i-starttime2" placeholder="Start time" name="time">
-                            <!-- <input type = "information" class = "contact-form-text" id="i-endloc" placeholder="end-location" name="End location">
-                            <input type = "information" class = "contact-form-text" id="i-endtime" placeholder="end-time" name="End time"> -->
+                                <input type = "location" class = "contact-form-text" id="i-loc2" placeholder="Add location" name="location" required>
+                                <input type = "information" class = "contact-form-text" id="i-starttime2" placeholder="Start time" name="time">
                             </div>
                             <textarea class = "contact-form-text" id="i-addinfo2" placeholder="Additional information" name="Additonal information(optional)"></textarea>
                             <button type = "submit" class = "contact-form-btn create-cal2" id="contact-submit2" value="create">Create</button>
@@ -840,14 +748,11 @@
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar3">
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
-                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
-
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(3)">&#8592;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
-
                         <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(3); w3_open(2)">&#x3c;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 3</p></h1></a>
                         <button type="button" id="cross" onclick="javascript:w3_close(3); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
@@ -865,7 +770,6 @@
                                 0900<button type="button" class="modal-btn3" >+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
-                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
                                 <table>
                                     <tr>
                                         <td>Title:</td>
@@ -1107,14 +1011,12 @@
                     <div id="contact" style="overflow: auto;">
                         <div class="close-cal3"><button onclick="resetForm3(); hideUpdate3()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <!-- jiasen helps for the action to save the things  -->
                         <form class="contact-form" id="iti-form3" action="" method="post">
                             <input type="hidden" name="_subject" value="Add Title">
                             <input type = "title" class = "contact-form-text" id="i-title3" placeholder="Add title" name="title" required>
                             <div class="row">
-                            <input type = "location" class = "contact-form-text" id="i-loc3" placeholder="Add location" name="location" required>
-                            <div class="time-container">
-                            <input type = "information" class = "contact-form-text" id="i-starttime3" placeholder="Start time" name="time">
+                                <input type = "location" class = "contact-form-text" id="i-loc3" placeholder="Add location" name="location" required>
+                                <input type = "information" class = "contact-form-text" id="i-starttime3" placeholder="Start time" name="time">
                             <textarea class = "contact-form-text" id="i-addinfo3" placeholder="Additional information" name="Additonal information(optional)"></textarea>
                             <button type = "submit" class = "contact-form-btn create-cal3" id="contact-submit3" value="create">Create</button>
                             <button type = "button" class = "contact-form-btn create-cal3" id="contact-update3">Update</button>
@@ -1126,8 +1028,6 @@
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar4">
             <section class="accordion-item accordion-item--default">
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
-                    <!-- <div style="display: flex; justify-content: space-between; padding: 2px 10px; border-radius: 0;"> -->
-
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(4)">&#8592;</button> 
                         <a href="javascript:w3_open();" style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
@@ -1151,7 +1051,6 @@
                                 0900<button type="button" class="modal-btn4" >+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
-                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
                                 <table>
                                     <tr>
                                         <td>Title:</td>
@@ -1393,14 +1292,12 @@
                     <div id="contact" style="overflow: auto;">
                         <div class="close-cal4"><button onclick="resetForm4(); hideUpdate4()" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
-                        <!-- jiasen helps for the action to save the things  -->
                         <form class="contact-form" id="iti-form4" action="" method="post">
                             <input type="hidden" name="_subject" value="Add Title">
                             <input type = "title" class = "contact-form-text" id="i-title4" placeholder="Add title" name="title" required>
                             <div class="row">
-                            <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
-                            <div class="time-container">
-                            <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
+                                <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location" name="location" required>
+                                <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
                             <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
                             <button type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="create">Create</button>
                             <button type = "button" class = "contact-form-btn create-cal4" id="contact-update4">Update</button>
@@ -1413,7 +1310,6 @@
     <!-- Google map -->
     <div id="wrapper">
         <div id="map"></div>
-
         <!-- Date Picker -->
             <div id="date-picker-section" class="hidden-1">
                 <form id="date-picker-container">
@@ -1421,12 +1317,10 @@
                         <h3>Planner</h3>
                         <button type="button" id="cross" onclick="hideCalendar(); resetForm()">&#10005;</button>
                     </div>
-            
                     <div id="date-picker-title">
                         <label for="name"><center>Itinerary Name</center></label>
                         <center><input type="text" id="itineary-form" placeholder="Name your itinerary"/></center>
                     </div>
-
                     <div id="date-picker-title">
                         <label for="date"> <center>Date Range</center></label>
                         <center>
@@ -1434,39 +1328,19 @@
                             <input type="date" class="end-date" id="date-picker-end-date" min="2022-01-01" max="2025-12-31">
                         </center>
                     </div>
-                
                     <div id="date-picker-title">
                         <label for="destination"> <center> Destination </center> </label>
                         <center><input type="text" id="destination-form" placeholder="Enter Your Destination"/></center>
                     </div>
-                    
                     <div class="center-button">
                         <br>
                         <center><button type="submit" id="update-plan">Update</button></center>
                         <center><button type="submit" id="plans-submit" onclick="hideCalendar()" >Create Itinerary</button></center>
                     </div>
-                        <!-- <section class="accordion-item">
-                            <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                                <p>Start Date:</p>
-                                <p id="plans-start-1"></p>
-                            </div>
-        
-                            <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                                <p>End Date:</p>
-                                <p id="plans-end-1"></p>
-                            </div>
-                            <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                                <p>Destination:</p>
-                                <p id="destination-1"></p>
-                            </div>
-                        </section> -->
                 </form>
             </div>
         </div>
     </div>
-    <!-- <div id="msg">
-            <pre></pre>
-    </div> -->
         <!-- Display geolocation data -->
     <ul class="geo-data">
         <li>Full Address: <span id="location"></span></li>
@@ -1483,22 +1357,5 @@
     <script src="/js/itinerary2.js"></script>
     <script src="/js/itinerary3.js"></script>
     <script src="/js/itinerary4.js"></script>
-
-    <script> 
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-<script type="text/javascript">
-    function confirm_alert(node) {
-        return confirm("Please click on OK to continue.");
-    }
-    </script>
 </body>
 </html>
