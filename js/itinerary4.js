@@ -3,16 +3,16 @@ var modalBtn4 = document.querySelector(".modal-btn4");
 var modalBg4 = document.querySelector(".bg-modal4");
 var modalClose4 = document.querySelector(".close-cal4");
 var modalCreate4 = document.querySelector(".create-cal4");
-// var editIBtn = document.querySelector(".editI-btn");
 
 modalBtn4.addEventListener("click", function () {
   modalBg4.classList.add("bg-active");
-  hideUpdate();
+  hideUpdate4();
 });
 
 modalClose4.addEventListener("click", function () {
   modalBg4.classList.remove("bg-active");
 });
+
 modalCreate4.addEventListener("click", function () {
   modalBg4.classList.remove("bg-active");
 });
@@ -38,10 +38,10 @@ function hideItineraries4(itineraries4) {
     document.getElementById("add-info-i4" + String(i)).innerHTML = "";
   }
 }
+
 const addItinerary4 = (ev) => {
   ev.preventDefault(); //to stop the form submitting
   let itinerary4 = {
-    // id: Date.now(),
     title: document.getElementById("i-title4").value,
     loc: document.getElementById("i-loc4").value,
     start_time: document.getElementById("i-starttime4").value,
@@ -57,9 +57,7 @@ const addItinerary4 = (ev) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("contact-submit4")
-    .addEventListener("click", addItinerary4);
+  document.getElementById("contact-submit4").addEventListener("click", addItinerary4);
 });
 
 for (let i = 0; i < obj4.length; i++) {
@@ -86,18 +84,14 @@ function editItinerary4(i) {
   document.getElementById("i-loc4").value = itineraries4[i][1];
   document.getElementById("i-starttime4").value = itineraries4[i][2];
   document.getElementById("i-addinfo4").value = itineraries4[i][3];
-  document
-    .getElementById("contact-update4")
-    .setAttribute("onclick", "updateItinerary4(" + i + ");");
+  document.getElementById("contact-update4").setAttribute("onclick", "updateItinerary4(" + i + ");");
 }
 
 function updateItinerary4(i) {
-  // hidePlans(plans);
   itineraries4[i][0] = document.getElementById("i-title4").value;
   itineraries4[i][1] = document.getElementById("i-loc4").value;
   itineraries4[i][2] = document.getElementById("i-starttime4").value;
   itineraries4[i][3] = document.getElementById("i-addinfo4").value;
-  selfRefresh4();
   localStorage.setItem("MyItineraryList4", JSON.stringify(itineraries4));
   modalBg4.classList.remove("bg-active");
   resetForm4();
@@ -106,7 +100,7 @@ function updateItinerary4(i) {
 }
 
 function selfRefresh4() {
-  let itineraries4 = [];
+  itineraries4 = [];
   var obj4 = JSON.parse(localStorage.getItem("MyItineraryList4")); // An object :D
   for (let i = 0; i < obj4.length; i++) {
     itineraries4.push(Object.values(obj4[i]));

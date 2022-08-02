@@ -3,16 +3,16 @@ var modalBtn2 = document.querySelector(".modal-btn2");
 var modalBg2 = document.querySelector(".bg-modal2");
 var modalClose2 = document.querySelector(".close-cal2");
 var modalCreate2 = document.querySelector(".create-cal2");
-// var editIBtn = document.querySelector(".editI-btn");
 
 modalBtn2.addEventListener("click", function () {
   modalBg2.classList.add("bg-active");
-  hideUpdate();
+  hideUpdate2();
 });
 
 modalClose2.addEventListener("click", function () {
   modalBg2.classList.remove("bg-active");
 });
+
 modalCreate2.addEventListener("click", function () {
   modalBg2.classList.remove("bg-active");
 });
@@ -38,34 +38,26 @@ function hideItineraries2(itineraries2) {
     document.getElementById("add-info-i2" + String(i)).innerHTML = "";
   }
 }
+
 const addItinerary2 = (ev) => {
   ev.preventDefault(); //to stop the form submitting
   let itinerary2 = {
-    // id: Date.now(),
     title: document.getElementById("i-title2").value,
     loc: document.getElementById("i-loc2").value,
     start_time: document.getElementById("i-starttime2").value,
     add_info: document.getElementById("i-addinfo2").value,
   };
   itineraries2.push(itinerary2);
-  //document.querySelector('form').reset();
-
-  //for display purposes only
-  // console.warn("added", { plans });
-  // let pre = document.querySelector("#msg pre");
-  // pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
+  document.forms[0].reset(); // to clear the form for the next entries
 
   displayItineraries2(itineraries2);
 
   localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
   selfRefresh2();
-  document.forms[0].reset(); // to clear the form for the next entries
-};;
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("contact-submit2")
-    .addEventListener("click", addItinerary2);
+  document.getElementById("contact-submit2").addEventListener("click", addItinerary2);
 });
 
 for (let i = 0; i < obj2.length; i++) {
@@ -96,13 +88,10 @@ function editItinerary2(i) {
 }
 
 function updateItinerary2(i) {
-  // hidePlans(plans);
   itineraries2[i][0] = document.getElementById("i-title2").value;
   itineraries2[i][1] = document.getElementById("i-loc2").value;
   itineraries2[i][2] = document.getElementById("i-starttime2").value;
   itineraries2[i][3] = document.getElementById("i-addinfo2").value;
-  displayItineraries2(itineraries2);
-  selfRefresh2();
   localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
   modalBg2.classList.remove("bg-active");
   resetForm2();
@@ -111,7 +100,7 @@ function updateItinerary2(i) {
 }
 
 function selfRefresh2() {
-  let itineraries2 = [];
+  itineraries2 = [];
   var obj2 = JSON.parse(localStorage.getItem("MyItineraryList2")); // An object :D
   for (let i = 0; i < obj2.length; i++) {
     itineraries2.push(Object.values(obj2[i]));

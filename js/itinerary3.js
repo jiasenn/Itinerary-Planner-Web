@@ -3,16 +3,16 @@ var modalBtn3 = document.querySelector(".modal-btn3");
 var modalBg3 = document.querySelector(".bg-modal3");
 var modalClose3 = document.querySelector(".close-cal3");
 var modalCreate3 = document.querySelector(".create-cal3");
-// var editIBtn = document.querySelector(".editI-btn");
 
 modalBtn3.addEventListener("click", function () {
   modalBg3.classList.add("bg-active");
-  hideUpdate();
+  hideUpdate3();
 });
 
 modalClose3.addEventListener("click", function () {
   modalBg3.classList.remove("bg-active");
 });
+
 modalCreate3.addEventListener("click", function () {
   modalBg3.classList.remove("bg-active");
 });
@@ -38,10 +38,10 @@ function hideItineraries3(itineraries3) {
     document.getElementById("add-info-i3" + String(i)).innerHTML = "";
   }
 }
+
 const addItinerary3 = (ev) => {
   ev.preventDefault(); //to stop the form submitting
   let itinerary3 = {
-    // id: Date.now(),
     title: document.getElementById("i-title3").value,
     loc: document.getElementById("i-loc3").value,
     start_time: document.getElementById("i-starttime3").value,
@@ -57,9 +57,7 @@ const addItinerary3 = (ev) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("contact-submit3")
-    .addEventListener("click", addItinerary3);
+  document.getElementById("contact-submit3").addEventListener("click", addItinerary3);
 });
 
 for (let i = 0; i < obj3.length; i++) {
@@ -86,18 +84,14 @@ function editItinerary3(i) {
   document.getElementById("i-loc3").value = itineraries3[i][1];
   document.getElementById("i-starttime3").value = itineraries3[i][2];
   document.getElementById("i-addinfo3").value = itineraries3[i][3];
-  document
-    .getElementById("contact-update3")
-    .setAttribute("onclick", "updateItinerary3(" + i + ");");
+  document.getElementById("contact-update3").setAttribute("onclick", "updateItinerary3(" + i + ");");
 }
 
 function updateItinerary3(i) {
-  // hidePlans(plans);
   itineraries3[i][0] = document.getElementById("i-title3").value;
   itineraries3[i][1] = document.getElementById("i-loc3").value;
   itineraries3[i][2] = document.getElementById("i-starttime3").value;
   itineraries3[i][3] = document.getElementById("i-addinfo3").value;
-  selfRefresh3();
   localStorage.setItem("MyItineraryList3", JSON.stringify(itineraries3));
   modalBg3.classList.remove("bg-active");
   resetForm3();
@@ -106,7 +100,7 @@ function updateItinerary3(i) {
 }
 
 function selfRefresh3() {
-  let itineraries3 = [];
+  itineraries3 = [];
   var obj3 = JSON.parse(localStorage.getItem("MyItineraryList3")); // An object :D
   for (let i = 0; i < obj3.length; i++) {
     itineraries3.push(Object.values(obj3[i]));

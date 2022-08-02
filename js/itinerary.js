@@ -11,15 +11,12 @@ modalBtn.addEventListener("click", function () {
   hideUpdate();
 });
 
-
-
 modalClose.addEventListener("click", function () {
   modalBg.classList.remove("bg-active");
 });
 modalCreate.addEventListener("click", function () {
   modalBg.classList.remove("bg-active");
 });
-
 
 let itineraries = [];
 var obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
@@ -68,7 +65,7 @@ const addItinerary = (ev) => {
 
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   selfRefresh1();
-};;
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit").addEventListener("click", addItinerary);
@@ -82,7 +79,6 @@ function resetForm1() {
   document.getElementById("iti-form").reset();
 }
 
-
 displayItineraries(itineraries);
 
 function removeItineraries(i) {
@@ -94,6 +90,7 @@ function removeItineraries(i) {
 }
 
 function editItinerary(i) {
+  selfRefresh1();
   modalBg.classList.add("bg-active");
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
@@ -103,33 +100,26 @@ function editItinerary(i) {
 }
 
 function updateItinerary(i) {
-  // hidePlans(plans);
   itineraries[i][0] = document.getElementById("i-title").value;
   itineraries[i][1] = document.getElementById("i-loc").value;
   itineraries[i][2] = document.getElementById("i-starttime").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
-  displayItineraries(itineraries);
-  selfRefresh1();
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   modalBg.classList.remove("bg-active");
   resetForm1();
   hideUpdate();
   displayItineraries(itineraries);
-
-  // document.getElementById("update-plan").setAttribute("id", "plans-submit");
-  // delete last added plan from plans
-  // plans.splice(i, 0,)
-  // plans.pop();
 }
 
 function selfRefresh1() {
-  let itineraries = [];
+  itineraries = [];
   var obj1 = JSON.parse(localStorage.getItem("MyItineraryList")); // An object :D
   for (let i = 0; i < obj1.length; i++) {
     itineraries.push(Object.values(obj1[i]));
   }
   localStorage.removeItem("MyItineraryList"); //remove one item
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  console.log()
 }
 
 function hideSubmit() {
