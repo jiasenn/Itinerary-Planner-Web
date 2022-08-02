@@ -105,49 +105,14 @@ function editItinerary(i) {
   document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 
-function arraymove(arr, fromIndex, toIndex) {
-  var element = arr[fromIndex];
-  arr.splice(fromIndex, 1);
-  arr.splice(toIndex, 0, element);
-}
-/*watch*/
-
-var timerVar = setInterval(countTimer, 1000);
-var totalSeconds = 0;
-function countTimer() {
-           ++totalSeconds;
-           var hour = Math.floor(totalSeconds /3600);
-           var minute = Math.floor((totalSeconds - hour*3600)/60);
-           var seconds = totalSeconds - (hour*3600 + minute*60);
-           if(hour < 10)
-             hour = "0"+hour;
-           if(minute < 10)
-             minute = "0"+minute;
-           if(seconds < 10)
-             seconds = "0"+seconds;
-           document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-        }
-
-/* alert for topwatch*/
-function myAlert() {
-  alert("You have completed the study. Please remember to indicate the timing and the number of clicks as stated in the survey. Select OK to continue. ")
-  alert( " Total seconds taken : " + totalSeconds +" Total number of Clicks :  " + count )
-}
-/*count*/
-let count = 0;
-      let btn = document.querySelector('html');
-      let divSection = document.getElementById('showCount');
-      btn.addEventListener('click', (e)=>{
-        count++;
-        divSection.innerHTML=`Number of Clicks are: ${count}`;
-     });
-
 function updateItinerary(i) {
   itineraries[i][0] = document.getElementById("i-title").value;
   itineraries[i][1] = document.getElementById("i-loc").value;
   itineraries[i][2] = document.getElementById("i-starttime").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
   itineraries[i][4] = document.getElementById("exactLoc").value;
+  itineraries[i][5] = document.getElementById("lat").innerHTML;
+  itineraries[i][6] = document.getElementById("lon").innerHTML;
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   modalBg.classList.remove("bg-active");
   resetForm1();

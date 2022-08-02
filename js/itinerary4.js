@@ -46,6 +46,9 @@ const addItinerary4 = (ev) => {
     loc: document.getElementById("i-loc4").value,
     start_time: document.getElementById("i-starttime4").value,
     add_info: document.getElementById("i-addinfo4").value,
+    full_add: document.getElementById("exactLoc4").value,
+    lat: document.getElementById("lat").innerHTML,
+    lng: document.getElementById("lon").innerHTML,
   };
   itineraries4.push(itinerary4);
   document.forms[0].reset(); // to clear the form for the next entries
@@ -87,6 +90,7 @@ function editItinerary4(i) {
   document.getElementById("i-loc4").value = itineraries4[i][1];
   document.getElementById("i-starttime4").value = itineraries4[i][2];
   document.getElementById("i-addinfo4").value = itineraries4[i][3];
+  document.getElementById("exactLoc4").value = itineraries4[i][4];
   document.getElementById("contact-update4").setAttribute("onclick", "updateItinerary4(" + i + ");");
 }
 
@@ -95,6 +99,9 @@ function updateItinerary4(i) {
   itineraries4[i][1] = document.getElementById("i-loc4").value;
   itineraries4[i][2] = document.getElementById("i-starttime4").value;
   itineraries4[i][3] = document.getElementById("i-addinfo4").value;
+  itineraries4[i][4] = document.getElementById("exactLoc4").value;
+  itineraries4[i][5] = document.getElementById("lat").innerHTML;
+  itineraries4[i][6] = document.getElementById("lon").innerHTML;
   localStorage.setItem("MyItineraryList4", JSON.stringify(itineraries4));
   modalBg4.classList.remove("bg-active");
   resetForm4();
