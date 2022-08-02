@@ -34,7 +34,7 @@
                     </div>
                     <div class="accordion-item-content" style="display: flex; justify-content: space-between; padding: 0px 10px; height: 2em;">
                         <a href="javascript:displayPlans(plans); selfRefresh()" style="font-weight: 1000;">Your planner</a>
-                        <a href="javascript:showButton(); showCalendar();">+ Create new itineary</a>
+                        <a href="javascript:showButton(); showCalendar(); resetForm();">+ Create new itineary</a>
                     </div>
                 </section>
                 <section class="accordion-item">
@@ -1332,26 +1332,7 @@
                         <label for="destination"> <center> Destination </center> </label>
                         <center><input type="text" id="destination-form" placeholder="Enter Your Destination"/></center>
                     </div>
-                    <div class="center-button">
-                        <br>
-                        <center><button type="submit" id="plans-submit" onclick="hideCalendar(); threedots()">Create Itinerary</button></center>
-                        <section class="accordion-item">
-                            <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                                <p>Start Date:</p>
-                                <p id="plans-start-1"></p>
-                            </div>
-        
-                            <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                                <p>End Date:</p>
-                                <p id="plans-end-1"></p>
-                            </div>
-                            <div class="accordion-item-content" style="display: flex; padding: 0px 10px;">
-                                <p>Destination:</p>
-                                <p id="destination-1"></p>
-                            </div>
-                   
-                        </section>
-                        
+                    <div class="center-button">                        
                         <center><button type="submit" id="update-plan">Update</button></center>
                         <center><button type="submit" id="plans-submit" onclick="hideCalendar()" >Create Itinerary</button></center>
                     </div>
