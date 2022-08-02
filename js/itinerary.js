@@ -51,7 +51,7 @@ const addItinerary = (ev) => {
     // end_loc: document.getElementById("i-endloc").value,
     // end_time: document.getElementById("i-endtime").value,
     add_info: document.getElementById("i-addinfo").value,
-    full_add: document.getElementById("exactLoc").value,
+    full_add: document.getElementById("exactLoc1").value,
     lat: document.getElementById("lat").innerHTML,
     lng: document.getElementById("lon").innerHTML,
   };
@@ -101,7 +101,7 @@ function editItinerary(i) {
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-starttime").value = itineraries[i][2];
   document.getElementById("i-addinfo").value = itineraries[i][3];
-  document.getElementById("exactLoc").value = itineraries[i][4];
+  document.getElementById("exactLoc1").value = itineraries[i][4];
   document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 
@@ -110,7 +110,7 @@ function updateItinerary(i) {
   itineraries[i][1] = document.getElementById("i-loc").value;
   itineraries[i][2] = document.getElementById("i-starttime").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
-  itineraries[i][4] = document.getElementById("exactLoc").value;
+  itineraries[i][4] = document.getElementById("exactLoc1").value;
   itineraries[i][5] = document.getElementById("lat").innerHTML;
   itineraries[i][6] = document.getElementById("lon").innerHTML;
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));

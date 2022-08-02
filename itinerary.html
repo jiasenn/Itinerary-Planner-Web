@@ -206,7 +206,7 @@
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn" >+</button>
+                                0900<button type="button" class="modal-btn" onclick="input = chooseDay(1); initMap()">+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
@@ -449,12 +449,12 @@
                 </table>
                 <div class="bg-modal" >
                     <div id="contact" style="overflow: auto;">
-                        <div class="close-cal"><button onclick="resetForm1(); hideUpdate()" style="background-color: transparent;">+</button></div>
+                        <div class="close-cal"><button onclick="resetForm1(); hideUpdate();" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
                         <form class="contact-form" id="iti-form" action="" method="post" validate>
                             <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add title" name="title" required>
                             <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location nickname" name="location" required>
-                            <input type = "text" class = "contact-form-text" id="exactLoc" placeholder="Search for you location on Google" name="search" required>
+                            <input type = "text" class = "contact-form-text" id="exactLoc1" placeholder="Search for you location on Google" name="search" required>
                             <input type = "information" class = "contact-form-text" id="i-starttime" placeholder="Start time" name="time" required>
                             <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
                             <input type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="Create"/>
@@ -486,7 +486,7 @@
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn2" >+</button>
+                                0900<button type="button" class="modal-btn2" onclick="input = chooseDay(2); initMap()">+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>
@@ -766,7 +766,7 @@
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn3" >+</button>
+                                0900<button type="button" class="modal-btn3" onclick="input = chooseDay(3); initMap()">+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>
@@ -1047,7 +1047,7 @@
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn4" >+</button>
+                                0900<button type="button" class="modal-btn4" onclick="input = chooseDay(4); initMap()">+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>

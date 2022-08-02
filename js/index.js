@@ -1,5 +1,6 @@
 var marker;
 var map;
+var input
 
 $("#loc-0").click(function () {
   changeMarkerPos(1.3414, 103.9633);
@@ -53,7 +54,6 @@ function initMap() {
   map.panTo(marker.position);
   // console.log(map);
 
-  var input = document.getElementById("exactLoc");
   // map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
@@ -132,7 +132,10 @@ function initMap() {
     document.getElementById("lon").innerHTML = place.geometry.location.lng();
   });
 }
-
+function chooseDay(i) {
+  input = document.getElementById("exactLoc" + String(i));
+  return input
+}
 
 function changeMarkerPos(lat, lon) {
   myLatLng = new google.maps.LatLng(lat, lon);
