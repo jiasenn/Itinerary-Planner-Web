@@ -1,6 +1,7 @@
 // window.localStorage.clear(); //clear all localstorage
 
 let plans = [];
+threedots();
 var obj = JSON.parse(localStorage.getItem("MyPlanList")); // An object :D
 
 function displayPlans(plans) {
@@ -69,6 +70,8 @@ for (let i = 0; i < obj.length; i++) {
 }
 
 displayPlans(plans);
+
+threedots();
 
 function resetForm() {
   document.getElementById("date-picker-container").reset();
@@ -142,8 +145,6 @@ function threedots() {
     }
   }
 }
-
-threedots();
 
 function showCalendar() {
   $("#date-picker-section").removeClass("hidden-1");

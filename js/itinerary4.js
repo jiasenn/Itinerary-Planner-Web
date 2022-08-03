@@ -51,7 +51,6 @@ const addItinerary4 = (ev) => {
     lng: document.getElementById("lon").innerHTML,
   };
   itineraries4.push(itinerary4);
-  document.forms[0].reset(); // to clear the form for the next entries
 
   if (itineraries.length !== 0) {
     displayItineraries(itineraries);
@@ -59,16 +58,18 @@ const addItinerary4 = (ev) => {
 
   localStorage.setItem("MyItineraryList4", JSON.stringify(itineraries4));
   selfRefresh4();
-};;
+  resetForm4(); // to clear the form for the next entries
+};;;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit4").addEventListener("click", addItinerary4);
 });
 
-for (let i = 0; i < obj4.length; i++) {
-  itineraries4.push(Object.values(obj4[i]));
+if (obj4 != null) {
+  for (let i = 0; i < obj4.length; i++) {
+    itineraries4.push(Object.values(obj4[i]));
+  }
 }
-
 
 function resetForm4() {
   document.getElementById("iti-form4").reset();
@@ -85,12 +86,12 @@ function removeItineraries4(i) {
 }
 
 function editItinerary4(i) {
-  modalBg4.classList.add("bg-active");
   document.getElementById("i-title4").value = itineraries4[i][0];
   document.getElementById("i-loc4").value = itineraries4[i][1];
   document.getElementById("i-starttime4").value = itineraries4[i][2];
   document.getElementById("i-addinfo4").value = itineraries4[i][3];
   document.getElementById("exactLoc4").value = itineraries4[i][4];
+  modalBg4.classList.add("bg-active");
   document.getElementById("contact-update4").setAttribute("onclick", "updateItinerary4(" + i + ");");
 }
 

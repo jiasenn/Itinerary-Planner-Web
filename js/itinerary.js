@@ -56,7 +56,6 @@ const addItinerary = (ev) => {
     lng: document.getElementById("lon").innerHTML,
   };
   itineraries.push(itinerary);
-  document.forms[0].reset(); // to clear the form for the next entries
   //document.querySelector('form').reset();
 
   //for display purposes only
@@ -65,11 +64,12 @@ const addItinerary = (ev) => {
   // pre.textContent = "\n" + JSON.stringify(plans, "\t", 2);
   if (itineraries.length !== 0) {
     displayItineraries(itineraries);
-  };
+  }
 
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   selfRefresh1();
-};
+  resetForm1(); // to clear the form for the next entries
+};;;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit").addEventListener("click", addItinerary);
@@ -95,13 +95,12 @@ function removeItineraries(i) {
 }
 
 function editItinerary(i) {
-  selfRefresh1();
-  modalBg.classList.add("bg-active");
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
   document.getElementById("i-starttime").value = itineraries[i][2];
   document.getElementById("i-addinfo").value = itineraries[i][3];
   document.getElementById("exactLoc1").value = itineraries[i][4];
+  modalBg.classList.add("bg-active");
   document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 

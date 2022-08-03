@@ -1,18 +1,12 @@
 var marker;
 var map;
-var input
-
-$("#loc-0").click(function () {
-  changeMarkerPos(1.3414, 103.9633);
-});
-$("#loc-1").click(function () {
-  changeMarkerPos(1.3483, 103.6831);
-});
-$("#loc-2").click(function () {
-  changeMarkerPos(1.2966, 103.7763);
-});
+var input;
+var infoWindow; // nickname location inforwindow
+var infowindow; // search infowindow
 
 function initMap() {
+    infoWindow = new google.maps.InfoWindow();
+
     var styles = [{
         stylers: [{
             // saturation: -100,
@@ -22,8 +16,8 @@ function initMap() {
       name: "Styled Map",
     });
     var mapProp = {
-      center: new google.maps.LatLng(3.165659, 101.611416),
-      zoom: 17,
+      center: new google.maps.LatLng(1.3521, 103.8198),
+      zoom: 12,
       panControl: true,
       zoomControl: true,
       mapTypeControl: false,
@@ -45,7 +39,7 @@ function initMap() {
   map.setMapTypeId("map_style");
 
   marker = new google.maps.Marker({
-    position: new google.maps.LatLng(3.165659, 101.611416),
+    position: new google.maps.LatLng(1.3521, 103.8198),
     animation: google.maps.Animation.DROP,
     icon: "https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png",
   });
@@ -59,7 +53,7 @@ function initMap() {
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo("bounds", map);
 
-  var infowindow = new google.maps.InfoWindow();
+  infowindow = new google.maps.InfoWindow();
   // var marker = new google.maps.Marker({
   //   map: map,
   //   position: new google.maps.LatLng(3.167244, 101.61295),
@@ -86,13 +80,13 @@ function initMap() {
       map.setCenter(place.geometry.location);
       map.setZoom(17);
     }
-    marker.setIcon({
-      url: place.icon,
-      size: new google.maps.Size(71, 71),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(17, 34),
-      scaledSize: new google.maps.Size(35, 35),
-    });
+    // marker.setIcon({
+    //   url: place.icon,
+    //   size: new google.maps.Size(71, 71),
+    //   origin: new google.maps.Point(0, 0),
+    //   anchor: new google.maps.Point(17, 34),
+    //   scaledSize: new google.maps.Size(35, 35),
+    // });
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
 
@@ -132,17 +126,47 @@ function initMap() {
     document.getElementById("lon").innerHTML = place.geometry.location.lng();
   });
 }
+
 function chooseDay(i) {
   input = document.getElementById("exactLoc" + String(i));
-  return input
+  return input;
+}
+
+function setInfo(i) {
+  infoWindow.close();
+  infoWindow.setContent(
+    "<strong>" + document.getElementById("loc-i" + String(i)).innerHTML + "</strong>"
+    );
+  infoWindow.open(map, marker);
+}
+function setInfo2(i) {
+  infoWindow.close();
+  infoWindow.setContent(
+    "<strong>" + document.getElementById("loc-i2" + String(i)).innerHTML + "</strong>"
+  );
+  infoWindow.open(map, marker);
+}
+function setInfo3(i) {
+  infoWindow.close();
+  infoWindow.setContent(
+    "<strong>" + document.getElementById("loc-i3" + String(i)).innerHTML + "</strong>"
+  );
+  infoWindow.open(map, marker);
+}
+function setInfo4(i) {
+  infoWindow.close();
+  infoWindow.setContent(
+    "<strong>" + document.getElementById("loc-i4" + String(i)).innerHTML + "</strong>"
+  );
+  infoWindow.open(map, marker);
 }
 
 function changeMarkerPos(lat, lon) {
+  infowindow.close();
+  map.zoom = 17;
   myLatLng = new google.maps.LatLng(lat, lon);
   marker.setPosition(myLatLng);
-  console.log(marker.position);
   map.panTo(myLatLng);
-  // console.log(map);
 }
 window.initMap = initMap;
 
