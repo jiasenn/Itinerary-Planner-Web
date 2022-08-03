@@ -150,12 +150,9 @@ window.initMap = initMap;
 // });
 
 
-// function showMenu () {
-// $("aside").addClass("close");
-
-// }
-// $("aside").addClass("close");
-
+function openMenu () {
+$("aside").addClass("close");
+}
 
 $(document).ready(function () {
   $(".toggle").click(function () {
