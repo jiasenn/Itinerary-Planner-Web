@@ -247,7 +247,7 @@ function showMenu () {
 
 /*watch*/
 var timerVar = setInterval(countTimer, 1000);
-var totalSeconds = 0;
+var totalSeconds = 1;
 function countTimer() {
            ++totalSeconds;
            var hour = Math.floor(totalSeconds /3600);
