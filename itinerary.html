@@ -1309,6 +1309,49 @@
     <!-- Google map -->
     <div id="wrapper">
         <div id="map"></div>
+        <div class="container" style="position:fixed; z-index: 0; bottom: 30px; left: 30px; background-color: white;">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div id="mode-selector" class="controls">
+                                <input type="radio" name="type" id="changemode-walking" checked="checked">
+                                <label for="changemode-walking">Walking</label>
+
+                                <input type="radio" name="type" id="changemode-transit">
+                                <label for="changemode-transit">Transit</label>
+
+                                <input type="radio" name="type" id="changemode-driving">
+                                <label for="changemode-driving">Driving</label>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="row searchboxs">
+                            <input id="origin-input" class="form-control col-md-12" type="text" placeholder="Enter an origin location">                    
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row searchboxs">
+                            <input id="destination-input" class="form-control col-md-12" type="text" placeholder="Enter a destination location">                    
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-12">
+                Start lat : <span id="startlat"></span><br>
+                Start lng : <span id="startlng"></span><br>
+                End lat : <span id="endlat"></span><br>
+                End lng : <span id="endlng"></span><br>
+            </div>
+        </div>
         <!-- Date Picker -->
         <div id="date-picker-section" class="hidden-1">
             <form id="date-picker-container">

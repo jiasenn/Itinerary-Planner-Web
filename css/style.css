@@ -36,7 +36,7 @@ html, body, #map {
 }
 
 .map-container {
-  /* overflow: hidden; */
+  overflow: hidden;
   padding-bottom: 56.25%;
   position: absolute;
   height: 0;
