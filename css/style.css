@@ -68,8 +68,8 @@ nav a#img:hover {
 
 #stop_timer {
   position: fixed; 
-  left: 4%; 
-  top: 5%; 
+  left: 2%; 
+  top: 7%; 
   z-index: -2;
 }
 
