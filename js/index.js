@@ -221,7 +221,7 @@ function myAlert() {
   alert( " Total seconds taken : " + totalSeconds +" Total number of Clicks :  " + count )
 }
 /*count*/
-let count = 0;
+let count = 1;
       let btn = document.querySelector('html');
       let divSection = document.getElementById('showCount');
       btn.addEventListener('click', (e)=>{
