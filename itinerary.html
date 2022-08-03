@@ -15,6 +15,8 @@
     <!-- <input id="searchInput" class="controls" type="text" placeholder="Enter a location"> -->
         <aside>
         <button class="toggle" type="button">|||</button>
+        <a href="javascript:hideMenu()" id ="stop_timer" onclick="clearInterval(timerVar), myAlert()" style="position: fixed; left: 1.5%; top: 5.5%"><img src="/img/maps-menu-f.png" alt="png" ></a>
+
         <aside id="mainmenu" style="position: fixed; right: 1044;">
         <h1 style="background-color: white; color: white; padding: 7px;"><img src="/img/maps-menu.png" alt="png" align="left"><img src="/img/cross.png" alt="png" onclick="javascript:closeSide()" class="close-menu"></h1>
         <nav style="padding: 0px 0 px 10px 0px;">
@@ -1307,7 +1309,6 @@
     </aside>    
     <!-- Google map -->
     <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-    <a href="javascript:hideMenu()" id ="stop_timer" onclick="clearInterval(timerVar), myAlert()"><img src="/img/maps-menu-f.png" alt="png" ></a>
 
     <div id="wrapper">
         <div id="map"></div>
