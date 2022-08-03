@@ -380,3 +380,6 @@ font-weight: 800;
   right: 8px;
   bottom: 2;
 }
+.topbar{
+  position: static;
+}
