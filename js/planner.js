@@ -68,9 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
 for (let i = 0; i < obj.length; i++) {
   plans.push(Object.values(obj[i]));
 }
-threedots();
 
 displayPlans(plans);
+
+threedots();
+
 
 function resetForm() {
   document.getElementById("date-picker-container").reset();
