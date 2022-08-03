@@ -1,6 +1,7 @@
 // window.localStorage.clear(); //clear all localstorage
 
 let plans = [];
+threedots();
 var obj = JSON.parse(localStorage.getItem("MyPlanList")); // An object :D
 
 function displayPlans(plans) {
@@ -142,8 +143,6 @@ function threedots() {
     }
   }
 }
-
-threedots();
 
 function showCalendar() {
   $("#date-picker-section").removeClass("hidden-1");
