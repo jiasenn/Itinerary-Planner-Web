@@ -63,11 +63,21 @@ html, body, #map {
 nav a#img:hover {
   border-color: #4d90fe;
   border-width: 1px;
-  border-style: solid;}
-  nav a#stop_timer:hover {
-    border-color: #4d90fe;
-    border-width: 1px;
-    border-style: solid;}
+  border-style: solid;
+}
+
+#stop_timer {
+  position: fixed; 
+  left: 4%; 
+  top: 5%; 
+  z-index: -2;
+}
+
+#stop_timer:hover {
+  border-color: #4d90fe;
+  border-width: 1px;
+  border-style: solid;
+}
   
 
 /* ul, ol {
