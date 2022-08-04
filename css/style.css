@@ -65,7 +65,7 @@ html, body, #map {
   /* margin-left: 40px; */
   display: flex;
   height: 32px;
-  padding-left: 7%;
+  padding-left: 30px;
 }
 
 nav a#img:hover {
