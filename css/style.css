@@ -68,15 +68,13 @@ nav a#img:hover {
 
 #stop_timer {
   position: fixed; 
-  left: 6%; 
-  top: 10%; 
+  left: 30px; 
+  top: 60px; 
   z-index: -2;
 }
 
-#stop_timer:hover {
-  border-color: #4d90fe;
-  border-width: 1px;
-  border-style: solid;
+#Your-planner:hover {
+  box-shadow: 0 0 10px #4d90fe;
 }
   
 
@@ -142,8 +140,8 @@ nav a:hover{
   background:none;
   position: fixed;
   vertical-align: middle;
-  left: 4.7%;
-  top: 2.8%;
+  left: 24px;
+  top: 16px;
   font-size:30px;
   display:inline-block;
   cursor:pointer;
