@@ -48,15 +48,19 @@ html, body, #map {
   font-size: 15px;
   font-weight: 300;
   margin-left: 60px;
-  padding: 0 11px 0 13px;
+  /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
-  height: 32px;
+  height: 33px;
   width: 400px;
   right: -50px;
   border-radius: 4px;
 }
 
 #searchInput:focus {
+  box-shadow: 0 0 10px #4d90fe;
+}
+
+.toggle:hover {
   box-shadow: 0 0 10px #4d90fe;
 }
 
@@ -131,14 +135,14 @@ nav a:hover{
   border:black;
   background:white;
   position: fixed;
-  left: 27px;
-  top: 9.5px;
+  left: 2.1%;
+  top: 1.53%;
   font-size:30px;
   transform:rotate(90deg);
   display:inline-block;
   cursor:pointer;
   color:black;
-  padding: 5px 4.5px 5px 4.5px; /* right bottom left top */
+  padding: 0px 5px 0px 5px; 
   border-radius: 4px;
   z-index: -1;
 }
