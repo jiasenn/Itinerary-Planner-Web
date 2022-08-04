@@ -60,11 +60,6 @@ html, body, #map {
   box-shadow: 0 0 10px #4d90fe;
 }
 
-
-.toggle:hover {
-  box-shadow: 0 0 10px #4d90fe;
-}
-
 nav a#img:hover {
   border-color: #4d90fe;
   border-width: 1px;
@@ -149,4 +144,12 @@ nav a:hover{
   z-index: -1;
 }
 
+#hamburger {
+  border-radius: 5px; 
+  height: 33px;
+}
+
+#hamburger:hover {
+  box-shadow: 0 0 10px #4d90fe;
+}
 /* stop watch */
