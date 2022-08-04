@@ -47,8 +47,8 @@ function initMap() {
   marker.setMap(map);
   map.panTo(marker.position);
   // console.log(map);
-  input = document.getElementById("searchInput");
 
+  input = document.getElementById("searchInput");
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
