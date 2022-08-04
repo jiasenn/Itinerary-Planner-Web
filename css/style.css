@@ -60,10 +60,6 @@ html, body, #map {
   box-shadow: 0 0 10px #4d90fe;
 }
 
-.toggle:hover {
-  box-shadow: 0 0 10px #4d90fe;
-}
-
 nav a#img:hover {
   border-color: #4d90fe;
   border-width: 1px;
@@ -72,8 +68,8 @@ nav a#img:hover {
 
 #stop_timer {
   position: fixed; 
-  left: 2%; 
-  top: 7%; 
+  left: 6%; 
+  top: 10%; 
   z-index: -2;
 }
 
@@ -143,12 +139,12 @@ nav a:hover{
 
 .toggle{
   border:black;
-  background:white;
+  background:none;
   position: fixed;
-  left: 2.1%;
-  top: 2%;
+  vertical-align: middle;
+  left: 4.7%;
+  top: 2.8%;
   font-size:30px;
-  transform:rotate(180deg);
   display:inline-block;
   cursor:pointer;
   color:black;
@@ -156,4 +152,12 @@ nav a:hover{
   border-radius: 4px;
   z-index: -1;
 }
-/* stop watch */
+
+#hamburger {
+  border-radius: 5px; 
+  height: 33px;
+}
+
+#hamburger:hover {
+  box-shadow: 0 0 10px #4d90fe;
+}
