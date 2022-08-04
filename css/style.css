@@ -47,7 +47,7 @@ html, body, #map {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: -9px;
+  margin-left: 3em;
   /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
   height: 32px;
@@ -58,7 +58,6 @@ html, body, #map {
 }
 
 #ham {
-  margin-left: 40px;
   display: flex;
   height: 32px;
 }
@@ -153,6 +152,7 @@ nav a:hover{
 #hamburger {
   border-radius: 4px; 
   height: 30px;  
+  margin-left: 1.5em;
 }
 
 #hamburger:hover {
