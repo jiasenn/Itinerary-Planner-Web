@@ -15,7 +15,7 @@ html, body, #map {
         padding: 0px
       }
       .controls {
-        margin-top: 16px;
+        /* margin-top: 16px; */
         border: 1px solid transparent;
         border-radius: 2px 0 0 2px;
         box-sizing: border-box;
@@ -47,10 +47,11 @@ html, body, #map {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
+  margin-left: -10px;
   text-overflow: ellipsis;
-  height: 33px;
+  height: 32px;
   width: 400px;
-  right: -50px;
+  /* right: -50px; */
   border-radius: 4px;
   z-index: -1;
 }
@@ -60,8 +61,10 @@ html, body, #map {
 }
 
 #ham {
-  margin-left: 60px;
+  margin-top: 16px;
+  margin-left: 20px;
   display: flex;
+  height: 32px;
 }
 
 nav a#img:hover {
@@ -142,22 +145,22 @@ nav a:hover{
 .toggle{
   border:black;
   background:none;
-  position: fixed;
-  vertical-align: middle;
-  left: 24px;
-  top: 16px;
-  font-size:30px;
-  display:inline-block;
+  /* position: absolute; */
+  /* left: 24px;
+  top: 16px; */
+  /* font-size:30px; */
+  /* display:inline-block; */
   cursor:pointer;
   color:black;
-  padding: 0px 5px 0px 5px; 
-  border-radius: 4px;
-  z-index: -1;
+  /* padding: 0px 5px 0px 5px;  */
+  /* border-radius: 4px; */
+  /* z-index: -1; */
 }
 
 #hamburger {
-  border-radius: 5px; 
-  height: 33px;
+  border-radius: 4px; 
+  height: 32px;
+  margin-top: -1px;
 }
 
 #hamburger:hover {
