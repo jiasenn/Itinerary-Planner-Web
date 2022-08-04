@@ -21,8 +21,8 @@ function initMap() {
       name: "Styled Map",
     });
     var mapProp = {
-      center: new google.maps.LatLng(3.165659, 101.611416),
-      zoom: 17,
+      center: new google.maps.LatLng(1.3521, 103.8198),
+      zoom: 12,
       panControl: true,
       zoomControl: true,
       mapTypeControl: false,
@@ -44,7 +44,7 @@ function initMap() {
   map.setMapTypeId("map_style");
 
   marker = new google.maps.Marker({
-    position: new google.maps.LatLng(3.165659, 101.611416),
+    position: new google.maps.LatLng(1.3521, 103.8198),
     animation: google.maps.Animation.DROP,
     icon: "https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png",
   });
