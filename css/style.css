@@ -60,6 +60,7 @@ html, body, #map {
   box-shadow: 0 0 10px #4d90fe;
 }
 
+
 .toggle:hover {
   box-shadow: 0 0 10px #4d90fe;
 }
@@ -136,9 +137,10 @@ nav a:hover{
   background:white;
   position: fixed;
   left: 2.1%;
-  top: 1.58%;
+  top: 2%;
+  
   font-size:30px;
-  transform:rotate(90deg);
+  transform:rotate(180deg);
   display:inline-block;
   cursor:pointer;
   color:black;
@@ -146,4 +148,5 @@ nav a:hover{
   border-radius: 4px;
   z-index: -1;
 }
+
 /* stop watch */
