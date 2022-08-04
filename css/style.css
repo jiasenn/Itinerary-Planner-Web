@@ -47,10 +47,10 @@ html, body, #map {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: 0px;
+  margin-left: -9px;
   /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
-  height: 33px;
+  height: 32px;
   width: 400px;
   right: -50px;
   border-radius: 4px;
@@ -58,8 +58,9 @@ html, body, #map {
 }
 
 #ham {
-  margin-left: 60px;
+  margin-left: 40px;
   display: flex;
+  height: 32px;
 }
 
 #searchInput:focus {
@@ -150,10 +151,8 @@ nav a:hover{
 }
 
 #hamburger {
-  border-radius: 5px; 
-  height: 33px;
-  margin-top: -1px;
-  
+  border-radius: 4px; 
+  height: 30px;  
 }
 
 #hamburger:hover {
