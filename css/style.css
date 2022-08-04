@@ -65,6 +65,7 @@ html, body, #map {
   /* margin-left: 40px; */
   display: flex;
   height: 32px;
+  padding-left: 7%;
 }
 
 nav a#img:hover {
@@ -160,7 +161,6 @@ nav a:hover{
 #hamburger {
   border-radius: 4px; 
   height: 30px;
-  margin-left: 2.5em;
 }
 
 #hamburger:hover {
