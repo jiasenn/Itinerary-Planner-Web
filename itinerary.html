@@ -12,9 +12,11 @@
 </head>
 <body>
     <!-- Menu bar -->
-    <!-- <input id="searchInput" class="controls" type="text" placeholder="Enter a location"> -->
-        <aside>
+    <div id="ham">
+        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
         <button class="toggle" type="button"><img src="/img/hamburger.png"  alt="png" id="hamburger"></button>
+    </div>
+        <aside>
         <a href="javascript:hideMenu()" id ="stop_timer" onclick="openMenu(); clearInterval(timerVar), myAlert();">
             <img src="/img/maps-menu-g.png" alt="png" id="Your-planner">
         </a>
@@ -1309,7 +1311,6 @@
         </nav>    
     </aside>    
     <!-- Google map -->
-    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
 
     <div id="wrapper">
         <div id="map"></div>

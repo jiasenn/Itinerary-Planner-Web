@@ -47,17 +47,21 @@ html, body, #map {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: 60px;
-  /* padding: 0 11px 0 11px; */
   text-overflow: ellipsis;
   height: 33px;
   width: 400px;
   right: -50px;
   border-radius: 4px;
+  z-index: -1;
 }
 
 #searchInput:focus {
   box-shadow: 0 0 10px #4d90fe;
+}
+
+#ham {
+  margin-left: 60px;
+  display: flex;
 }
 
 nav a#img:hover {
@@ -146,7 +150,7 @@ nav a:hover{
   display:inline-block;
   cursor:pointer;
   color:black;
-  padding: 0px 5px 0px 5px; 
+  /* padding: 0px 5px 0px 5px;  */
   border-radius: 4px;
   z-index: -1;
 }
@@ -154,6 +158,7 @@ nav a:hover{
 #hamburger {
   border-radius: 5px; 
   height: 33px;
+  margin-top: -1px;
 }
 
 #hamburger:hover {

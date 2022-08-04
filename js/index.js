@@ -54,7 +54,8 @@ function initMap() {
   // console.log(map);
 
   var input = document.getElementById("searchInput");
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  var ham = document.getElementById("ham");
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(ham);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo("bounds", map);
