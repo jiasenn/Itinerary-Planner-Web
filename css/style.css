@@ -131,8 +131,8 @@ nav a:hover{
   border:black;
   background:transparent;
   position: fixed;
-  left: 4.7%;
-  top: 2.8%;
+  left: 24px;
+  top: 16px;
   vertical-align: middle;  
   font-size:30px;
   /* transform:rotate(180deg); */
