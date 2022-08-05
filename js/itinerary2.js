@@ -49,6 +49,7 @@ const addItinerary2 = (ev) => {
     full_add: document.getElementById("exactLoc2").value,
     lat: document.getElementById("lat").innerHTML,
     lng: document.getElementById("lon").innerHTML,
+    place_id: document.getElementById("place_id").innerHTML,
   };
   itineraries2.push(itinerary2);
 

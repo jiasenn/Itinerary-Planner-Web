@@ -54,6 +54,7 @@ const addItinerary = (ev) => {
     full_add: document.getElementById("exactLoc1").value,
     lat: document.getElementById("lat").innerHTML,
     lng: document.getElementById("lon").innerHTML,
+    place_id: document.getElementById("place_id").innerHTML,
   };
   itineraries.push(itinerary);
   //document.querySelector('form').reset();
