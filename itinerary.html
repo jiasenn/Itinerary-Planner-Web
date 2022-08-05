@@ -211,7 +211,6 @@
                                 0900<button type="button" class="modal-btn" onclick="input = chooseDay(1); initMap()">+</button>
                             </td>
                             <td class="row rowrow" draggable="true">
-                                <!-- <button class="active"><a id="link1" href="#office" data-toggle="tab">SUTD</a></button> -->
                                 <table>
                                     <tr>
                                         <td>Title:</td>
@@ -241,6 +240,19 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                                <button id="show-dir-1" onclick="getDirections(itineraries[0][7], itineraries[1][7])">SHOW</button>
+                                <button id="hide-dir-1" onclick="hideDirections()" style="display:none;">HIDE</button>
+                            </td>
+                            <td class="row rowrow" draggable="false">
+
+                                <button class="editI-btn" onclick="editItinerary(0); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button>
+                                <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>                                                                        <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>
+                                <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>
+                                <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>
                             </td>
                         </tr>
                         <tr class="rowsa">
