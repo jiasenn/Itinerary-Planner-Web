@@ -181,8 +181,12 @@ button.active {
  } */
 
  .active, .active2, .active3,
- .active4, .active5, .active6 {
-  /* background-color: #7caeff; */
+ .active4, .active5, .active6,
+ .active21, .active22, .active23,
+ .active24, .active25, .active26,
+ .active31, .active32, .active33,
+ .active34, .active35, .active36,
+ .active41, .active42, .active43,
+ .active44, .active45, .active46 {
   box-shadow: 0 0 10px #4d90fe;
-  /* color: white; */
 }
