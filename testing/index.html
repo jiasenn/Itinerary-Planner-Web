@@ -1,45 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<title>Font Awesome 5 Icons</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<!--Get your own code at fontawesome.com-->
 </head>
 <body>
-  <div style="color:red;text-align:center"><strong>READ ME</strong>: Please change your own API Key inside the script tags where it says [YOUR_API_KEY] & enabled Directions API from Cloud Console </div> 
 
+<h1>fas fa-car-side</h1>
 
-<div id="map" style="height:100vh"></div>
-  
-<script src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyANFw3IiEwi6Z4_OZtgzfkrc-QuPaoYi7g"></script>
+<i class='fas fa-car-side'></i>
+<i class='fas fa-car-side' style='font-size:24px'></i>
+<i class='fas fa-car-side' style='font-size:36px'></i>
+<i class='fas fa-car-side' style='font-size:48px;color:red'></i>
+<br>
 
-<script>
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(45.4215296, -75.6971931),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-});
+<p>Used on a button:</p>
+<button style='font-size:24px'>Button <i class='fas fa-car-side'></i></button>
 
-const directionsService = new google.maps.DirectionsService();
+<p>Unicode:</p>
+<i style='font-size:24px' class='fas'>&#xf5e4;</i>
 
-directionsService.route(
-    {
-            origin: new google.maps.LatLng(1.3521, 103.8198),
-            destination: new google.maps.LatLng(1.5000, 103.8198),
-            travelMode: "DRIVING",
-    },
-    (response, status) => {
-        if (status === "OK") {
-
-            new google.maps.DirectionsRenderer({
-                suppressMarkers: true,
-                directions: response,
-                map: map,
-              });
-        }
-    }
-)
-</script>
 </body>
 </html>

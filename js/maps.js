@@ -234,17 +234,20 @@ function initMap() {
   // );
 }
 
-function getDirections(origin_id, destination_id) {
-  directionsService.route(
+function getDirections(origin_id, destination_id, mode) {
+  if (directionsDisplay != null) {
+      directionsDisplay.setMap(null);
+  }
+   directionsService.route(
     {
       origin: { placeId: origin_id },
       destination: { placeId: destination_id },
-      travelMode: "TRANSIT",
+      travelMode: google.maps.TravelMode[mode],
     },
     (response, status) => {
       if (status === "OK") {
         directionsDisplay = new google.maps.DirectionsRenderer({
-          suppressMarkers: true,
+          suppressMarkers: false,
           directions: response,
           map: map,
         });
@@ -253,17 +256,144 @@ function getDirections(origin_id, destination_id) {
       }
     }
   );
-  document.getElementById("show-dir-1").style.display = "none";
-  document.getElementById("hide-dir-1").style.display = "block";
+  // document.getElementById("show-dir-1").style.display = "none";
+  // document.getElementById("hide-dir-1").style.display = "block";
+}
+function getDirections2(origin_id, destination_id, mode) {
+  if (directionsDisplay2 != null) {
+      directionsDisplay2.setMap(null);
+  }
+  directionsService2.route(
+    {
+      origin: { placeId: origin_id },
+      destination: { placeId: destination_id },
+      travelMode: google.maps.TravelMode[mode],
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsDisplay2 = new google.maps.DirectionsRenderer({
+          suppressMarkers: false,
+          directions: response,
+          map: map,
+        });
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
+function getDirections3(origin_id, destination_id, mode) {
+  if (directionsDisplay3 != null) {
+    directionsDisplay3.setMap(null);
+  }
+  directionsService3.route(
+    {
+      origin: { placeId: origin_id },
+      destination: { placeId: destination_id },
+      travelMode: google.maps.TravelMode[mode],
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsDisplay3 = new google.maps.DirectionsRenderer({
+          suppressMarkers: false,
+          directions: response,
+          map: map,
+        });
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
+function getDirections4(origin_id, destination_id, mode) {
+  if (directionsDisplay4 != null) {
+    directionsDisplay4.setMap(null);
+  }
+  directionsService4.route(
+    {
+      origin: { placeId: origin_id },
+      destination: { placeId: destination_id },
+      travelMode: google.maps.TravelMode[mode],
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsDisplay4 = new google.maps.DirectionsRenderer({
+          suppressMarkers: false,
+          directions: response,
+          map: map,
+        });
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
+function getDirections5(origin_id, destination_id, mode) {
+  if (directionsDisplay5 != null) {
+    directionsDisplay5.setMap(null);
+  }
+  directionsService5.route(
+    {
+      origin: { placeId: origin_id },
+      destination: { placeId: destination_id },
+      travelMode: google.maps.TravelMode[mode],
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsDisplay5 = new google.maps.DirectionsRenderer({
+          suppressMarkers: false,
+          directions: response,
+          map: map,
+        });
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
+function getDirections6(origin_id, destination_id, mode) {
+  if (directionsDisplay6 != null) {
+    directionsDisplay6.setMap(null);
+  }
+  directionsService6.route(
+    {
+      origin: { placeId: origin_id },
+      destination: { placeId: destination_id },
+      travelMode: google.maps.TravelMode[mode],
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsDisplay6 = new google.maps.DirectionsRenderer({
+          suppressMarkers: false,
+          directions: response,
+          map: map,
+        });
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
 }
 
 function hideDirections() {
   directionsDisplay.setMap(null);
-  document.getElementById("show-dir-1").style.display = "block";
-  document.getElementById("hide-dir-1").style.display = "none";
-};
+}
+function hideDirections2() {
+  directionsDisplay2.setMap(null);
+}
+function hideDirections3() {
+  directionsDisplay3.setMap(null);
+}
+function hideDirections4() {
+  directionsDisplay4.setMap(null);
+}
+function hideDirections5() {
+  directionsDisplay5.setMap(null);
+}
+function hideDirections6() {
+  directionsDisplay6.setMap(null);
+}
 
-// function Car
 
 function chooseDay(i) {
   input = document.getElementById("exactLoc" + String(i));

@@ -161,3 +161,28 @@ nav a:hover{
   box-shadow: 0 0 10px #4d90fe;
 }
 /* stop watch */
+/* 
+.mode-tabs:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+button.active {
+  background-color: #4d90fe;
+  color: white;
+}
+ */
+/* 
+ #transit-1 {
+  background-color: #4d90fe;
+  color: white;
+ } */
+
+ .active, .active2, .active3,
+ .active4, .active5, .active6 {
+  /* background-color: #7caeff; */
+  box-shadow: 0 0 10px #4d90fe;
+  /* color: white; */
+}

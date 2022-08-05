@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Planner</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/calendar.css">
@@ -229,6 +230,8 @@
                                         <td id="add-info-i0"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[0][5], itineraries[0][6]); setInfo(0)">&#x27A4;</button></th>
@@ -237,22 +240,19 @@
                                         <th><button class="editI-btn" onclick="editItinerary(0); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                <button id="show-dir-1" onclick="getDirections(itineraries[0][7], itineraries[1][7])">SHOW</button>
-                                <button id="hide-dir-1" onclick="hideDirections()" style="display:none;">HIDE</button>
                             </td>
-                            <td class="row rowrow" draggable="false">
-
-                                <button class="editI-btn" onclick="editItinerary(0); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button>
-                                <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>                                                                        <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>
-                                <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>
-                                <button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a>
+                            <td class="row rowrow" id="toggle1" draggable="false">
+                                <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1 active" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -276,6 +276,8 @@
                                         <td id="add-info-i1"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[1][5], itineraries[1][6]); setInfo(1)">&#x27A4;</button></th>
@@ -284,10 +286,20 @@
                                         <th><button class="editI-btn" onclick="editItinerary(1); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(1)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(1); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
                             </td>     
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle2" draggable="false">
+                                <button class="btn2" onclick="getDirections2(itineraries[1][7], itineraries[2][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries[1][7], itineraries[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries[1][7], itineraries[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2 active2" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
@@ -310,6 +322,8 @@
                                         <td id="add-info-i2"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[2][5], itineraries[2][6]); setInfo(2)">&#x27A4;</button></th>
@@ -318,9 +332,19 @@
                                         <th><button class="editI-btn" onclick="editItinerary(2); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(2); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle3" draggable="false">
+                                <button class="btn3" onclick="getDirections3(itineraries[2][7], itineraries[3][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries[2][7], itineraries[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries[2][7], itineraries[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3 active3" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -344,6 +368,8 @@
                                         <td id="add-info-i3"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[3][5], itineraries[3][6]); setInfo(3)">&#x27A4;</button></th>
@@ -352,9 +378,19 @@
                                         <th><button class="editI-btn" onclick="editItinerary(3); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(3); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle4" draggable="false">
+                                <button class="btn4" onclick="getDirections4(itineraries[3][7], itineraries[4][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries[3][7], itineraries[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries[3][7], itineraries[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4 active4" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -378,6 +414,8 @@
                                         <td id="add-info-i4"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[4][5], itineraries[4][6]); setInfo(4)">&#x27A4;</button></th>
@@ -386,9 +424,19 @@
                                         <th><button class="editI-btn" onclick="editItinerary(4); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(4); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle5" draggable="false">
+                                <button class="btn5" onclick="getDirections5(itineraries[4][7], itineraries[5][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries[4][7], itineraries[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries[4][7], itineraries[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5 active5" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -412,6 +460,8 @@
                                         <td id="add-info-i5"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[5][5], itineraries[5][6]); setInfo(5)">&#x27A4;</button></th>
@@ -420,9 +470,19 @@
                                         <th><button class="editI-btn" onclick="editItinerary(5); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(5); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle6" draggable="false">
+                                <button class="btn6" onclick="getDirections6(itineraries[5][7], itineraries[6][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries[5][7], itineraries[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries[5][7], itineraries[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6 active6" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -446,6 +506,8 @@
                                         <td id="add-info-i6"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries[6][5], itineraries[6][6]); setInfo(6)">&#x27A4;</button></th>
@@ -454,7 +516,7 @@
                                         <th><button class="editI-btn" onclick="editItinerary(6); hideSubmit(); chooseDay(1); initMap()">&#x270E;</button></th>
                                     </tr>
                                      <tr>
-                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(6)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
+                                        <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries(6); hideDirections()" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
                             </td>
@@ -521,6 +583,8 @@
                                         <td id="add-info-i20"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[0][5], itineraries2[0][6]); setInfo2(0)">&#x27A4;</button></th>
@@ -532,6 +596,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle1" draggable="false">
+                                <button class="btn1" onclick="getDirections(itineraries2[0][7], itineraries2[1][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries2[0][7], itineraries2[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries2[0][7], itineraries2[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1 active" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -555,6 +629,8 @@
                                         <td id="add-info-i21"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[1][5], itineraries2[1][6]); setInfo2(1)">&#x27A4;</button></th>
@@ -567,6 +643,16 @@
                                     </tr>
                                 </table>
                             </td>     
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle2" draggable="false">
+                                <button class="btn2" onclick="getDirections2(itineraries2[1][7], itineraries2[2][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries2[1][7], itineraries2[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries2[1][7], itineraries2[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2 active2" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
@@ -589,6 +675,8 @@
                                         <td id="add-info-i22"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[2][5], itineraries2[2][6]); setInfo2(2)">&#x27A4;</button></th>
@@ -600,6 +688,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle3" draggable="false">
+                                <button class="btn3" onclick="getDirections3(itineraries2[2][7], itineraries2[3][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries2[2][7], itineraries2[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries2[2][7], itineraries2[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3 active3" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -623,6 +721,8 @@
                                         <td id="add-info-i23"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[3][5], itineraries2[3][6]); setInfo2(3)"</button></th>
@@ -634,6 +734,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle4" draggable="false">
+                                <button class="btn4" onclick="getDirections4(itineraries2[3][7], itineraries2[4][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries2[3][7], itineraries2[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries2[3][7], itineraries2[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4 active4" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -657,6 +767,8 @@
                                         <td id="add-info-i24"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[4][5], itineraries2[4][6]); setInfo2(4)">&#x27A4;</button></th>
@@ -668,6 +780,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle5" draggable="false">
+                                <button class="btn5" onclick="getDirections5(itineraries2[4][7], itineraries2[5][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries2[4][7], itineraries2[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries2[4][7], itineraries2[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5 active5" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -691,6 +813,8 @@
                                         <td id="add-info-i25"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[5][5], itineraries2[5][6]); setInfo2(5)">&#x27A4;</button></th>
@@ -702,6 +826,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries2(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle6" draggable="false">
+                                <button class="btn6" onclick="getDirections6(itineraries2[5][7], itineraries2[6][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries2[5][7], itineraries2[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries2[5][7], itineraries2[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6 active6" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -725,6 +859,8 @@
                                         <td id="add-info-i26"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries2[6][5], itineraries2[6][6]); setInfo2(6)">&#x27A4;</button></th>
@@ -801,6 +937,8 @@
                                         <td id="add-info-i30"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[0][5], itineraries3[0][6]); setInfo3(0)">&#x27A4;</button></th>
@@ -812,6 +950,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle1" draggable="false">
+                                <button class="btn1" onclick="getDirections(itineraries3[0][7], itineraries3[1][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries3[0][7], itineraries3[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries3[0][7], itineraries3[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1 active" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -835,6 +983,8 @@
                                         <td id="add-info-i31"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[1][5], itineraries3[1][6]); setInfo3(1)">&#x27A4;</button></th>
@@ -847,6 +997,16 @@
                                     </tr>
                                 </table>
                             </td>     
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle2" draggable="false">
+                                <button class="btn2" onclick="getDirections2(itineraries3[1][7], itineraries3[2][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries3[1][7], itineraries3[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries3[1][7], itineraries3[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2 active2" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
@@ -869,6 +1029,8 @@
                                         <td id="add-info-i32"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[2][5], itineraries3[2][6]); setInfo3(2)">&#x27A4;</button></th>
@@ -880,6 +1042,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle3" draggable="false">
+                                <button class="btn3" onclick="getDirections3(itineraries3[2][7], itineraries3[3][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries3[2][7], itineraries3[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries3[2][7], itineraries3[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3 active3" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -903,6 +1075,8 @@
                                         <td id="add-info-i33"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[3][5], itineraries3[3][6]); setInfo3(3)">&#x27A4;</button></th>
@@ -914,6 +1088,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle4" draggable="false">
+                                <button class="btn4" onclick="getDirections4(itineraries3[3][7], itineraries3[4][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries3[3][7], itineraries3[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries3[3][7], itineraries3[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4 active4" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -937,6 +1121,8 @@
                                         <td id="add-info-i34"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[4][5], itineraries3[4][6]); setInfo3(4)">&#x27A4;</button></th>
@@ -948,6 +1134,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle5" draggable="false">
+                                <button class="btn5" onclick="getDirections5(itineraries3[4][7], itineraries3[5][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries3[4][7], itineraries3[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries3[4][7], itineraries3[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5 active5" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -971,6 +1167,8 @@
                                         <td id="add-info-i35"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[5][5], itineraries3[5][6]); setInfo3(5)">&#x27A4;</button></th>
@@ -982,6 +1180,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries3(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle6" draggable="false">
+                                <button class="btn6" onclick="getDirections6(itineraries3[5][7], itineraries3[6][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries3[5][7], itineraries3[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries3[5][7], itineraries3[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6 active6" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1005,6 +1213,8 @@
                                         <td id="add-info-i36"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries3[6][5], itineraries3[6][6]); setInfo3(6)">&#x27A4;</button></th>
@@ -1082,6 +1292,8 @@
                                         <td id="add-info-i40"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[0][5], itineraries4[0][6]); setInfo4(0)">&#x27A4;</button></th>
@@ -1093,6 +1305,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(0)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle1" draggable="false">
+                                <button class="btn1" onclick="getDirections(itineraries4[0][7], itineraries4[1][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries4[0][7], itineraries4[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1" onclick="getDirections(itineraries4[0][7], itineraries4[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn1 active" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1116,6 +1338,8 @@
                                         <td id="add-info-i41"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[1][5], itineraries4[1][6]); setInfo4(1)">&#x27A4;</button></th>
@@ -1128,6 +1352,16 @@
                                     </tr>
                                 </table>
                             </td>     
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle2" draggable="false">
+                                <button class="btn2" onclick="getDirections2(itineraries4[1][7], itineraries4[2][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries4[1][7], itineraries4[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2" onclick="getDirections2(itineraries4[1][7], itineraries4[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn2 active2" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                            </td>
                         </tr>
                         <tr class="rowsa">
                             <td>1300</td>
@@ -1150,6 +1384,8 @@
                                         <td id="add-info-i42"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[2][5], itineraries4[2][6]); setInfo4(2)">&#x27A4;</button></th>
@@ -1161,6 +1397,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(2)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle3" draggable="false">
+                                <button class="btn3" onclick="getDirections3(itineraries4[2][7], itineraries4[3][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries4[2][7], itineraries4[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3" onclick="getDirections3(itineraries4[2][7], itineraries4[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn3 active3" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -1184,6 +1430,8 @@
                                         <td id="add-info-i43"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[3][5], itineraries4[3][6]); setInfo4(3)">&#x27A4;</button></th>
@@ -1195,6 +1443,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(3)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle4" draggable="false">
+                                <button class="btn4" onclick="getDirections4(itineraries4[3][7], itineraries4[4][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries4[3][7], itineraries4[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4" onclick="getDirections4(itineraries4[3][7], itineraries4[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn4 active4" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1218,6 +1476,8 @@
                                         <td id="add-info-i44"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[4][5], itineraries4[4][6]); setInfo4(4)">&#x27A4;</button></th>
@@ -1229,6 +1489,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(4)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle5" draggable="false">
+                                <button class="btn5" onclick="getDirections5(itineraries4[4][7], itineraries4[5][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries4[4][7], itineraries4[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5" onclick="getDirections5(itineraries4[4][7], itineraries4[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn5 active5" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1252,6 +1522,8 @@
                                         <td id="add-info-i45"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[5][5], itineraries4[5][6]); setInfo4(5)">&#x27A4;</button></th>
@@ -1263,6 +1535,16 @@
                                         <td><button onclick="return confirm('Please click on OK to Remove Itinerary')"><a href="javascript:removeItineraries4(5)" style="padding: 0px; background-color: transparent;">&#10005;</button></a></td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr class="rowsa">
+                            <td>
+                            </td>
+                            <td class="row rowrow" id="toggle6" draggable="false">
+                                <button class="btn6" onclick="getDirections6(itineraries4[5][7], itineraries4[6][7], 'DRIVING')"><img src="/img/car.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries4[5][7], itineraries4[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6" onclick="getDirections6(itineraries4[5][7], itineraries4[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
+                                <button class="btn6 active6" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1286,6 +1568,8 @@
                                         <td id="add-info-i46"></td>
                                     </tr>
                                 </table>
+                            </td>
+                            <td>
                                 <table>
                                     <tr>
                                         <th><button onclick="changeMarkerPos(itineraries4[6][5], itineraries4[6][6]); setInfo4(6)">&#x27A4;</button></th>
