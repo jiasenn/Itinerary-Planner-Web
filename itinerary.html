@@ -13,8 +13,8 @@
 <body>
     <!-- Menu bar -->
     <div id ="ham">
-        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
         <button class="toggle" type="button"><img src="/img/hamburger.png"  alt="png" id="hamburger"></button>
+        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
     </div>
     <aside>
         <aside id="mainmenu" style="position: fixed; right: 1044;">
@@ -1311,7 +1311,7 @@
     <!-- Google map -->
     <div id="wrapper">
         <div id="map"></div>
-        <div class="container" style="position:fixed; z-index: 0; bottom: 30px; left: 30px; background-color: white;" hidden>
+        <div class="container" style="position:fixed; z-index: 0; bottom: 30px; left: 30px; background-color: white;">
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
@@ -1399,6 +1399,8 @@
         <li>Country: <span id="country"></span></li>
         <li>Latitude: <span id="lat"></span></li>
         <li>Longitude: <span id="lon"></span></li>
+        <li>Place_id: <span id="place_id"></span></li>
+
     </ul>
     <script src="/js/index.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANFw3IiEwi6Z4_OZtgzfkrc-QuPaoYi7g&callback=initMap&libraries=places&v=weekly"></script>

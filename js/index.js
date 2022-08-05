@@ -1,4 +1,5 @@
 var marker;
+var marker1;
 var map;
 var input;
 var infoWindow; // nickname location inforwindow
@@ -46,54 +47,30 @@ function initMap() {
 
   marker.setMap(map);
   map.panTo(marker.position);
-  // console.log(map);
-  ham = document.getElementById("ham");
-  input = document.getElementById("searchInput");
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(ham);
+
+  // ham = document.getElementById("ham");
+  var input1 = document.getElementById("searchInput");
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(ham);
   // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo("bounds", map);
+  var autocomplete1 = new google.maps.places.Autocomplete(input1);
+  autocomplete1.bindTo("bounds", map);
 
   infowindow = new google.maps.InfoWindow();
-  // var marker = new google.maps.Marker({
-  //   map: map,
-  //   position: new google.maps.LatLng(3.167244, 101.61295),
-  //   anchorPoint: new google.maps.Point(0, -29),
-  //   animation: google.maps.Animation.DROP,
-  //   icon: "https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png",
-  // });
-
-
 
   autocomplete.addListener("place_changed", function () {
     infowindow.close();
-    // marker.setVisible(false);
+    marker.setVisible(false);
     var place = autocomplete.getPlace();
-    // if (!place.place_id) {
-    //   alert("Please select an option from the dropdown list.");
-    //   return;
-    // }
 
-    // if (!place.geometry) {
-    //   window.alert("Autocomplete's returned place contains no geometry");
-    //   return;
-    // }
-
-    // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
     } else {
       map.setCenter(place.geometry.location);
       map.setZoom(17);
     }
-    // marker.setIcon({
-    //   url: place.icon,
-    //   size: new google.maps.Size(71, 71),
-    //   origin: new google.maps.Point(0, 0),
-    //   anchor: new google.maps.Point(17, 34),
-    //   scaledSize: new google.maps.Size(35, 35),
-    // });
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
 
@@ -131,6 +108,66 @@ function initMap() {
     document.getElementById("location").innerHTML = place.formatted_address;
     document.getElementById("lat").innerHTML = place.geometry.location.lat();
     document.getElementById("lon").innerHTML = place.geometry.location.lng();
+    document.getElementById("place_id").innerHTML = place.place_id;
+  });
+
+
+  // main menu autocomplete searchbar
+  autocomplete1.addListener("place_changed", function () {
+    infowindow.close();
+    marker1 = marker;
+    marker1.setVisible(false);
+
+    var place1 = autocomplete1.getPlace();
+    if (!place1.place_id) {
+      alert("Please select an option from the dropdown list.");
+      return;
+    }
+
+    if (!place1.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
+    }
+
+    // If the place has a geometry, then present it on a map.
+    if (place1.geometry.viewport) {
+      map.fitBounds(place1.geometry.viewport);
+    } else {
+      map.setCenter(place1.geometry.location);
+      map.setZoom(17);
+    }
+
+    marker1.setIcon({
+      url: place1.icon,
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(35, 35),
+    });
+
+    marker1.setPosition(place1.geometry.location);
+    marker1.setVisible(true);
+
+    var address1 = "";
+
+    if (place1.address_components) {
+      address1 = [
+        (place1.address_components[0] &&
+          place1.address_components[0].short_name) ||
+          "",
+        (place1.address_components[1] &&
+          place1.address_components[1].short_name) ||
+          "",
+        (place1.address_components[2] &&
+          place1.address_components[2].short_name) ||
+          "",
+      ].join(" ");
+    }
+
+    infowindow.setContent(
+      "<div><strong>" + place1.name + "</strong><br>" + address1
+    );
+    infowindow.open(map, marker1);
   });
   
   new AutocompleteDirectionsHandler(map);
@@ -164,9 +201,9 @@ function AutocompleteDirectionsHandler(map) {
   this.setupPlaceChangedListener(originAutocomplete, "ORIG");
   this.setupPlaceChangedListener(destinationAutocomplete, "DEST");
 
-  // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-  // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-  // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+  // this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(originInput);
+  // this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(destinationInput);
+  // this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(modeSelector);
 }
 
 // Sets a listener on a radio button to change the filter type on Places
