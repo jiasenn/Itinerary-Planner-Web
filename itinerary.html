@@ -1311,7 +1311,7 @@
     <!-- Google map -->
     <div id="wrapper">
         <div id="map"></div>
-        <div class="container" style="position:fixed; z-index: 0; bottom: 30px; left: 30px; background-color: white;">
+        <div class="container" style="position:fixed; z-index: 0; bottom: 30px; left: 30px; background-color: white;" hidden>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
@@ -1332,12 +1332,24 @@
                     
                     <div class="col-md-12">
                         <div class="row searchboxs">
-                            <input id="origin-input" class="form-control col-md-12" type="text" placeholder="Enter an origin location">                    
+                            <select name="cars" id="origin-input">
+                                <option value="ChIJRYMSeKwe2jERAR2QXVU39vg">Sentosa</option>
+                                <option value="saab"></option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            <!-- <input id="origin-input" class="form-control col-md-12" type="text" placeholder="Enter an origin location">                     -->
                         </div>
                         <hr>
                     </div>
                     <div class="col-md-12">
                         <div class="row searchboxs">
+                            <!-- <select name="cars" id="destination-input">
+                                <option value="ChIJK7xLl1gZ2jERP_GdUY9XNLo">Vivo</option>
+                                <option value="saab"></option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select> -->
                             <input id="destination-input" class="form-control col-md-12" type="text" placeholder="Enter a destination location">                    
                         </div>
                         <hr>

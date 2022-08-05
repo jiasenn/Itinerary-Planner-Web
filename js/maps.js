@@ -1,5 +1,6 @@
 var marker;
 var map;
+var directionsService;
 var input;
 var infoWindow; // nickname location inforwindow
 var infowindow; // search infowindow
@@ -173,114 +174,52 @@ function initMap() {
     infowindow.open(map, marker1);
   });
 
-  new AutocompleteDirectionsHandler(map);
-}
+  // new AutocompleteDirectionsHandler(map);
 
-function AutocompleteDirectionsHandler(map) {
-  this.map = map;
-  this.originPlaceId = null;
-  this.destinationPlaceId = null;
-  this.travelMode = "WALKING";
-  var originInput = document.getElementById("origin-input");
-  var destinationInput = document.getElementById("destination-input");
-  var modeSelector = document.getElementById("mode-selector");
-  this.directionsService = new google.maps.DirectionsService();
-  this.directionsDisplay = new google.maps.DirectionsRenderer();
-  this.directionsDisplay.setMap(map);
+  directionsService = new google.maps.DirectionsService();
 
-  var originAutocomplete = new google.maps.places.Autocomplete(originInput, {
-    placeIdOnly: true,
-  });
-  var destinationAutocomplete = new google.maps.places.Autocomplete(
-    destinationInput,
-    { placeIdOnly: true }
-  );
-
-  this.setupClickListener("changemode-walking", "WALKING");
-  this.setupClickListener("changemode-transit", "TRANSIT");
-  this.setupClickListener("changemode-driving", "DRIVING");
-
-  this.setupPlaceChangedListener(originAutocomplete, "ORIG");
-  this.setupPlaceChangedListener(destinationAutocomplete, "DEST");
-
-  // this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(originInput);
-  // this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(destinationInput);
-  // this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(modeSelector);
-}
-
-// Sets a listener on a radio button to change the filter type on Places
-// Autocomplete.
-AutocompleteDirectionsHandler.prototype.setupClickListener = function (
-  id,
-  mode
-) {
-  var radioButton = document.getElementById(id);
-  var me = this;
-  radioButton.addEventListener("click", function () {
-    me.travelMode = mode;
-    me.route();
-  });
-};
-
-AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (
-  autocomplete,
-  mode
-) {
-  var me = this;
-  autocomplete.bindTo("bounds", this.map);
-  autocomplete.addListener("place_changed", function () {
-    var place = autocomplete.getPlace();
-    if (!place.place_id) {
-      window.alert("Please select an option from the dropdown list.");
-      return;
-    }
-    if (mode === "ORIG") {
-      me.originPlaceId = place.place_id;
-    } else {
-      me.destinationPlaceId = place.place_id;
-    }
-    me.route();
-  });
-};
-
-AutocompleteDirectionsHandler.prototype.route = function () {
-  if (!this.originPlaceId || !this.destinationPlaceId) {
-    return;
-  }
-  var me = this;
-
-  // alert(this.originPlaceId);
-
-  this.directionsService.route(
+  directionsService.route(
     {
-      origin: { placeId: this.originPlaceId },
-      destination: { placeId: this.destinationPlaceId },
-      travelMode: this.travelMode,
+      // origin: new google.maps.LatLng(1.3521, 103.8198),
+      // destination: new google.maps.LatLng(1.8, 103.8198),
+      origin: { placeId: "ChIJRYMSeKwe2jERAR2QXVU39vg" },
+      destination: { placeId: "ChIJK7xLl1gZ2jERP_GdUY9XNLo" },
+      travelMode: "TRANSIT",
     },
-    function (response, status) {
+    (response, status) => {
       if (status === "OK") {
-        me.directionsDisplay.setDirections(response);
-
-        document.getElementById("startlat").innerHTML =
-          response.routes[0].legs[0].start_location.lat();
-        document.getElementById("startlng").innerHTML =
-          response.routes[0].legs[0].start_location.lng();
-        document.getElementById("endlat").innerHTML =
-          response.routes[0].legs[0].end_location.lat();
-        document.getElementById("endlng").innerHTML =
-          response.routes[0].legs[0].end_location.lng();
-
-        console.log(response.routes[0].legs[0].start_location.lat());
-        console.log(response.routes[0].legs[0].start_location.lng());
-
-        console.log(response.routes[0].legs[0].end_location.lat());
-        console.log(response.routes[0].legs[0].end_location.lng());
+        new google.maps.DirectionsRenderer({
+          suppressMarkers: true,
+          directions: response,
+          map: map,
+        });
       } else {
         window.alert("Directions request failed due to " + status);
       }
     }
   );
-};
+}
+
+function getDirections(origin_id, destination_id) {
+  directionsService.route(
+    {
+      origin: { placeId: origin_id },
+      destination: { placeId: destination_id },
+      travelMode: "TRANSIT",
+    },
+    (response, status) => {
+      if (status === "OK") {
+        new google.maps.DirectionsRenderer({
+          suppressMarkers: true,
+          directions: response,
+          map: map,
+        });
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
 
 function chooseDay(i) {
   input = document.getElementById("exactLoc" + String(i));
