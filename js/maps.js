@@ -189,6 +189,11 @@ function initMap() {
 
   directionsService = new google.maps.DirectionsService();
   directionsService2 = new google.maps.DirectionsService();
+  directionsService3 = new google.maps.DirectionsService();
+  directionsService4 = new google.maps.DirectionsService();
+  directionsService5 = new google.maps.DirectionsService();
+  directionsService6 = new google.maps.DirectionsService();
+
 
 
   // directionsService.route(
