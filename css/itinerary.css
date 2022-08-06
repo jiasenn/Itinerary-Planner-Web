@@ -223,11 +223,17 @@ h1:empty {
   margin:0;
   border: 0;
   height: 50px;
-  width: 50px;
-  border-radius: 50%;
+  width: 30px;
+  /* border-radius: 50%; */
   background-color: white;
   color: #4d90fe;
 }
+.modal-btn:hover, .modal-btn2:hover,
+.modal-btn3:hover, .modal-btn4:hover {
+  box-shadow: 0 0 10px #4d90fe;
+  cursor: copy;
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
@@ -324,7 +330,6 @@ max-width: 700px;
 margin: auto;
 padding: 0 10px;
 overflow: hidden;
-
 }
 
 .contact-form-text {

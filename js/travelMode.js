@@ -223,7 +223,6 @@ for (var i = 0; i < btns46.length; i++) {
 }
 
 function resetHighlight() {
-    // current = document.getElementsByClassName("active");
     for (i = 1; i < 7; i++) {
         window['current' + i] = document.getElementsByClassName("active" + i);
    window["current" + i][0].className = window[

@@ -192,12 +192,12 @@
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: #4d90fe; border-radius: 0;">
                         <button type="button" id="cross" style="font-size: 30px; background-color: #4d90fe; color: white;" onclick="w3_close(1)">&#8592;</button> 
                         <a style="padding: 0px; "><h1 style="border: 0; justify-content: left;">Calendar</h1></a>
-                        <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
+                        <button type="button" id="cross" onclick="closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
-                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(); w3_open(1)">&#x3c;</button> 
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(); w3_open(1); resetHighlight(); hideAllDir()">&#x3c;</button> 
                         <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 1</p></h1></a>
-                        <button type="button" id="cross" onclick="javascript:w3_close(1); w3_open(2)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                        <button type="button" id="cross" onclick="w3_close(1); w3_open(2); resetHighlight(); hideAllDir()" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
             <section>
@@ -205,11 +205,11 @@
                     <tbody>
                         <tr>
                             <th class="rowsa">Time</th>
-                            <th>Activities</th>
+                            <th><button type="button" class="modal-btn" onclick="input = chooseDay(1); initMap(); resetHighlight()">+</button>Activities</th>
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn" onclick="input = chooseDay(1); initMap(); resetHighlight()">+</button>
+                                0900
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>
@@ -548,9 +548,9 @@
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
-                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(2); w3_open(1)">&#x3c;</button> 
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(2); w3_open(1); resetHighlight(); hideAllDir()">&#x3c;</button> 
                         <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 2</p></h1></a>
-                        <button type="button" id="cross" onclick="javascript:w3_close(2); w3_open(3)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                        <button type="button" id="cross" onclick="w3_close(2); w3_open(3); resetHighlight(); hideAllDir()" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
             <section>
@@ -558,11 +558,11 @@
                     <tbody>
                         <tr>
                             <th class="rowsa">Time</th>
-                            <th>Activities</th>
+                            <th><button type="button" class="modal-btn2" onclick="input = chooseDay(2); initMap(); resetHighlight()">+</button>Activities</th>
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn2" onclick="input = chooseDay(2); initMap(); resetHighlight()">+</button>
+                                0900
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>
@@ -902,9 +902,9 @@
                         <button type="button" id="cross" onclick="javascript:closeSide()" style="background-color: #4d90fe; color: white;">&#10005;</button>
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
-                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(3); w3_open(2)">&#x3c;</button> 
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(3); w3_open(2); resetHighlight(); hideAllDir()">&#x3c;</button> 
                         <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 3</p></h1></a>
-                        <button type="button" id="cross" onclick="javascript:w3_close(3); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                        <button type="button" id="cross" onclick="w3_close(3); w3_open(4); resetHighlight(); hideAllDir()" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
             <section>
@@ -912,11 +912,11 @@
                     <tbody>
                         <tr>
                             <th class="rowsa">Time</th>
-                            <th>Activities</th>
+                            <th><button type="button" class="modal-btn3" onclick="input = chooseDay(3); initMap(); resetHighlight()">+</button>Activities</th>
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn3" onclick="input = chooseDay(3); initMap(); resetHighlight()">+</button>
+                                0900
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>
@@ -1257,9 +1257,9 @@
                     </div>
                     <div id="menu-bar" style="display: flex; justify-content: space-between; padding: 2px 10px; background-color: white; border-radius: 0;">
 
-                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(4); w3_open(3)">&#x3c;</button> 
+                        <button type="button" id="cross" style="font-size: 20px; background-color: white; color: black;" onclick="w3_close(4); w3_open(3); resetHighlight(); hideAllDir()">&#x3c;</button> 
                         <a style="padding: 0px; "><h1 style="border: 0; justify-content: left; background-color: white; color: black;"><p id="plans-start-1">DAY 4</p></h1></a>
-                        <button type="button" id="cross" onclick="javascript:w3_close(); w3_open(4)" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
+                        <button type="button" id="cross" onclick="w3_close(); w3_open(4); resetHighlight(); hideAllDir()" style="background-color: white; color: black; font-size: 20px;">&#x3e;</button>
                     </div>
             </section>
             <section>
@@ -1267,11 +1267,11 @@
                     <tbody>
                         <tr>
                             <th class="rowsa">Time</th>
-                            <th>Activities</th>
+                            <th><button type="button" class="modal-btn4" onclick="input = chooseDay(4); initMap(); resetHighlight();">+</button>Activities</th>
                         </tr>
                         <tr class="rowsa">
                             <td>
-                                0900<button type="button" class="modal-btn4" onclick="input = chooseDay(4); initMap(); resetHighlight(); resetHighlight()">+</button>
+                                0900
                             </td>
                             <td class="row rowrow" draggable="true">
                                 <table>

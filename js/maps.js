@@ -59,7 +59,7 @@ function initMap() {
     animation: google.maps.Animation.DROP,
     icon: "https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png",
   });
-
+  marker.setVisible(false);
   marker.setMap(map);
   map.panTo(marker.position);
 
@@ -396,6 +396,14 @@ function hideDirections5() {
   directionsDisplay5.setMap(null);
 }
 function hideDirections6() {
+  directionsDisplay6.setMap(null);
+}
+function hideAllDir() {
+  directionsDisplay.setMap(null);
+  directionsDisplay2.setMap(null);
+  directionsDisplay3.setMap(null);
+  directionsDisplay4.setMap(null);
+  directionsDisplay5.setMap(null);
   directionsDisplay6.setMap(null);
 }
 
