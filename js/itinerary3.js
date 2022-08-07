@@ -153,19 +153,18 @@ function moveItinerary3(i, j) {
 }
 
 function showForm3(i) {
-  document.getElementById("time-form3" + String(i)).style.display = "block";
-  document.getElementById("start-time-i3" + String(i)).style.display = "none";
-  document.getElementById("i-starttime3" + String(i)).value =
-    itineraries3[i][2];
+  if (itineraries3.length > i) {
+    document.getElementById("time-form3" + String(i)).style.display = "block";
+    document.getElementById("start-time-i3" + String(i)).style.display = "none";
+    document.getElementById("i-starttime3" + String(i)).value = itineraries3[i][2];
+  }
 }
 function hideForm3(i) {
   document.getElementById("time-form3" + String(i)).style.display = "none";
 }
 function saveTime3(i) {
   document.getElementById("start-time-i3" + String(i)).style.display = "block";
-  itineraries3[i][2] = document.getElementById(
-    "i-starttime3" + String(i)
-  ).value;
+  itineraries3[i][2] = document.getElementById("i-starttime3" + String(i)).value;
   localStorage.setItem("MyItineraryList3", JSON.stringify(itineraries3));
   displayItineraries3(itineraries3);
 }

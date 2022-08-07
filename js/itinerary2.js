@@ -153,9 +153,11 @@ function moveItinerary2(i, j) {
 }
 
 function showForm2(i) {
-  document.getElementById("time-form2" + String(i)).style.display = "block";
-  document.getElementById("start-time-i2" + String(i)).style.display = "none";
-  document.getElementById("i-starttime2" + String(i)).value = itineraries2[i][2];
+  if (itineraries2.length > i) {
+    document.getElementById("time-form2" + String(i)).style.display = "block";
+    document.getElementById("start-time-i2" + String(i)).style.display = "none";
+    document.getElementById("i-starttime2" + String(i)).value = itineraries2[i][2];
+  }
 }
 function hideForm2(i) {
   document.getElementById("time-form2" + String(i)).style.display = "none";

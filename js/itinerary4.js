@@ -159,15 +159,12 @@ function showForm4(i) {
   document.getElementById("i-starttime4" + String(i)).value = itineraries4[i][2];
   }
 }
-
 function hideForm4(i) {
   document.getElementById("time-form4" + String(i)).style.display = "none";
 }
 function saveTime4(i) {
   document.getElementById("start-time-i4" + String(i)).style.display = "block";
-  itineraries4[i][2] = document.getElementById(
-    "i-starttime4" + String(i)
-  ).value;
+  itineraries4[i][2] = document.getElementById("i-starttime4" + String(i)).value;
   localStorage.setItem("MyItineraryList4", JSON.stringify(itineraries4));
   displayItineraries4(itineraries4);
 }
