@@ -500,12 +500,12 @@ if (directionsDisplay6 != null) {
   resultFieldDuration6.innerHTML = "";
 }
 function hideAllDir() {
-  directionsDisplay.setMap(null);
-  directionsDisplay2.setMap(null);
-  directionsDisplay3.setMap(null);
-  directionsDisplay4.setMap(null);
-  directionsDisplay5.setMap(null);
-  directionsDisplay6.setMap(null);
+  hideDirections();
+  hideDirections2();
+  hideDirections3();
+  hideDirections4();
+  hideDirections5();
+  hideDirections6();
 }
 
 

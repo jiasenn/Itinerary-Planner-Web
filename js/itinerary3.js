@@ -71,6 +71,16 @@ if (obj3 != null) {
   }
 }
 
+// set time
+for (let i = 1; i < 7; i++) {
+  if (document.getElementById("start-time-i3" + String(i)).innerText === "") {
+    document.getElementById("start-time-i3" + String(i)).innerText =
+      String(9 + i * 2) + "00";
+  }
+}
+if (document.getElementById("start-time-i30").innerText === "") {
+  document.getElementById("start-time-i30").innerText = "0900";
+}
 
 function resetForm3() {
   document.getElementById("iti-form3").reset();
@@ -137,5 +147,23 @@ function moveItinerary3(i, j) {
   itineraries3[j] = temp;
   localStorage.setItem("MyItineraryList3", JSON.stringify(itineraries3));
   selfRefresh3();
+  displayItineraries3(itineraries3);
+}
+
+function showForm3(i) {
+  document.getElementById("time-form3" + String(i)).style.display = "block";
+  document.getElementById("start-time-i3" + String(i)).style.display = "none";
+  document.getElementById("i-starttime3" + String(i)).value =
+    itineraries3[i][2];
+}
+function hideForm3(i) {
+  document.getElementById("time-form3" + String(i)).style.display = "none";
+}
+function saveTime3(i) {
+  document.getElementById("start-time-i3" + String(i)).style.display = "block";
+  itineraries3[i][2] = document.getElementById(
+    "i-starttime3" + String(i)
+  ).value;
+  localStorage.setItem("MyItineraryList3", JSON.stringify(itineraries3));
   displayItineraries3(itineraries3);
 }

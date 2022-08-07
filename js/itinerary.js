@@ -47,7 +47,7 @@ const addItinerary = (ev) => {
     title: document.getElementById("i-title").value,
     loc: document.getElementById("i-loc").value,
     // start_loc: document.getElementById("i-startloc").value,
-    start_time: document.getElementById("i-starttime").value,
+    start_time: document.getElementById("i-starttime0").value,
     // end_loc: document.getElementById("i-endloc").value,
     // end_time: document.getElementById("i-endtime").value,
     add_info: document.getElementById("i-addinfo").value,
@@ -76,10 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-submit").addEventListener("click", addItinerary);
 });
 
-for (let i = 0; i < obj1.length; i++) {
-  itineraries.push(Object.values(obj1[i]));
+if (obj1 != null) {
+  for (let i = 0; i < obj1.length; i++) {
+    itineraries.push(Object.values(obj1[i]));
+  }
 }
 
+// set time
+for (let i = 1; i < 7; i++) {
+  if (document.getElementById("start-time-i" + String(i)).innerText === "") {
+    document.getElementById("start-time-i" + String(i)).innerText =
+      String(9 + i * 2) + "00";
+  }
+}
+if (document.getElementById("start-time-i0").innerText === "") {
+  document.getElementById("start-time-i0").innerText = "0900";
+}
 
 function resetForm1() {
   document.getElementById("iti-form").reset();
@@ -98,17 +110,21 @@ function removeItineraries(i) {
 function editItinerary(i) {
   document.getElementById("i-title").value = itineraries[i][0];
   document.getElementById("i-loc").value = itineraries[i][1];
-  document.getElementById("i-starttime").value = itineraries[i][2];
+  document.getElementById("i-starttime0").value = itineraries[i][2];
   document.getElementById("i-addinfo").value = itineraries[i][3];
   document.getElementById("exactLoc1").value = itineraries[i][4];
   modalBg.classList.add("bg-active");
   document.getElementById("contact-update").setAttribute("onclick", "updateItinerary(" + i + ");");
 }
 
+// document.getElementById('price').onchange = function() {
+//     this.value = this.value.match(/\d*\.?\d+/);
+// };
+
 function updateItinerary(i) {
   itineraries[i][0] = document.getElementById("i-title").value;
   itineraries[i][1] = document.getElementById("i-loc").value;
-  itineraries[i][2] = document.getElementById("i-starttime").value;
+  itineraries[i][2] = document.getElementById("i-starttime0").value;
   itineraries[i][3] = document.getElementById("i-addinfo").value;
   itineraries[i][4] = document.getElementById("exactLoc1").value;
   itineraries[i][5] = document.getElementById("lat").innerHTML;
@@ -146,6 +162,21 @@ function moveItinerary(i, j) {
   let temp = itineraries[i];
   itineraries[i] = itineraries[j];
   itineraries[j] = temp;
+  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  displayItineraries(itineraries);
+}
+
+function showForm(i) {
+  document.getElementById("time-form" + String(i)).style.display = "block";
+  document.getElementById("start-time-i" + String(i)).style.display = "none";
+  document.getElementById("i-starttime0" + String(i)).value = itineraries[i][2];
+}
+function hideForm(i) {
+  document.getElementById("time-form" + String(i)).style.display = "none";
+}
+function saveTime(i) {
+  document.getElementById("start-time-i" + String(i)).style.display = "block";
+  itineraries[i][2] = document.getElementById("i-starttime0" + String(i)).value;
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   displayItineraries(itineraries);
 }

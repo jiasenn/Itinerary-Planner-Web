@@ -71,6 +71,17 @@ if (obj2 != null) {
   }
 }
 
+// set time
+for (let i = 1; i < 7; i++) {
+  if (document.getElementById("start-time-i2" + String(i)).innerText === "") {
+    document.getElementById("start-time-i2" + String(i)).innerText =
+      String(9 + i * 2) + "00";
+  }
+}
+if (document.getElementById("start-time-i20").innerText === "") {
+  document.getElementById("start-time-i20").innerText = "0900";
+}
+
 function resetForm2() {
   document.getElementById("iti-form2").reset();
 }
@@ -136,5 +147,20 @@ function moveItinerary2(i, j) {
   itineraries2[j] = temp;
   localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
   selfRefresh2();
+  displayItineraries2(itineraries2);
+}
+
+function showForm2(i) {
+  document.getElementById("time-form2" + String(i)).style.display = "block";
+  document.getElementById("start-time-i2" + String(i)).style.display = "none";
+  document.getElementById("i-starttime2" + String(i)).value = itineraries2[i][2];
+}
+function hideForm2(i) {
+  document.getElementById("time-form2" + String(i)).style.display = "none";
+}
+function saveTime2(i) {
+  document.getElementById("start-time-i2" + String(i)).style.display = "block";
+  itineraries2[i][2] = document.getElementById("i-starttime2" + String(i)).value;
+  localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
   displayItineraries2(itineraries2);
 }

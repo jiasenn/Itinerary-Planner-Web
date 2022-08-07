@@ -385,3 +385,7 @@ font-weight: 800;
   right: 8px;
   bottom: 2;
 }
+
+.timeinput {
+  width: 50px;
+}
