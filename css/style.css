@@ -198,3 +198,8 @@ button.active {
 .active6, .active26, .active36, .active46 {
    box-shadow: 0 0 10px green; 
 }
+
+#resultDistance, #resultDistance2, #resultDistance3, 
+#resultDistance4, #resultDistance5, #resultDistance6 {
+  width: 200px;
+}

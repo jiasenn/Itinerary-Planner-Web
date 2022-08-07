@@ -18,6 +18,16 @@ var infowindow; // search infowindow
 
 let resultFieldDistance = document.getElementById("resultDistance");
 let resultFieldDuration = document.getElementById("resultDuration");
+let resultFieldDistance2 = document.getElementById("resultDistance2");
+let resultFieldDuration2 = document.getElementById("resultDuration2");
+let resultFieldDistance3 = document.getElementById("resultDistance3");
+let resultFieldDuration3 = document.getElementById("resultDuration3");
+let resultFieldDistance4 = document.getElementById("resultDistance4");
+let resultFieldDuration4 = document.getElementById("resultDuration4");
+let resultFieldDistance5 = document.getElementById("resultDistance5");
+let resultFieldDuration5 = document.getElementById("resultDuration5");
+let resultFieldDistance6 = document.getElementById("resultDistance6");
+let resultFieldDuration6 = document.getElementById("resultDuration6");
 
 function initMap() {
   infoWindow = new google.maps.InfoWindow();
@@ -257,15 +267,10 @@ function getDirections(origin_id, destination_id, mode) {
     (response, status) => {
       if (status === "OK") {
         resultFieldDistance.innerHTML =
-          response.routes[0].legs[0].distance.text +
-          " (" +
-          response.routes[0].legs[0].distance.value +
-          " meters)";
+        "Distance: " + response.routes[0].legs[0].distance.text;
         resultFieldDuration.innerHTML =
-          response.routes[0].legs[0].duration.text +
-          " (" +
-          response.routes[0].legs[0].duration.value +
-          " seconds)";
+        "Duration: " +  response.routes[0].legs[0].duration.text;
+          
         directionsDisplay = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -299,6 +304,10 @@ function getDirections2(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
+        resultFieldDistance2.innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration2.innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay2 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -328,7 +337,12 @@ function getDirections3(origin_id, destination_id, mode) {
       travelMode: google.maps.TravelMode[mode],
     },
     (response, status) => {
+      
       if (status === "OK") {
+        resultFieldDistance3.innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration3.innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay3 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -359,6 +373,10 @@ function getDirections4(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
+        resultFieldDistance4.innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration4.innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay4 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -389,6 +407,10 @@ function getDirections5(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
+        resultFieldDistance5.innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration5.innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay5 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -419,6 +441,10 @@ function getDirections6(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
+        resultFieldDistance6.innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration6.innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay6 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -438,21 +464,33 @@ function getDirections6(origin_id, destination_id, mode) {
 
 function hideDirections() {
   directionsDisplay.setMap(null);
+  resultFieldDistance.innerHTML = "";
+  resultFieldDuration.innerHTML = "";
 }
 function hideDirections2() {
   directionsDisplay2.setMap(null);
+  resultFieldDistance2.innerHTML = "";
+  resultFieldDuration2.innerHTML = "";
 }
 function hideDirections3() {
   directionsDisplay3.setMap(null);
+  resultFieldDistance3.innerHTML = "";
+  resultFieldDuration3.innerHTML = "";
 }
 function hideDirections4() {
   directionsDisplay4.setMap(null);
+  resultFieldDistance4.innerHTML = "";
+  resultFieldDuration4.innerHTML = "";
 }
 function hideDirections5() {
   directionsDisplay5.setMap(null);
+  resultFieldDistance5.innerHTML = "";
+  resultFieldDuration5.innerHTML = "";
 }
 function hideDirections6() {
   directionsDisplay6.setMap(null);
+  resultFieldDistance6.innerHTML = "";
+  resultFieldDuration6.innerHTML = "";
 }
 function hideAllDir() {
   directionsDisplay.setMap(null);
