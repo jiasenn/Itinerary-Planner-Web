@@ -16,6 +16,9 @@ var input;
 var infoWindow; // nickname location inforwindow
 var infowindow; // search infowindow
 
+let resultFieldDistance = document.getElementById("resultDistance");
+let resultFieldDuration = document.getElementById("resultDuration");
+
 function initMap() {
   infoWindow = new google.maps.InfoWindow();
 
@@ -240,6 +243,8 @@ function initMap() {
 }
 
 function getDirections(origin_id, destination_id, mode) {
+  marker.setVisible(false);
+  infowindow.close();
   if (directionsDisplay != null) {
       directionsDisplay.setMap(null);
   }
@@ -251,10 +256,26 @@ function getDirections(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
+        resultFieldDistance.innerHTML =
+          response.routes[0].legs[0].distance.text +
+          " (" +
+          response.routes[0].legs[0].distance.value +
+          " meters)";
+        resultFieldDuration.innerHTML =
+          response.routes[0].legs[0].duration.text +
+          " (" +
+          response.routes[0].legs[0].duration.value +
+          " seconds)";
         directionsDisplay = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
           map: map,
+          
+          // polylineOptions: {
+          //   strokeColor: "blue",
+          //   strokeOpacity: 0.5,
+          //   strokeWeight: 5,
+          // },
         });
       } else {
         window.alert("Directions request failed due to " + status);
@@ -265,6 +286,8 @@ function getDirections(origin_id, destination_id, mode) {
   // document.getElementById("hide-dir-1").style.display = "block";
 }
 function getDirections2(origin_id, destination_id, mode) {
+  marker.setVisible(false);
+  infowindow.close();
   if (directionsDisplay2 != null) {
       directionsDisplay2.setMap(null);
   }
@@ -280,6 +303,11 @@ function getDirections2(origin_id, destination_id, mode) {
           suppressMarkers: false,
           directions: response,
           map: map,
+          polylineOptions: {
+            strokeColor: "purple",
+            strokeOpacity: 0.5,
+            strokeWeight: 5,
+          },
         });
       } else {
         window.alert("Directions request failed due to " + status);
@@ -288,6 +316,8 @@ function getDirections2(origin_id, destination_id, mode) {
   );
 }
 function getDirections3(origin_id, destination_id, mode) {
+  marker.setVisible(false);
+  infowindow.close();
   if (directionsDisplay3 != null) {
     directionsDisplay3.setMap(null);
   }
@@ -303,6 +333,11 @@ function getDirections3(origin_id, destination_id, mode) {
           suppressMarkers: false,
           directions: response,
           map: map,
+          polylineOptions: {
+            strokeColor: "red",
+            strokeOpacity: 0.5,
+            strokeWeight: 5,
+          },
         });
       } else {
         window.alert("Directions request failed due to " + status);
@@ -311,6 +346,8 @@ function getDirections3(origin_id, destination_id, mode) {
   );
 }
 function getDirections4(origin_id, destination_id, mode) {
+  marker.setVisible(false);
+  infowindow.close();
   if (directionsDisplay4 != null) {
     directionsDisplay4.setMap(null);
   }
@@ -326,6 +363,11 @@ function getDirections4(origin_id, destination_id, mode) {
           suppressMarkers: false,
           directions: response,
           map: map,
+          polylineOptions: {
+            strokeColor: "orange",
+            strokeOpacity: 0.5,
+            strokeWeight: 5,
+          },
         });
       } else {
         window.alert("Directions request failed due to " + status);
@@ -334,6 +376,8 @@ function getDirections4(origin_id, destination_id, mode) {
   );
 }
 function getDirections5(origin_id, destination_id, mode) {
+  marker.setVisible(false);
+  infowindow.close();
   if (directionsDisplay5 != null) {
     directionsDisplay5.setMap(null);
   }
@@ -349,6 +393,11 @@ function getDirections5(origin_id, destination_id, mode) {
           suppressMarkers: false,
           directions: response,
           map: map,
+          polylineOptions: {
+            strokeColor: "violet",
+            strokeOpacity: 0.5,
+            strokeWeight: 5,
+          },
         });
       } else {
         window.alert("Directions request failed due to " + status);
@@ -357,6 +406,8 @@ function getDirections5(origin_id, destination_id, mode) {
   );
 }
 function getDirections6(origin_id, destination_id, mode) {
+  marker.setVisible(false);
+  infowindow.close();
   if (directionsDisplay6 != null) {
     directionsDisplay6.setMap(null);
   }
@@ -372,6 +423,11 @@ function getDirections6(origin_id, destination_id, mode) {
           suppressMarkers: false,
           directions: response,
           map: map,
+          polylineOptions: {
+            strokeColor: "green",
+            strokeOpacity: 0.5,
+            strokeWeight: 5,
+          },
         });
       } else {
         window.alert("Directions request failed due to " + status);

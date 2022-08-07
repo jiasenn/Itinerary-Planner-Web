@@ -180,13 +180,21 @@ button.active {
   color: white;
  } */
 
- .active1, .active2, .active3,
- .active4, .active5, .active6,
- .active21, .active22, .active23,
- .active24, .active25, .active26,
- .active31, .active32, .active33,
- .active34, .active35, .active36,
- .active41, .active42, .active43,
- .active44, .active45, .active46 {
-  box-shadow: 0 0 10px #4d90fe;
+.active1, .active21, .active31, .active41 {
+   box-shadow: 0 0 10px #4d90fe; 
+}
+.active2, .active22, .active32, .active42 {
+   box-shadow: 0 0 10px purple; 
+}
+.active3, .active23, .active33, .active43 {
+   box-shadow: 0 0 10px red; 
+}
+.active4, .active24, .active34, .active44 {
+   box-shadow: 0 0 10px orange; 
+}
+.active5, .active25, .active35, .active45 {
+   box-shadow: 0 0 10px violet; 
+}
+.active6, .active26, .active36, .active46 {
+   box-shadow: 0 0 10px green; 
 }

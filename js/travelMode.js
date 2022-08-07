@@ -129,7 +129,7 @@ for (var i = 0; i < btns32.length; i++) {
     this.className += " active32";
   });
 }
-var header233 = document.getElementById("toggle33");
+var header33 = document.getElementById("toggle33");
 var btns33 = header33.getElementsByClassName("btn33");
 for (var i = 0; i < btns33.length; i++) {
   btns33[i].addEventListener("click", function () {

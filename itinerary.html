@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Planner</title>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/calendar.css">
@@ -253,6 +252,8 @@
                                 <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn1 active1 deleteR" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div id="resultDistance" class="box"></div>
+                                <div id="resultDuration" class="box"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
