@@ -64,8 +64,8 @@ for (var i = 0; i < btns21.length; i++) {
     this.className += " active21";
   });
 }
-var header22 = document.getElementById("toggle2");
-var btns22 = header22.getElementsByClassName("btn2");
+var header22 = document.getElementById("toggle22");
+var btns22 = header22.getElementsByClassName("btn22");
 for (var i = 0; i < btns22.length; i++) {
   btns22[i].addEventListener("click", function () {
     var current22 = document.getElementsByClassName("active22");
@@ -120,8 +120,8 @@ for (var i = 0; i < btns31.length; i++) {
     this.className += " active31";
   });
 }
-var header32 = document.getElementById("toggle2");
-var btns32 = header32.getElementsByClassName("btn2");
+var header32 = document.getElementById("toggle32");
+var btns32 = header32.getElementsByClassName("btn32");
 for (var i = 0; i < btns32.length; i++) {
   btns32[i].addEventListener("click", function () {
     var current32 = document.getElementsByClassName("active32");
@@ -176,8 +176,8 @@ for (var i = 0; i < btns41.length; i++) {
     this.className += " active41";
   });
 }
-var header42 = document.getElementById("toggle2");
-var btns42 = header42.getElementsByClassName("btn2");
+var header42 = document.getElementById("toggle42");
+var btns42 = header42.getElementsByClassName("btn42");
 for (var i = 0; i < btns42.length; i++) {
   btns42[i].addEventListener("click", function () {
     var current42 = document.getElementsByClassName("active42");
@@ -238,8 +238,8 @@ function resetHighlight() {
         }
     }
     for (i = 0; i < 6; i++) {
-            document.getElementsByClassName("deleteR")[i].className += " active" + String(i+1);
-        }
+        document.getElementsByClassName("deleteR")[i].className += " active" + String(i+1);
+    }
     for (i = 0; i < 6; i++) {
       document.getElementsByClassName("deleteR")[i+6].className +=
         " active2" + String(i + 1);
@@ -250,4 +250,33 @@ function resetHighlight() {
       document.getElementsByClassName("deleteR")[i+18].className +=
         " active4" + String(i + 1);
     }
+}
+
+function resetHigh1(i) {
+    window["high" + i] = document.getElementsByClassName("active" + i);
+    window["high" + i][0].className = window[
+      "high" + i
+    ][0].className.replace(" active" + String(i), "");
+  document.getElementsByClassName("deleteR")[i -1].className += " active" + String(i);
+}
+function resetHigh2(i) {
+    window["high" + i] = document.getElementsByClassName("active2" + i);
+    window["high" + i][0].className = window[
+      "high" + i
+    ][0].className.replace(" active2" + String(i), "");
+  document.getElementsByClassName("deleteR")[i + 5].className += " active2" + String(i);
+}
+function resetHigh3(i) {
+    window["high" + i] = document.getElementsByClassName("active3" + i);
+    window["high" + i][0].className = window[
+      "high" + i
+    ][0].className.replace(" active3" + String(i), "");
+  document.getElementsByClassName("deleteR")[i + 11].className += " active3" + String(i);
+}
+function resetHigh4(i) {
+    window["high" + i] = document.getElementsByClassName("active4" + i);
+    window["high" + i][0].className = window[
+      "high" + i
+    ][0].className.replace(" active4" + String(i), "");
+  document.getElementsByClassName("deleteR")[i + 17].className += " active4" + String(i);
 }

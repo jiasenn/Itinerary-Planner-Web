@@ -142,4 +142,10 @@ function hideUpdate() {
   document.getElementById("contact-submit").style.display = "block";
 }
 
-
+function moveItinerary(i, j) {
+  let temp = itineraries[i];
+  itineraries[i] = itineraries[j];
+  itineraries[j] = temp;
+  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+  displayItineraries(itineraries);
+}

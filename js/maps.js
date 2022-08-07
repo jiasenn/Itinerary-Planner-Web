@@ -463,33 +463,40 @@ function getDirections6(origin_id, destination_id, mode) {
 }
 
 function hideDirections() {
-  directionsDisplay.setMap(null);
+  if (directionsDisplay != null) {
+    directionsDisplay.setMap(null);
+  }
   resultFieldDistance.innerHTML = "";
   resultFieldDuration.innerHTML = "";
 }
 function hideDirections2() {
+if (directionsDisplay2 != null) {
   directionsDisplay2.setMap(null);
-  resultFieldDistance2.innerHTML = "";
+}  resultFieldDistance2.innerHTML = "";
   resultFieldDuration2.innerHTML = "";
 }
 function hideDirections3() {
+if (directionsDisplay3 != null) {
   directionsDisplay3.setMap(null);
-  resultFieldDistance3.innerHTML = "";
+}  resultFieldDistance3.innerHTML = "";
   resultFieldDuration3.innerHTML = "";
 }
 function hideDirections4() {
+if (directionsDisplay4 != null) {
   directionsDisplay4.setMap(null);
-  resultFieldDistance4.innerHTML = "";
+}  resultFieldDistance4.innerHTML = "";
   resultFieldDuration4.innerHTML = "";
 }
 function hideDirections5() {
+if (directionsDisplay5 != null) {
   directionsDisplay5.setMap(null);
-  resultFieldDistance5.innerHTML = "";
+}  resultFieldDistance5.innerHTML = "";
   resultFieldDuration5.innerHTML = "";
 }
 function hideDirections6() {
+if (directionsDisplay6 != null) {
   directionsDisplay6.setMap(null);
-  resultFieldDistance6.innerHTML = "";
+}  resultFieldDistance6.innerHTML = "";
   resultFieldDuration6.innerHTML = "";
 }
 function hideAllDir() {

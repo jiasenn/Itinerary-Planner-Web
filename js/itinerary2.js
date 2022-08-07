@@ -129,3 +129,12 @@ function hideUpdate2() {
   document.getElementById("contact-update2").style.display = "none";
   document.getElementById("contact-submit2").style.display = "block";
 }
+
+function moveItinerary2(i, j) {
+  let temp = itineraries2[i];
+  itineraries2[i] = itineraries2[j];
+  itineraries2[j] = temp;
+  localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
+  selfRefresh2();
+  displayItineraries2(itineraries2);
+}
