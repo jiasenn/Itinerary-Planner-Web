@@ -159,11 +159,13 @@ function hideUpdate() {
 }
 
 function moveItinerary(i, j) {
-  let temp = itineraries[i];
-  itineraries[i] = itineraries[j];
-  itineraries[j] = temp;
-  localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
-  displayItineraries(itineraries);
+  if (itineraries.length > j) {
+    let temp = itineraries[i];
+    itineraries[i] = itineraries[j];
+    itineraries[j] = temp;
+    localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
+    displayItineraries(itineraries);
+  }
 }
 
 function showForm(i) {

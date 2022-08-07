@@ -60,36 +60,36 @@ function showMenu () {
 }
 
 /*watch*/
-var timerVar = setInterval(countTimer, 1000);
-var totalSeconds = 1;
-function countTimer() {
-           ++totalSeconds;
-           var hour = Math.floor(totalSeconds /3600);
-           var minute = Math.floor((totalSeconds - hour*3600)/60);
-           var seconds = totalSeconds - (hour*3600 + minute*60);
-           if(hour < 10)
-             hour = "0"+hour;
-           if(minute < 10)
-             minute = "0"+minute;
-           if(seconds < 10)
-             seconds = "0"+seconds;
-           document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-        }
+// var timerVar = setInterval(countTimer, 1000);
+// var totalSeconds = 1;
+// function countTimer() {
+//            ++totalSeconds;
+//            var hour = Math.floor(totalSeconds /3600);
+//            var minute = Math.floor((totalSeconds - hour*3600)/60);
+//            var seconds = totalSeconds - (hour*3600 + minute*60);
+//            if(hour < 10)
+//              hour = "0"+hour;
+//            if(minute < 10)
+//              minute = "0"+minute;
+//            if(seconds < 10)
+//              seconds = "0"+seconds;
+//            document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+//         }
 
-/* alert for topwatch*/
-function myAlert() {
-  alert("You have completed the study. Please remember to indicate the timing and the number of clicks as stated in the survey. Select OK to continue. ")
-  alert( " Total seconds taken : " + totalSeconds +" Total number of Clicks :  " + count )
-}
+// /* alert for topwatch*/
+// function myAlert() {
+//   alert("You have completed the study. Please remember to indicate the timing and the number of clicks as stated in the survey. Select OK to continue. ")
+//   alert( " Total seconds taken : " + totalSeconds +" Total number of Clicks :  " + count )
+// }
 
-/*count*/
-let count = 0;
-      let btn = document.querySelector('html');
-      let divSection = document.getElementById('showCount');
-      btn.addEventListener('click', (e)=>{
-        count++;
-        divSection.innerHTML=`Number of Clicks are: ${count}`;
-     });
+// /*count*/
+// let count = 0;
+//       let btn = document.querySelector('html');
+//       let divSection = document.getElementById('showCount');
+//       btn.addEventListener('click', (e)=>{
+//         count++;
+//         divSection.innerHTML=`Number of Clicks are: ${count}`;
+//      });
 
 // does not allow enter to submit form 
  $(document).on("keydown", "form", function (event) {

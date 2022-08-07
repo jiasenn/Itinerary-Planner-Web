@@ -142,12 +142,14 @@ function hideUpdate2() {
 }
 
 function moveItinerary2(i, j) {
-  let temp = itineraries2[i];
-  itineraries2[i] = itineraries2[j];
-  itineraries2[j] = temp;
-  localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
-  selfRefresh2();
-  displayItineraries2(itineraries2);
+  if (itineraries2.length > j) {
+    let temp = itineraries2[i];
+    itineraries2[i] = itineraries2[j];
+    itineraries2[j] = temp;
+    localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
+    selfRefresh2();
+    displayItineraries2(itineraries2);
+  }
 }
 
 function showForm2(i) {
