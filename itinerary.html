@@ -610,7 +610,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="bg-modal" >
+                <!-- <div class="bg-modal" >
                     <div id="contact" style="overflow: auto;">
                         <div class="close-cal"><button onclick="resetForm1(); hideUpdate();" style="background-color: transparent;">+</button></div>
                         <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
@@ -624,7 +624,7 @@
                             <input type = "submit" class = "contact-form-btn create-cal" id="contact-update" value="Update"/>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </section>
         </nav>
         <nav style="display:none; background-color: #4d90fe;" id="mySidebar2">
@@ -1929,6 +1929,23 @@
                 </div>
             </form>
         </div>
+        <section>
+        <div class="bg-modal" >
+            <div id="contact" style="overflow: auto;">
+                <div class="close-cal"><button onclick="resetForm1(); hideUpdate();" style="background-color: transparent;">+</button></div>
+                <h2>Add Itinerary<i class="fas fa-sort-down"></i></h2>
+                <form class="contact-form" id="iti-form" action="" method="post" validate>
+                    <input type = "title" class = "contact-form-text" id="i-title" placeholder="Add title" name="title" required>
+                    <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location nickname" name="location" required>
+                    <input type = "text" class = "contact-form-text" id="exactLoc1" placeholder="Search for you location on Google" name="search" required>
+                    <input type = "information" class = "contact-form-text" id="i-starttime0" placeholder="Start time" name="time" required>
+                    <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                    <input type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="Create"/>
+                    <input type = "submit" class = "contact-form-btn create-cal" id="contact-update" value="Update"/>
+                </form>
+            </div>
+        </div>
+        </section>
         <section>
             <body>
                 <div class="watch-container" style="display: none;">

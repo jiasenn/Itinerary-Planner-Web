@@ -51,7 +51,7 @@ html, body, #map {
   /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
   height: 32px;
-  width: 400px;
+  width: 170%;
   right: -50px;
   border-radius: 4px;
   z-index: -1;
