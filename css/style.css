@@ -51,7 +51,7 @@ html, body, #map {
   /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
   height: 32px;
-  width: 170%;
+  width: 32vmax;
   right: -50px;
   border-radius: 4px;
   z-index: -1;
@@ -61,7 +61,8 @@ html, body, #map {
   display: block;
   height: 32px;
   position: fixed;
-  z-index: 1;
+  z-index: 0;
+  width: 400px;
 }
 
 #searchInput:focus {
