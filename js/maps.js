@@ -19,16 +19,16 @@ var infowindow; // search infowindow
 // let resultFieldDistance = document.getElementsByClassName("resultDistance");
 var resultFieldDistance = document.querySelectorAll(".resultDistance");
 var resultFieldDuration = document.querySelectorAll(".resultDuration");
-let resultFieldDistance2 = document.querySelectorAll(".resultDistance2");
-let resultFieldDuration2 = document.querySelectorAll(".resultDuration2");
-let resultFieldDistance3 = document.querySelectorAll(".resultDistance3");
-let resultFieldDuration3 = document.querySelectorAll(".resultDuration3");
-let resultFieldDistance4 = document.querySelectorAll(".resultDistance4");
-let resultFieldDuration4 = document.querySelectorAll(".resultDuration4");
-let resultFieldDistance5 = document.querySelectorAll(".resultDistance5");
-let resultFieldDuration5 = document.querySelectorAll(".resultDuration5");
-let resultFieldDistance6 = document.querySelectorAll(".resultDistance6");
-let resultFieldDuration6 = document.querySelectorAll(".resultDuration6");
+var resultFieldDistance2 = document.querySelectorAll(".resultDistance2");
+var resultFieldDuration2 = document.querySelectorAll(".resultDuration2");
+var resultFieldDistance3 = document.querySelectorAll(".resultDistance3");
+var resultFieldDuration3 = document.querySelectorAll(".resultDuration3");
+var resultFieldDistance4 = document.querySelectorAll(".resultDistance4");
+var resultFieldDuration4 = document.querySelectorAll(".resultDuration4");
+var resultFieldDistance5 = document.querySelectorAll(".resultDistance5");
+var resultFieldDuration5 = document.querySelectorAll(".resultDuration5");
+var resultFieldDistance6 = document.querySelectorAll(".resultDistance6");
+var resultFieldDuration6 = document.querySelectorAll(".resultDuration6");
 
 function initMap() {
   infoWindow = new google.maps.InfoWindow();
