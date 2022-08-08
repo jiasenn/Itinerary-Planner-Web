@@ -21,14 +21,14 @@ var resultFieldDistance = document.querySelectorAll(".resultDistance");
 var resultFieldDuration = document.querySelectorAll(".resultDuration");
 let resultFieldDistance2 = document.querySelectorAll(".resultDistance2");
 let resultFieldDuration2 = document.querySelectorAll(".resultDuration2");
-let resultFieldDistance3 = document.getElementById("resultDistance3");
-let resultFieldDuration3 = document.getElementById("resultDuration3");
-let resultFieldDistance4 = document.getElementById("resultDistance4");
-let resultFieldDuration4 = document.getElementById("resultDuration4");
-let resultFieldDistance5 = document.getElementById("resultDistance5");
-let resultFieldDuration5 = document.getElementById("resultDuration5");
-let resultFieldDistance6 = document.getElementById("resultDistance6");
-let resultFieldDuration6 = document.getElementById("resultDuration6");
+let resultFieldDistance3 = document.querySelectorAll(".resultDistance3");
+let resultFieldDuration3 = document.querySelectorAll(".resultDuration3");
+let resultFieldDistance4 = document.querySelectorAll(".resultDistance4");
+let resultFieldDuration4 = document.querySelectorAll(".resultDuration4");
+let resultFieldDistance5 = document.querySelectorAll(".resultDistance5");
+let resultFieldDuration5 = document.querySelectorAll(".resultDuration5");
+let resultFieldDistance6 = document.querySelectorAll(".resultDistance6");
+let resultFieldDuration6 = document.querySelectorAll(".resultDuration6");
 
 function initMap() {
   infoWindow = new google.maps.InfoWindow();
@@ -267,8 +267,6 @@ function getDirections(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
-        
-
         directionsDisplay = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -308,10 +306,6 @@ function getDirections2(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
-        resultFieldDistance2.innerHTML =
-          "Distance: " + response.routes[0].legs[0].distance.text;
-        resultFieldDuration2.innerHTML =
-          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay2 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -324,6 +318,12 @@ function getDirections2(origin_id, destination_id, mode) {
         });
       } else {
         window.alert("Directions request failed due to " + status);
+      }
+      for (i = 0; i < 4; i++) {
+        resultFieldDistance2[i].innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration2[i].innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
       }
     }
   );
@@ -343,10 +343,6 @@ function getDirections3(origin_id, destination_id, mode) {
     (response, status) => {
       
       if (status === "OK") {
-        resultFieldDistance3.innerHTML =
-          "Distance: " + response.routes[0].legs[0].distance.text;
-        resultFieldDuration3.innerHTML =
-          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay3 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -359,6 +355,12 @@ function getDirections3(origin_id, destination_id, mode) {
         });
       } else {
         window.alert("Directions request failed due to " + status);
+      }
+      for (i = 0; i < 4; i++) {
+        resultFieldDistance3[i].innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration3[i].innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
       }
     }
   );
@@ -377,10 +379,6 @@ function getDirections4(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
-        resultFieldDistance4.innerHTML =
-          "Distance: " + response.routes[0].legs[0].distance.text;
-        resultFieldDuration4.innerHTML =
-          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay4 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -393,6 +391,12 @@ function getDirections4(origin_id, destination_id, mode) {
         });
       } else {
         window.alert("Directions request failed due to " + status);
+      }
+      for (i = 0; i < 4; i++) {
+        resultFieldDistance4[i].innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration4[i].innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
       }
     }
   );
@@ -411,10 +415,6 @@ function getDirections5(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
-        resultFieldDistance5.innerHTML =
-          "Distance: " + response.routes[0].legs[0].distance.text;
-        resultFieldDuration5.innerHTML =
-          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay5 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -427,6 +427,12 @@ function getDirections5(origin_id, destination_id, mode) {
         });
       } else {
         window.alert("Directions request failed due to " + status);
+      }
+      for (i = 0; i < 4; i++) {
+        resultFieldDistance5[i].innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration5[i].innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
       }
     }
   );
@@ -445,10 +451,6 @@ function getDirections6(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
-        resultFieldDistance6.innerHTML =
-          "Distance: " + response.routes[0].legs[0].distance.text;
-        resultFieldDuration6.innerHTML =
-          "Duration: " + response.routes[0].legs[0].duration.text;
         directionsDisplay6 = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -461,6 +463,12 @@ function getDirections6(origin_id, destination_id, mode) {
         });
       } else {
         window.alert("Directions request failed due to " + status);
+      }
+      for (i = 0; i < 4; i++) {
+        resultFieldDistance6[i].innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration6[i].innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
       }
     }
   );
