@@ -129,6 +129,7 @@ function updateItinerary(i) {
   itineraries[i][4] = document.getElementById("exactLoc1").value;
   itineraries[i][5] = document.getElementById("lat").innerHTML;
   itineraries[i][6] = document.getElementById("lon").innerHTML;
+  itineraries[i][7] = document.getElementById("place_id").innerHTML;
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   modalBg.classList.remove("bg-active");
   resetForm1();
