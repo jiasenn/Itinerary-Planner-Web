@@ -80,7 +80,7 @@ function initMap() {
   // ham = document.getElementById("ham");
   var input1 = document.getElementById("searchInput");
   // map.controls[google.maps.ControlPosition.TOP_LEFT].push(ham);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input1);
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input1);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo("bounds", map);
