@@ -51,7 +51,7 @@ html, body, #map {
   /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
   height: 32px;
-  width: 21.5vmax;
+  width: 25vmax;
   right: -50px;
   border-radius: 4px;
   z-index: -1;
@@ -155,7 +155,7 @@ nav a:hover{
 #hamburger {
   border-radius: 4px; 
   height: 30px;  
-  margin-left: 0.5em;
+  margin-left: 5%;
 }
 
 #hamburger:hover {
