@@ -76,9 +76,9 @@ function initMap() {
   marker.setMap(map);
   map.panTo(marker.position);
 
-  // ham = document.getElementById("ham");
+  ham = document.getElementById("ham");
   var input1 = document.getElementById("searchInput");
-  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(ham);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(ham);
   // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
