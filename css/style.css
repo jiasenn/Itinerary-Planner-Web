@@ -47,12 +47,12 @@ html, body, #map {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: 2em;
+  margin-left: 2vmax;
   /* padding: 0 11px 0px 11px; */
   text-overflow: ellipsis;
   height: 32px;
   width: 25vmax;
-  right: -50px;
+  /* right: -50px; */
   border-radius: 4px;
   z-index: -1;
 }
@@ -155,7 +155,7 @@ nav a:hover{
 #hamburger {
   border-radius: 4px; 
   height: 30px;  
-  /* margin-left: 1%; */
+  margin-left: 0.5vmax;
 }
 
 #hamburger:hover {
