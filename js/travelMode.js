@@ -223,6 +223,7 @@ for (var i = 0; i < btns46.length; i++) {
 }
 
 function resetHighlight() {
+  resetDT();
     for (i = 1; i < 7; i++) {
         window['current' + i] = document.getElementsByClassName("active" + i);
    window["current" + i][0].className = window[
@@ -252,14 +253,58 @@ function resetHighlight() {
     }
 }
 
+function resetDT() {
+  for (i = 0; i < 4; i++) {
+    if (document.querySelectorAll(".resultDistance")[i] != null) {
+    document.querySelectorAll(".resultDistance")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDuration")[i] != null) {
+      document.querySelectorAll(".resultDuration")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDistance2")[i] != null) {
+      document.querySelectorAll(".resultDistance2")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDuration2")[i] != null) {
+      document.querySelectorAll(".resultDuration2")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDistance3")[i] != null) {
+      document.querySelectorAll(".resultDistance3")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDuration3")[i] != null) {
+      document.querySelectorAll(".resultDuration3")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDistance4")[i] != null) {
+      document.querySelectorAll(".resultDistance4")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDuration4")[i] != null) {
+      document.querySelectorAll(".resultDuration4")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDistance5")[i] != null) {
+      document.querySelectorAll(".resultDistance5")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDuration5")[i] != null) {
+      document.querySelectorAll(".resultDuration5")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDistance6")[i] != null) {
+      document.querySelectorAll(".resultDistance6")[i].innerHTML = "";
+    }
+    if (document.querySelectorAll(".resultDuration6")[i] != null) {
+      document.querySelectorAll(".resultDuration6")[i].innerHTML = "";
+    }
+    
+  }
+}
+
 function resetHigh1(i) {
-    window["high" + i] = document.getElementsByClassName("active" + i);
-    window["high" + i][0].className = window[
-      "high" + i
-    ][0].className.replace(" active" + String(i), "");
+  resetDT();
+  window["high" + i] = document.getElementsByClassName("active" + i);
+  window["high" + i][0].className = window[
+    "high" + i
+  ][0].className.replace(" active" + String(i), "");
   document.getElementsByClassName("deleteR")[i -1].className += " active" + String(i);
 }
 function resetHigh2(i) {
+  resetDT();
     window["high" + i] = document.getElementsByClassName("active2" + i);
     window["high" + i][0].className = window[
       "high" + i
@@ -267,6 +312,7 @@ function resetHigh2(i) {
   document.getElementsByClassName("deleteR")[i + 5].className += " active2" + String(i);
 }
 function resetHigh3(i) {
+  resetDT();
     window["high" + i] = document.getElementsByClassName("active3" + i);
     window["high" + i][0].className = window[
       "high" + i
@@ -274,6 +320,7 @@ function resetHigh3(i) {
   document.getElementsByClassName("deleteR")[i + 11].className += " active3" + String(i);
 }
 function resetHigh4(i) {
+  resetDT();
     window["high" + i] = document.getElementsByClassName("active4" + i);
     window["high" + i][0].className = window[
       "high" + i

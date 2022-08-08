@@ -259,10 +259,8 @@
                                 <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn1" onclick="getDirections(itineraries[0][7], itineraries[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn1 active1 deleteR" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
-                                <div>
-                                <div id="resultDistance"></div>
-                                <div id="resultDuration"></div>
-                                </div>
+                                <div class="resultDistance"></div>
+                                <div class="resultDuration"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -320,8 +318,8 @@
                                 <button class="btn2" onclick="getDirections2(itineraries[1][7], itineraries[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn2" onclick="getDirections2(itineraries[1][7], itineraries[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn2 active2 deleteR" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
-                                <div id="resultDistance2"></div>
-                                <div id="resultDuration2"></div>
+                                <div class="resultDistance2"></div>
+                                <div class="resultDuration2"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -379,8 +377,8 @@
                                 <button class="btn3" onclick="getDirections3(itineraries[2][7], itineraries[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn3" onclick="getDirections3(itineraries[2][7], itineraries[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn3 active3 deleteR" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
-                                <div id="resultDistance3"></div>
-                                <div id="resultDuration3"></div>
+                                <div class="resultDistance3"></div>
+                                <div class="resultDuration3"></div>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -438,8 +436,8 @@
                                 <button class="btn4" onclick="getDirections4(itineraries[3][7], itineraries[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn4" onclick="getDirections4(itineraries[3][7], itineraries[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn4 active4 deleteR" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
-                                <div id="resultDistance4"></div>
-                                <div id="resultDuration4"></div>
+                                <div class="resultDistance4"></div>
+                                <div class="resultDuration4"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -497,8 +495,8 @@
                                 <button class="btn5" onclick="getDirections5(itineraries[4][7], itineraries[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn5" onclick="getDirections5(itineraries[4][7], itineraries[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn5 active5 deleteR" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
-                                <div id="resultDistance5"></div>
-                                <div id="resultDuration5"></div>
+                                <div class="resultDistance5"></div>
+                                <div class="resultDuration5"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -556,8 +554,8 @@
                                 <button class="btn6" onclick="getDirections6(itineraries[5][7], itineraries[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn6" onclick="getDirections6(itineraries[5][7], itineraries[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn6 active6 deleteR" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
-                                <div id="resultDistance6"></div>
-                                <div id="resultDuration6"></div>
+                                <div class="resultDistance6"></div>
+                                <div class="resultDuration6"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -680,6 +678,8 @@
                                 <button class="btn21" onclick="getDirections(itineraries2[0][7], itineraries2[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn21" onclick="getDirections(itineraries2[0][7], itineraries2[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn21 active21 deleteR" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance"></div>
+                                <div class="resultDuration"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -737,6 +737,8 @@
                                 <button class="btn22" onclick="getDirections2(itineraries2[1][7], itineraries2[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn22" onclick="getDirections2(itineraries2[1][7], itineraries2[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn22 active22 deleteR" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance2"></div>
+                                <div class="resultDuration2"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -794,6 +796,8 @@
                                 <button class="btn23" onclick="getDirections3(itineraries2[2][7], itineraries2[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn23" onclick="getDirections3(itineraries2[2][7], itineraries2[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn23 active23 deleteR" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance3"></div>
+                                <div class="resultDuration3"></div>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -851,6 +855,8 @@
                                 <button class="btn24" onclick="getDirections4(itineraries2[3][7], itineraries2[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn24" onclick="getDirections4(itineraries2[3][7], itineraries2[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn24 active24 deleteR" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance4"></div>
+                                <div class="resultDuration4"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -908,6 +914,8 @@
                                 <button class="btn25" onclick="getDirections5(itineraries2[4][7], itineraries2[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn25" onclick="getDirections5(itineraries2[4][7], itineraries2[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn25 active25 deleteR" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance5"></div>
+                                <div class="resultDuration5"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -965,6 +973,8 @@
                                 <button class="btn26" onclick="getDirections6(itineraries2[5][7], itineraries2[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn26" onclick="getDirections6(itineraries2[5][7], itineraries2[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn26 active26 deleteR" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance6"></div>
+                                <div class="resultDuration6"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1087,6 +1097,8 @@
                                 <button class="btn31" onclick="getDirections(itineraries3[0][7], itineraries3[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn31" onclick="getDirections(itineraries3[0][7], itineraries3[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn31 active31 deleteR" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance"></div>
+                                <div class="resultDuration"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1144,6 +1156,8 @@
                                 <button class="btn32" onclick="getDirections2(itineraries3[1][7], itineraries3[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn32" onclick="getDirections2(itineraries3[1][7], itineraries3[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn32 active32 deleteR" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance2"></div>
+                                <div class="resultDuration2"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1201,6 +1215,8 @@
                                 <button class="btn33" onclick="getDirections3(itineraries3[2][7], itineraries3[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn33" onclick="getDirections3(itineraries3[2][7], itineraries3[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn33 active33 deleteR" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance3"></div>
+                                <div class="resultDuration3"></div>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -1258,6 +1274,8 @@
                                 <button class="btn34" onclick="getDirections4(itineraries3[3][7], itineraries3[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn34" onclick="getDirections4(itineraries3[3][7], itineraries3[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn34 active34 deleteR" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance4"></div>
+                                <div class="resultDuration4"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1315,6 +1333,8 @@
                                 <button class="btn35" onclick="getDirections5(itineraries3[4][7], itineraries3[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn35" onclick="getDirections5(itineraries3[4][7], itineraries3[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn35 active35 deleteR" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance5"></div>
+                                <div class="resultDuration5"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1372,6 +1392,8 @@
                                 <button class="btn36" onclick="getDirections6(itineraries3[5][7], itineraries3[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn36" onclick="getDirections6(itineraries3[5][7], itineraries3[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn36 active36 deleteR" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance6"></div>
+                                <div class="resultDuration6"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1495,6 +1517,8 @@
                                 <button class="btn41" onclick="getDirections(itineraries4[0][7], itineraries4[1][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn41" onclick="getDirections(itineraries4[0][7], itineraries4[1][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn41 active41 deleteR" onclick="hideDirections()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance"></div>
+                                <div class="resultDuration"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1552,6 +1576,8 @@
                                 <button class="btn42" onclick="getDirections2(itineraries4[1][7], itineraries4[2][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn42" onclick="getDirections2(itineraries4[1][7], itineraries4[2][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn42 active42 deleteR" onclick="hideDirections2()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance2"></div>
+                                <div class="resultDuration2"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1609,6 +1635,8 @@
                                 <button class="btn43" onclick="getDirections3(itineraries4[2][7], itineraries4[3][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn43" onclick="getDirections3(itineraries4[2][7], itineraries4[3][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn43 active43 deleteR" onclick="hideDirections3()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance3"></div>
+                                <div class="resultDuration3"></div>
                             </td>
                         </tr>
                         <tr class="rowsa" >
@@ -1666,6 +1694,8 @@
                                 <button class="btn44" onclick="getDirections4(itineraries4[3][7], itineraries4[4][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn44" onclick="getDirections4(itineraries4[3][7], itineraries4[4][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn44 active44 deleteR" onclick="hideDirections4()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance4"></div>
+                                <div class="resultDuration4"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1723,6 +1753,8 @@
                                 <button class="btn45" onclick="getDirections5(itineraries4[4][7], itineraries4[5][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn45" onclick="getDirections5(itineraries4[4][7], itineraries4[5][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn45 active45 deleteR" onclick="hideDirections5()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance5"></div>
+                                <div class="resultDuration5"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">
@@ -1780,6 +1812,8 @@
                                 <button class="btn46" onclick="getDirections6(itineraries4[5][7], itineraries4[6][7], 'TRANSIT')"><img src="/img/front-of-bus.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn46" onclick="getDirections6(itineraries4[5][7], itineraries4[6][7], 'WALKING')"><img src="/img/pedestrian-man.png" alt="png" style="height: 16px;"></button>
                                 <button class="btn46 active46 deleteR" onclick="hideDirections6()"><img src="/img/trash.png" alt="png" style="height: 16px;"></button>
+                                <div class="resultDistance6"></div>
+                                <div class="resultDuration6"></div>
                             </td>
                         </tr>
                         <tr class="rowsa">

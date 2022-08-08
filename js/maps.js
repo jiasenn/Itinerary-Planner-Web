@@ -16,10 +16,11 @@ var input;
 var infoWindow; // nickname location inforwindow
 var infowindow; // search infowindow
 
-let resultFieldDistance = document.getElementById("resultDistance");
-let resultFieldDuration = document.getElementById("resultDuration");
-let resultFieldDistance2 = document.getElementById("resultDistance2");
-let resultFieldDuration2 = document.getElementById("resultDuration2");
+// let resultFieldDistance = document.getElementsByClassName("resultDistance");
+var resultFieldDistance = document.querySelectorAll(".resultDistance");
+var resultFieldDuration = document.querySelectorAll(".resultDuration");
+let resultFieldDistance2 = document.querySelectorAll(".resultDistance2");
+let resultFieldDuration2 = document.querySelectorAll(".resultDuration2");
 let resultFieldDistance3 = document.getElementById("resultDistance3");
 let resultFieldDuration3 = document.getElementById("resultDuration3");
 let resultFieldDistance4 = document.getElementById("resultDistance4");
@@ -266,11 +267,8 @@ function getDirections(origin_id, destination_id, mode) {
     },
     (response, status) => {
       if (status === "OK") {
-        resultFieldDistance.innerHTML =
-        "Distance: " + response.routes[0].legs[0].distance.text;
-        resultFieldDuration.innerHTML =
-        "Duration: " +  response.routes[0].legs[0].duration.text;
-          
+        
+
         directionsDisplay = new google.maps.DirectionsRenderer({
           suppressMarkers: false,
           directions: response,
@@ -284,6 +282,12 @@ function getDirections(origin_id, destination_id, mode) {
         });
       } else {
         window.alert("Directions request failed due to " + status);
+      }
+      for (i = 0; i < 4; i++) {
+        resultFieldDistance[i].innerHTML =
+          "Distance: " + response.routes[0].legs[0].distance.text;
+        resultFieldDuration[i].innerHTML =
+          "Duration: " + response.routes[0].legs[0].duration.text;
       }
     }
   );
