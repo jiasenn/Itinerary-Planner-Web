@@ -1,5 +1,5 @@
 # Itinerary Planner Web
- Itinerary planner webapp project that makes use of ML to auto generate Itinerary with editable input
+ Itinerary planner webapp project that integrate planner function into google maps
 
 
 ## Steps to run the app
