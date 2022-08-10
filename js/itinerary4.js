@@ -30,7 +30,7 @@ function displayItineraries4(itineraries4) {
   }
 }
 
-export function hideItineraries4(itineraries4) {
+function hideItineraries4(itineraries4) {
   for (let i = 0; i < itineraries4.length; i++) {
     document.getElementById("title-i4" + String(i)).innerHTML = "";
     document.getElementById("loc-i4" + String(i)).innerHTML = "";
