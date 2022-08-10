@@ -1,5 +1,6 @@
 // window.localStorage.clear(); //clear all localstorage
 
+
 let plans = [];
 threedots();
 var obj = JSON.parse(localStorage.getItem("MyPlanList")); // An object :D
@@ -40,6 +41,11 @@ const addPlan = (ev) => {
     end_date: document.getElementById("date-picker-end-date").value,
     destination: document.getElementById("destination-form").value,
   };
+  if (plan.title == "" || plan.start_date == "" || plan.end_date == "" || plan.destination == "") {
+    alert("Please fill all the fields");
+    showCalendar();
+    return;
+  }
   plans.push(plan);
   document.forms[0].reset(); // to clear the form for the next entries
   //document.querySelector('form').reset();
@@ -82,6 +88,12 @@ function removePlan(i) {
   plans.splice(i, 1);
   displayPlans(plans);
   localStorage.removeItem("MyPlanList"); //remove one item
+  if (i == 0) {
+    localStorage.removeItem("MyItineraryList");
+    localStorage.removeItem("MyItineraryList2");
+    localStorage.removeItem("MyItineraryList3");
+    localStorage.removeItem("MyItineraryList4");
+  };
   localStorage.setItem("MyPlanList", JSON.stringify(plans));
 }
 
@@ -184,6 +196,10 @@ function editProperties(i) {
 
 function updatePlan(i) {
   // hidePlans(plans);
+  if (document.getElementById("itineary-form").value == "" || document.getElementById("date-picker-start-date").value == "" || document.getElementById("date-picker-end-date").value == "" || document.getElementById("destination-form").value == "") {
+    alert("Please fill all the fields");
+    showCalendar();
+    return;}
   plans[i][0] = document.getElementById("itineary-form").value;
   plans[i][1] = document.getElementById("date-picker-start-date").value;
   plans[i][2] = document.getElementById("date-picker-end-date").value;

@@ -50,7 +50,7 @@
                             </ul>
                             <div id="myDropdown-1" class="dropdown-content">
                                 <a href="javascript:editProperties(0)">Edit property</a>
-                                <a href="javascript:removePlan(0); threedots()"onclick="return confirm('Please click on OK to delete');">Delete</a>
+                                <a href="javascript:removePlan(0); hideItineraries(itineraries); hideItineraries2(itineraries2); hideItineraries3(itineraries3); hideItineraries4(itineraries4); threedots()"onclick="return confirm('Please click on OK to delete');">Delete</a>
                             </div>
                         </div>    
                     </div>
@@ -209,7 +209,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(0)" id="start-time-i0"></a></td> 
                                         <div id="time-form0" style="display: none;">
-                                        <form action="javascript:saveTime(0); hideForm(0)" ><input type="text" id="i-starttime00" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(0); hideForm(0)" ><input type="text" id="i-starttime00" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -272,7 +272,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(1)" id="start-time-i1"></a></td> 
                                         <div id="time-form1" style="display: none;">
-                                        <form action="javascript:saveTime(1); hideForm(1)" ><input type="text" id="i-starttime01" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(1); hideForm(1)" ><input type="text" id="i-starttime01" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -331,7 +331,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(2)" id="start-time-i2"></a></td> 
                                         <div id="time-form2" style="display: none;">
-                                        <form action="javascript:saveTime(2); hideForm(2)" ><input type="text" id="i-starttime02" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(2); hideForm(2)" ><input type="text" id="i-starttime02" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -390,7 +390,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(3)" id="start-time-i3"></a></td> 
                                         <div id="time-form3" style="display: none;">
-                                        <form action="javascript:saveTime(3); hideForm(3)" ><input type="text" id="i-starttime03" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(3); hideForm(3)" ><input type="text" id="i-starttime03" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -449,7 +449,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(4)" id="start-time-i4"></a></td> 
                                         <div id="time-form4" style="display: none;">
-                                        <form action="javascript:saveTime(4); hideForm(4)" ><input type="text" id="i-starttime04" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(4); hideForm(4)" ><input type="text" id="i-starttime04" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -508,7 +508,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(5)" id="start-time-i5"></a></td> 
                                         <div id="time-form5" style="display: none;">
-                                        <form action="javascript:saveTime(5); hideForm(5)" ><input type="text" id="i-starttime05" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(5); hideForm(5)" ><input type="text" id="i-starttime05" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -567,7 +567,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm(6)" id="start-time-i6"></a></td> 
                                         <div id="time-form6" style="display: none;">
-                                        <form action="javascript:saveTime(6); hideForm(6)" ><input type="text" id="i-starttime06" class="timeinput" required></form>
+                                        <form action="javascript:saveTime(6); hideForm(6)" ><input type="text" id="i-starttime06" class="timeinput"></form>
                                         </div>
                                     </tr>
                                 </table>
@@ -632,7 +632,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(0)" id="start-time-i20"></a></td> 
                                         <div id="time-form20" style="display: none;">
-                                        <form action="javascript:saveTime2(0); hideForm2(0)" ><input type="text" id="i-starttime20" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(0); hideForm2(0)" ><input type="text" id="i-starttime20" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -691,7 +691,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(1)" id="start-time-i21"></a></td> 
                                         <div id="time-form21" style="display: none;">
-                                        <form action="javascript:saveTime2(1); hideForm2(1)" ><input type="text" id="i-starttime21" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(1); hideForm2(1)" ><input type="text" id="i-starttime21" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -750,7 +750,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(2)" id="start-time-i22"></a></td> 
                                         <div id="time-form22" style="display: none;">
-                                        <form action="javascript:saveTime2(2); hideForm2(2)" ><input type="text" id="i-starttime22" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(2); hideForm2(2)" ><input type="text" id="i-starttime22" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -809,7 +809,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(3)" id="start-time-i23"></a></td> 
                                         <div id="time-form23" style="display: none;">
-                                        <form action="javascript:saveTime2(3); hideForm2(3)" ><input type="text" id="i-starttime23" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(3); hideForm2(3)" ><input type="text" id="i-starttime23" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -868,7 +868,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(4)" id="start-time-i24"></a></td> 
                                         <div id="time-form24" style="display: none;">
-                                        <form action="javascript:saveTime2(4); hideForm2(4)" ><input type="text" id="i-starttime24" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(4); hideForm2(4)" ><input type="text" id="i-starttime24" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -927,7 +927,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(5)" id="start-time-i25"></a></td> 
                                         <div id="time-form25" style="display: none;">
-                                        <form action="javascript:saveTime2(5); hideForm2(5)" ><input type="text" id="i-starttime25" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(5); hideForm2(5)" ><input type="text" id="i-starttime25" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -986,7 +986,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm2(6)" id="start-time-i26"></a></td> 
                                         <div id="time-form26" style="display: none;">
-                                        <form action="javascript:saveTime2(6); hideForm2(6)" ><input type="text" id="i-starttime26" class="timeinput" required></form>
+                                        <form action="javascript:saveTime2(6); hideForm2(6)" ><input type="text" id="i-starttime26" class="timeinput"></form>
                                         </div>
                                     </tr>
                                 </table>
@@ -1051,7 +1051,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(0)" id="start-time-i30"></a></td> 
                                         <div id="time-form30" style="display: none;">
-                                        <form action="javascript:saveTime3(0); hideForm3(0)" ><input type="text" id="i-starttime30" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(0); hideForm3(0)" ><input type="text" id="i-starttime30" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1110,7 +1110,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(1)" id="start-time-i31"></a></td> 
                                         <div id="time-form31" style="display: none;">
-                                        <form action="javascript:saveTime3(1); hideForm3(1)" ><input type="text" id="i-starttime31" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(1); hideForm3(1)" ><input type="text" id="i-starttime31" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1169,7 +1169,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(2)" id="start-time-i32"></a></td> 
                                         <div id="time-form32" style="display: none;">
-                                        <form action="javascript:saveTime3(2); hideForm3(2)" ><input type="text" id="i-starttime32" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(2); hideForm3(2)" ><input type="text" id="i-starttime32" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1228,7 +1228,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(3)" id="start-time-i33"></a></td> 
                                         <div id="time-form33" style="display: none;">
-                                        <form action="javascript:saveTime3(3); hideForm3(3)" ><input type="text" id="i-starttime33" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(3); hideForm3(3)" ><input type="text" id="i-starttime33" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1287,7 +1287,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(4)" id="start-time-i34"></a></td> 
                                         <div id="time-form34" style="display: none;">
-                                        <form action="javascript:saveTime3(4); hideForm3(4)" ><input type="text" id="i-starttime34" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(4); hideForm3(4)" ><input type="text" id="i-starttime34" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1346,7 +1346,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(5)" id="start-time-i35"></a></td> 
                                         <div id="time-form35" style="display: none;">
-                                        <form action="javascript:saveTime3(5); hideForm3(5)" ><input type="text" id="i-starttime35" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(5); hideForm3(5)" ><input type="text" id="i-starttime35" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1405,7 +1405,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm3(6)" id="start-time-i36"></a></td> 
                                         <div id="time-form36" style="display: none;">
-                                        <form action="javascript:saveTime3(6); hideForm3(6)" ><input type="text" id="i-starttime36" class="timeinput" required></form>
+                                        <form action="javascript:saveTime3(6); hideForm3(6)" ><input type="text" id="i-starttime36" class="timeinput"></form>
                                         </div>
                                     </tr>
                                 </table>
@@ -1471,7 +1471,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(0)" id="start-time-i40"></a></td> 
                                         <div id="time-form40" style="display: none;">
-                                        <form action="javascript:saveTime4(0); hideForm4(0)" ><input type="text" id="i-starttime40" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(0); hideForm4(0)" ><input type="text" id="i-starttime40" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1530,7 +1530,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(1)" id="start-time-i41"></a></td> 
                                         <div id="time-form41" style="display: none;">
-                                        <form action="javascript:saveTime4(1); hideForm4(1)" ><input type="text" id="i-starttime41" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(1); hideForm4(1)" ><input type="text" id="i-starttime41" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1589,7 +1589,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(2)" id="start-time-i42"></a></td> 
                                         <div id="time-form42" style="display: none;">
-                                        <form action="javascript:saveTime4(2); hideForm4(2)" ><input type="text" id="i-starttime42" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(2); hideForm4(2)" ><input type="text" id="i-starttime42" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1648,7 +1648,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(3)" id="start-time-i43"></a></td> 
                                         <div id="time-form43" style="display: none;">
-                                        <form action="javascript:saveTime4(3); hideForm4(3)" ><input type="text" id="i-starttime43" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(3); hideForm4(3)" ><input type="text" id="i-starttime43" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1707,7 +1707,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(4)" id="start-time-i44"></a></td> 
                                         <div id="time-form44" style="display: none;">
-                                        <form action="javascript:saveTime4(4); hideForm4(4)" ><input type="text" id="i-starttime44" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(4); hideForm4(4)" ><input type="text" id="i-starttime44" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1766,7 +1766,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(5)" id="start-time-i45"></a></td> 
                                         <div id="time-form45" style="display: none;">
-                                        <form action="javascript:saveTime4(5); hideForm4(5)" ><input type="text" id="i-starttime45" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(5); hideForm4(5)" ><input type="text" id="i-starttime45" class="timeinput"></form>
                                         </div>
                                     </tr>
                                     <tr>
@@ -1825,7 +1825,7 @@
                                     <tr>
                                         <td><a href="javascript:showForm4(6)" id="start-time-i46"></a></td> 
                                         <div id="time-form46" style="display: none;">
-                                        <form action="javascript:saveTime4(6); hideForm4(6)" ><input type="text" id="i-starttime46" class="timeinput" required></form>
+                                        <form action="javascript:saveTime4(6); hideForm4(6)" ><input type="text" id="i-starttime46" class="timeinput"></form>
                                         </div>
                                     </tr>
                                 </table>
@@ -1910,7 +1910,7 @@
                         <input type = "location" class = "contact-form-text" id="i-loc" placeholder="Add location nickname" name="location" required>
                         <input type = "text" class = "contact-form-text" id="exactLoc1" placeholder="Search for you location on Google" name="search" required>
                         <input type = "information" class = "contact-form-text" id="i-starttime0" placeholder="Start time" name="time" required>
-                        <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                        <textarea class = "contact-form-text" id="i-addinfo" placeholder="Additonal Information (optional)" name="Additonal information(optional)"></textarea>
                         <input type = "submit" class = "contact-form-btn create-cal" id="contact-submit" value="Create"/>
                         <input type = "submit" class = "contact-form-btn create-cal" id="contact-update" value="Update"/>
                     </form>
@@ -1928,7 +1928,7 @@
                         <input type = "location" class = "contact-form-text" id="i-loc2" placeholder="Add location nickname" name="location" required>
                         <input type = "text" class = "contact-form-text" id="exactLoc2" placeholder="Search for you location on Google" name="search" required>
                         <input type = "information" class = "contact-form-text" id="i-starttime2" placeholder="Start time" name="time">
-                        <textarea class = "contact-form-text" id="i-addinfo2" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                        <textarea class = "contact-form-text" id="i-addinfo2" placeholder="Additonal Information (optional)" name="Additonal information(optional)"></textarea>
                         <input type = "submit" class = "contact-form-btn create-cal2" id="contact-submit2" value="Create">
                         <input type = "button" class = "contact-form-btn create-cal2" id="contact-update2" value="Update">
                     </form>
@@ -1946,7 +1946,7 @@
                         <input type = "location" class = "contact-form-text" id="i-loc3" placeholder="Add location nickname" name="location" required>
                         <input type = "text" class = "contact-form-text" id="exactLoc3" placeholder="Search for you location on Google" name="search" required>
                         <input type = "information" class = "contact-form-text" id="i-starttime3" placeholder="Start time" name="time">
-                        <textarea class = "contact-form-text" id="i-addinfo3" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                        <textarea class = "contact-form-text" id="i-addinfo3" placeholder="Additonal Information (optional)" name="Additonal information(optional)"></textarea>
                         <input type = "submit" class = "contact-form-btn create-cal3" id="contact-submit3" value="Create">
                         <input type = "button" class = "contact-form-btn create-cal3" id="contact-update3" value="Update">
                     </form>
@@ -1964,7 +1964,7 @@
                             <input type = "location" class = "contact-form-text" id="i-loc4" placeholder="Add location nickname" name="location" required>
                             <input type = "text" class = "contact-form-text" id="exactLoc4" placeholder="Search for you location on Google" name="search" required>
                             <input type = "information" class = "contact-form-text" id="i-starttime4" placeholder="Start time" name="time">
-                            <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additional information" name="Additonal information(optional)"></textarea>
+                            <textarea class = "contact-form-text" id="i-addinfo4" placeholder="Additonal Information (optional)" name="Additonal information(optional)"></textarea>
                             <input type = "submit" class = "contact-form-btn create-cal4" id="contact-submit4" value="Create">
                             <input type = "button" class = "contact-form-btn create-cal4" id="contact-update4" value="Update">
                         </form>

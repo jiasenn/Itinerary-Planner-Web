@@ -56,6 +56,16 @@ const addItinerary = (ev) => {
     lng: document.getElementById("lon").innerHTML,
     place_id: document.getElementById("place_id").innerHTML,
   };
+
+  if (itinerary.title == "" || itinerary.loc == "" || itinerary.start_time == "") {
+    alert("Please fill out all fields");
+    modalBg.classList.add("bg-active");
+    return; } 
+  else if (itinerary.full_add == "" || itinerary.lat == "" || itinerary.lng == "" || itinerary.place_id == "") { 
+    alert("Please search location and select from dropdown"); 
+    modalBg.classList.add("bg-active");
+    return; }
+
   itineraries.push(itinerary);
   //document.querySelector('form').reset();
 
@@ -122,6 +132,14 @@ function editItinerary(i) {
 // };
 
 function updateItinerary(i) {
+  if (document.getElementById("i-title").value == "" || document.getElementById("i-loc").value == "" || document.getElementById("i-starttime0").value == "") {
+    alert("Please fill out all fields");
+    modalBg.classList.add("bg-active");
+    return; }
+  else if (document.getElementById("exactLoc1").value == "" || document.getElementById("lat").innerHTML == "" || document.getElementById("lon").innerHTML == "" || document.getElementById("place_id").innerHTML == "") {
+    alert("Please search location and select from dropdown");
+    modalBg.classList.add("bg-active");
+    return; }
   itineraries[i][0] = document.getElementById("i-title").value;
   itineraries[i][1] = document.getElementById("i-loc").value;
   itineraries[i][2] = document.getElementById("i-starttime0").value;
@@ -181,6 +199,10 @@ function hideForm(i) {
 }
 function saveTime(i) {
   document.getElementById("start-time-i" + String(i)).style.display = "block";
+  if (document.getElementById("i-starttime0" + String(i)).value == "") {
+    alert("Time cannot be empty");
+    return;
+  }
   itineraries[i][2] = document.getElementById("i-starttime0" + String(i)).value;
   localStorage.setItem("MyItineraryList", JSON.stringify(itineraries));
   displayItineraries(itineraries);

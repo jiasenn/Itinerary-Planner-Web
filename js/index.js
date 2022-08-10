@@ -92,6 +92,6 @@ function showMenu () {
 //      });
 
 // does not allow enter to submit form 
- $(document).on("keydown", "form", function (event) {
-   return event.key != "Enter";
- });
+//  $(document).on("keydown", "form", function (event) {
+//    return event.key != "Enter";
+//  });

@@ -30,7 +30,7 @@ function displayItineraries4(itineraries4) {
   }
 }
 
-function hideItineraries4(itineraries4) {
+export function hideItineraries4(itineraries4) {
   for (let i = 0; i < itineraries4.length; i++) {
     document.getElementById("title-i4" + String(i)).innerHTML = "";
     document.getElementById("loc-i4" + String(i)).innerHTML = "";
@@ -51,6 +51,15 @@ const addItinerary4 = (ev) => {
     lng: document.getElementById("lon").innerHTML,
     place_id: document.getElementById("place_id").innerHTML,
   };
+
+  if (itinerary4.title == "" || itinerary4.loc == "" || itinerary4.start_time == "") {
+    alert("Please fill out all fields");
+    modalBg.classList.add("bg-active");
+    return; } 
+  else if (itinerary4.full_add == "" || itinerary4.lat == "" || itinerary4.lng == "" || itinerary4.place_id == "") { 
+    alert("Please search location and select from dropdown"); 
+    modalBg.classList.add("bg-active");
+    return; }
   itineraries4.push(itinerary4);
 
   if (itineraries.length !== 0) {
@@ -107,6 +116,14 @@ function editItinerary4(i) {
 }
 
 function updateItinerary4(i) {
+  if (document.getElementById("i-title4").value == "" || document.getElementById("i-loc4").value == "" || document.getElementById("i-starttime4").value == "") {
+    alert("Please fill out all fields");
+    modalBg4.classList.add("bg-active");
+    return; }
+  else if (document.getElementById("exactLoc4").value == "" || document.getElementById("lat").innerHTML == "" || document.getElementById("lon").innerHTML == "" || document.getElementById("place_id").innerHTML == "") {
+    alert("Please search location and select from dropdown");
+    modalBg4.classList.add("bg-active");
+    return; }
   itineraries4[i][0] = document.getElementById("i-title4").value;
   itineraries4[i][1] = document.getElementById("i-loc4").value;
   itineraries4[i][2] = document.getElementById("i-starttime4").value;
@@ -165,6 +182,9 @@ function hideForm4(i) {
 }
 function saveTime4(i) {
   document.getElementById("start-time-i4" + String(i)).style.display = "block";
+  if (document.getElementById("i-starttime4" + String(i)).value == "") {
+    alert("Time cannot be empty");
+    return;}
   itineraries4[i][2] = document.getElementById("i-starttime4" + String(i)).value;
   localStorage.setItem("MyItineraryList4", JSON.stringify(itineraries4));
   displayItineraries4(itineraries4);
