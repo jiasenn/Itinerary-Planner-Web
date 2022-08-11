@@ -104,16 +104,16 @@ function initMap() {
 
         },
         () => {
-          handleLocationError(true, map.getCenter());
+          handleLocationError(true);
         }
       );
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, map.getCenter());
+      handleLocationError(false);
     }
   });
 
-function handleLocationError(browserHasGeolocation, pos) {
+function handleLocationError(browserHasGeolocation) {
   if (browserHasGeolocation) {
     alert ("Error: The Geolocation service failed.");
     alert ("Error: Your browser doesn't support geolocation.");
