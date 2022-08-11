@@ -155,9 +155,9 @@ function hideIndiIt() {
       }
     }
     else {
-      document.getElementById("table-i" + String(i)).style.display = "table";
+      document.getElementById("table-i" + String(i)).style.display = "";
       if (i != 0 ) {
-        document.getElementById("route-i" + String(i)).style.display = "table";
+        document.getElementById("route-i" + String(i)).style.display = "";
       }
     }
   }

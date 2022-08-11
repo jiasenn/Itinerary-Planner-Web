@@ -138,9 +138,9 @@ function hideIndiIt4() {
         document.getElementById("route-i4" + String(i)).style.display = "none";
       }
     } else {
-      document.getElementById("table-i4" + String(i)).style.display = "block";
+      document.getElementById("table-i4" + String(i)).style.display = "";
       if (i != 0) {
-        document.getElementById("route-i4" + String(i)).style.display = "block";
+        document.getElementById("route-i4" + String(i)).style.display = "";
       }
     }
   }
