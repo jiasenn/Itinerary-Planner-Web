@@ -13,8 +13,9 @@ var directionsDisplay5;
 var directionsService6;
 var directionsDisplay6;
 var input;
-var infoWindow; // nickname location inforwindow
+var infoWindow; // nickname location infoWindow
 var infowindow; // search infowindow
+let locationInfo;
 
 // let resultFieldDistance = document.getElementsByClassName("resultDistance");
 var resultFieldDistance = document.querySelectorAll(".resultDistance");
@@ -32,6 +33,7 @@ var resultFieldDuration6 = document.querySelectorAll(".resultDuration6");
 
 function initMap() {
   infoWindow = new google.maps.InfoWindow();
+  locationInfo = new google.maps.InfoWindow();
 
   var styles = [
     {
@@ -76,6 +78,48 @@ function initMap() {
   marker.setVisible(false);
   marker.setMap(map);
   map.panTo(marker.position);
+
+  const locationButton = document.createElement("button");
+
+  locationButton.textContent = "Pan to Current Location";
+  locationButton.classList.add("controls");
+  map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(locationButton);
+  locationButton.addEventListener("click", () => {
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          marker.setIcon("https://cdn2.iconfinder.com/data/icons/boxicons-regular-vol-2/24/bx-current-location-32.png");
+          marker.setPosition(pos);
+          marker.setVisible(true);
+          map.setCenter(pos);
+          infoWindow.setPosition(pos);
+          infowindow.setContent("You are here");
+          infowindow.open(map, marker);
+
+        },
+        () => {
+          handleLocationError(true, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, map.getCenter());
+    }
+  });
+
+function handleLocationError(browserHasGeolocation, pos) {
+  if (browserHasGeolocation) {
+    alert ("Error: The Geolocation service failed.");
+    alert ("Error: Your browser doesn't support geolocation.");
+  }
+}
+
 
   // ham = document.getElementById("ham");
   var input1 = document.getElementById("searchInput");
@@ -207,8 +251,6 @@ function initMap() {
   directionsService4 = new google.maps.DirectionsService();
   directionsService5 = new google.maps.DirectionsService();
   directionsService6 = new google.maps.DirectionsService();
-
-
 
   // directionsService.route(
   //   {
