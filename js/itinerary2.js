@@ -68,6 +68,7 @@ const addItinerary2 = (ev) => {
   localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
   selfRefresh2();
   resetForm2(); // to clear the form for the next entries
+  hideIndiIt2();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -80,19 +81,8 @@ if (obj2 != null) {
   }
 }
 
-// set time
-for (let i = 1; i < 7; i++) {
-  if (document.getElementById("start-time-i2" + String(i)).innerText === "") {
-    document.getElementById("start-time-i2" + String(i)).innerText =
-      String(9 + i * 2) + "00";
-  }
-}
-if (document.getElementById("start-time-i20").innerText === "") {
-  document.getElementById("start-time-i20").innerText = "0900";
-}
-
 function resetForm2() {
-  document.getElementById("iti-form2").reset();
+  document.getElementById("iti-form4").reset();
 }
 
 displayItineraries2(itineraries2);
@@ -103,6 +93,7 @@ function removeItineraries2(i) {
   displayItineraries2(itineraries2);
   localStorage.removeItem("MyItineraryList2"); //remove one item
   localStorage.setItem("MyItineraryList2", JSON.stringify(itineraries2));
+  hideIndiIt2();
 }
 
 function editItinerary2(i) {
@@ -138,6 +129,23 @@ function updateItinerary2(i) {
   hideUpdate2();
   displayItineraries2(itineraries2);
 }
+
+function hideIndiIt2() {
+  for (let i = 0; i < 7; i++) {
+    if (document.getElementById("start-time-i2" + String(i)).innerText === "") {
+      document.getElementById("table-i2" + String(i)).style.display = "none";
+      if (i != 0) {
+        document.getElementById("route-i2" + String(i)).style.display = "none";
+      }
+    } else {
+      document.getElementById("table-i2" + String(i)).style.display = "block";
+      if (i != 0) {
+        document.getElementById("route-i2" + String(i)).style.display = "block";
+      }
+    }
+  }
+}
+hideIndiIt2();
 
 function selfRefresh2() {
   itineraries2 = [];
